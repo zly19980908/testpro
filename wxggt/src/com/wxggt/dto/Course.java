@@ -8,6 +8,7 @@ public class Course {
 	private int Studyquantity;
 	private int Price;
 	private int Specialtyid;
+	private String describe;
 
 	public String getcNo() {
 		return cNo;
@@ -63,6 +64,14 @@ public class Course {
 
 	public void setSpecialtyid(int specialtyid) {
 		Specialtyid = specialtyid;
+	}
+
+	public String getDescribe() {
+		return describe;
+	}
+
+	public void setDescribe(String describe) {
+		this.describe = describe;
 	}
 
 }
