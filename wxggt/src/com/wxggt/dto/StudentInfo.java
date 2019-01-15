@@ -13,6 +13,7 @@ public class StudentInfo {
 	private Date FreezeDate;
 	private int Vip;
 	private int balance;
+	private Date registerDate;
 
 	public String getsNo() {
 		return sNo;
@@ -84,6 +85,14 @@ public class StudentInfo {
 
 	public void setBalance(int balance) {
 		this.balance = balance;
+	}
+
+	public Date getRegisterDate() {
+		return registerDate;
+	}
+
+	public void setRegisterDate(Date registerDate) {
+		this.registerDate = registerDate;
 	}
 
 }

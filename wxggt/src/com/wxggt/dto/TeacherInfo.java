@@ -7,6 +7,7 @@ public class TeacherInfo {
 	private String tSex;
 	private String TeacherLicense;
 	private String tDesc;
+	private String facePic;
 
 	public String gettNo() {
 		return tNo;
@@ -46,6 +47,14 @@ public class TeacherInfo {
 
 	public void settDesc(String tDesc) {
 		this.tDesc = tDesc;
+	}
+
+	public String getFacePic() {
+		return facePic;
+	}
+
+	public void setFacePic(String facePic) {
+		this.facePic = facePic;
 	}
 
 }
