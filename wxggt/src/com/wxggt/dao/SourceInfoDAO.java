@@ -44,7 +44,7 @@ public class SourceInfoDAO {
 	}
 
 	public static void main(String[] args) {
-		/* 上传一个资源 */
+		/* 上传一个资源  */
 		SourceInfoDAO dao = new SourceInfoDAO();
 		SourceInfo sourceInfo = new SourceInfo();
 		sourceInfo.setcNo("126263347916");
