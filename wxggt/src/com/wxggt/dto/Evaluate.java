@@ -1,6 +1,7 @@
 package com.wxggt.dto;
 
 public class Evaluate {
+	private int eId;
 	private String tNo;
 	private String cNo;
 	private String sNo;
@@ -45,6 +46,14 @@ public class Evaluate {
 
 	public void setGrade(int grade) {
 		this.grade = grade;
+	}
+
+	public int geteId() {
+		return eId;
+	}
+
+	public void seteId(int eId) {
+		this.eId = eId;
 	}
 
 }

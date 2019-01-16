@@ -3,6 +3,7 @@ package com.wxggt.dto;
 import java.util.Date;
 
 public class SourceInfo {
+	private int id;
 	private String cNo;
 	private String sourceName;
 	private String sourceSort;
@@ -83,6 +84,14 @@ public class SourceInfo {
 
 	public void setcNo(String cNo) {
 		this.cNo = cNo;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }

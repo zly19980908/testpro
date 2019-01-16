@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class Sound {
 	private int soundId;
-	private String uId;
-	private String sound;
+	private String uName;
+	private String soundPath;
 	private int surname;
 	private int pageview;
 	private int reward;
-	private int Uploadid;
+	private String uploadid;
 	private Date sTime;
-	private String describe;
+	private String sDescribe;
 	private String title;
 
 	public int getSoundId() {
@@ -22,20 +22,20 @@ public class Sound {
 		this.soundId = soundId;
 	}
 
-	public String getuId() {
-		return uId;
+	public String getuName() {
+		return uName;
 	}
 
-	public void setuId(String uId) {
-		this.uId = uId;
+	public void setuName(String uName) {
+		this.uName = uName;
 	}
 
-	public String getSound() {
-		return sound;
+	public String getSoundPath() {
+		return soundPath;
 	}
 
-	public void setSound(String sound) {
-		this.sound = sound;
+	public void setSoundPath(String soundPath) {
+		this.soundPath = soundPath;
 	}
 
 	public int getSurname() {
@@ -62,12 +62,12 @@ public class Sound {
 		this.reward = reward;
 	}
 
-	public int getUploadid() {
-		return Uploadid;
+	public String getUploadid() {
+		return uploadid;
 	}
 
-	public void setUploadid(int uploadid) {
-		Uploadid = uploadid;
+	public void setUploadid(String uploadid) {
+		this.uploadid = uploadid;
 	}
 
 	public Date getsTime() {
@@ -78,12 +78,12 @@ public class Sound {
 		this.sTime = sTime;
 	}
 
-	public String getDescribe() {
-		return describe;
+	public String getsDescribe() {
+		return sDescribe;
 	}
 
-	public void setDescribe(String describe) {
-		this.describe = describe;
+	public void setsDescribe(String sDescribe) {
+		this.sDescribe = sDescribe;
 	}
 
 	public String getTitle() {
