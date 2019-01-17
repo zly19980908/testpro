@@ -7,7 +7,7 @@ public class DBUtil {
 	public static Connection getConnection(){
 		String className="com.mysql.jdbc.Driver";
 		Connection conn=null;
-		String url="jdbc:mysql://www.wxggt.xyz:3306/xhxt?useSSL=false";
+		String url="jdbc:mysql://120.79.92.84:3306/xhxt?useSSL=false";
 		String user="root";
 		String password="root";
 		try {

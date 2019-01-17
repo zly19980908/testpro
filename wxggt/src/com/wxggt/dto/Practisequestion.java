@@ -2,15 +2,15 @@ package com.wxggt.dto;
 
 public class Practisequestion {
 	private int QuestionId;
-	private String pid;
+	private int pid;
 	private String Question;
 	private String A;
 	private String B;
 	private String C;
 	private String D;
-	private String Right;
-	private String Type;
-	private String Analyze;
+	private String rightAnswer;
+	private String qType;
+	private String qAnalyze;
 
 	public int getQuestionId() {
 		return QuestionId;
@@ -20,11 +20,11 @@ public class Practisequestion {
 		QuestionId = questionId;
 	}
 
-	public String getPid() {
+	public int getPid() {
 		return pid;
 	}
 
-	public void setPid(String pid) {
+	public void setPid(int pid) {
 		this.pid = pid;
 	}
 
@@ -68,28 +68,28 @@ public class Practisequestion {
 		D = d;
 	}
 
-	public String getRight() {
-		return Right;
+	public String getRightAnswer() {
+		return rightAnswer;
 	}
 
-	public void setRight(String right) {
-		Right = right;
+	public void setRightAnswer(String rightAnswer) {
+		this.rightAnswer = rightAnswer;
 	}
 
-	public String getType() {
-		return Type;
+	public String getqType() {
+		return qType;
 	}
 
-	public void setType(String type) {
-		Type = type;
+	public void setqType(String qType) {
+		this.qType = qType;
 	}
 
-	public String getAnalyze() {
-		return Analyze;
+	public String getqAnalyze() {
+		return qAnalyze;
 	}
 
-	public void setAnalyze(String analyze) {
-		Analyze = analyze;
+	public void setqAnalyze(String qAnalyze) {
+		this.qAnalyze = qAnalyze;
 	}
 
 }
