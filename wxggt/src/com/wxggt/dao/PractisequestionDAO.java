@@ -17,7 +17,7 @@ public class PractisequestionDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "INSERT INTO Practisequestion(pid,question,a,b,c,d,rightAnswer,qType,qAnalyze) VALUES(?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Practisequestion(pid,question,a,b,c,d,rightAnswer,qType,qAnalyze,qPic) VALUES(?,?,?,?,?,?,?,?,?,?)";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -30,6 +30,7 @@ public class PractisequestionDAO {
 			ps.setString(7, question.getRightAnswer());
 			ps.setString(8, question.getqType());
 			ps.setString(9, question.getqAnalyze());
+			ps.setString(10, question.getqPic());
 			rs = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,7 +110,7 @@ public class PractisequestionDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "update Practisequestion set Question=?,A=?,B=?,C=?,D=?,rightAnswer=?,qAnalyze=? where QuestionId=?";
+		String sql = "update Practisequestion set Question=?,A=?,B=?,C=?,D=?,rightAnswer=?,qAnalyze=?,qPic=? where QuestionId=?";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -120,7 +121,8 @@ public class PractisequestionDAO {
 			ps.setString(5, question.getD());
 			ps.setString(6, question.getRightAnswer());
 			ps.setString(7, question.getqAnalyze());
-			ps.setInt(8, question.getQuestionId());
+			ps.setString(8, question.getqPic());
+			ps.setInt(9, question.getQuestionId());
 			rs = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -142,7 +144,7 @@ public class PractisequestionDAO {
 	/* 显示一道题 */
 	public List<Practisequestion> showSingleQuestion(int questionId) {
 		List<Practisequestion> list = new ArrayList<Practisequestion>();
-		String sql = "SELECT pid,question,a,b,c,d,rightAnswer,qType,qAnalyze FROM practisequestion WHERE questionId=?";
+		String sql = "SELECT pid,question,a,b,c,d,rightAnswer,qType,qAnalyze,qPic FROM practisequestion WHERE questionId=?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -163,6 +165,7 @@ public class PractisequestionDAO {
 				practisequestion.setRightAnswer(rs.getString(7));
 				practisequestion.setqType(rs.getString(8));
 				practisequestion.setqAnalyze(rs.getString(9));
+				practisequestion.setqPic(rs.getString(10));
 				list.add(practisequestion);
 			}
 		} catch (Exception e) {
@@ -180,7 +183,7 @@ public class PractisequestionDAO {
 	/* 显示一套题 */
 	public List<Practisequestion> showQuestionsByPid(int pId) {
 		List<Practisequestion> list = new ArrayList<Practisequestion>();
-		String sql = "SELECT pid,question,a,b,c,d,rightAnswer,qType,qAnalyze,questionId FROM practisequestion WHERE pId=?";
+		String sql = "SELECT pid,question,a,b,c,d,rightAnswer,qType,qAnalyze,questionId,qPic FROM practisequestion WHERE pId=?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -201,6 +204,7 @@ public class PractisequestionDAO {
 				practisequestion.setRightAnswer(rs.getString(7));
 				practisequestion.setqType(rs.getString(8));
 				practisequestion.setqAnalyze(rs.getString(9));
+				practisequestion.setqPic(rs.getString(11));
 				list.add(practisequestion);
 			}
 		} catch (Exception e) {
@@ -216,32 +220,21 @@ public class PractisequestionDAO {
 	}
 
 	public static void main(String[] args) {
-		// /* 显示一道题 */
-		// PractisequestionDAO dao = new PractisequestionDAO();
-		// int questionId = 4;
-		// List<Practisequestion> list = dao.showSingleQuestion(questionId);
-		// for (Practisequestion p : list) {
-		// System.out.println(p.getQuestionId() + " " + p.getQuestion() + " " +
-		// p.getPid() + " " + p.getqAnalyze());
-		// }
+		/* 显示一道题 */
+		PractisequestionDAO dao = new PractisequestionDAO();
+		int questionId = 7;
+		List<Practisequestion> list = dao.showSingleQuestion(questionId);
+		for (Practisequestion p : list) {
+			System.out.println(p.getQuestionId() + " " + p.getQuestion() + " " + p.getPid() + " " + p.getqPic());
+		}
 
 		/* 显示一套题 */
-		PractisequestionDAO dao = new PractisequestionDAO();
-		int pId = 1;
-		List<Practisequestion> list = dao.showQuestionsByPid(pId);
-		for (Practisequestion p : list) {
-			System.out.println(p.getQuestionId() + " " + p.getQuestion() + " " + p.getPid() + " " + p.getqAnalyze());
-		}
-	}
-
-	public void test() {
-		/* 删除一道题 */
 		// PractisequestionDAO dao = new PractisequestionDAO();
-		// int questionId = 1;
-		// if (dao.deleteSingleQuestion(questionId)) {
-		// System.out.println("删除成功");
-		// } else {
-		// System.out.println("删除失败");
+		// int pId = 1;
+		// List<Practisequestion> list = dao.showQuestionsByPid(pId);
+		// for (Practisequestion p : list) {
+		// System.out.println(p.getQuestionId() + " " + p.getQuestion() + " " +
+		// p.getPid() + " " + p.getqPic());
 		// }
 
 		/* 删除一套题 */
@@ -253,12 +246,26 @@ public class PractisequestionDAO {
 		// System.out.println("删除失败");
 		// }
 
+		// PractisequestionDAO dao = new PractisequestionDAO();
+		// dao.test();
+	}
+
+	public void test() {
+		/* 删除一道题 */
+		// PractisequestionDAO dao = new PractisequestionDAO();
+		// int questionId =6;
+		// if (dao.deleteSingleQuestion(questionId)) {
+		// System.out.println("删除成功");
+		// } else {
+		// System.out.println("删除失败");
+		// }
+
 		/* 上传一道题 */
 		// PractisequestionDAO dao = new PractisequestionDAO();
 		// Practisequestion question = new Practisequestion();
 		// question.setQuestionId(1);
 		// question.setPid(1);
-		// question.setQuestion("1?");
+		// question.setQuestion("2?");
 		// question.setA("1");
 		// question.setB("2");
 		// question.setC("3");
@@ -266,6 +273,7 @@ public class PractisequestionDAO {
 		// question.setRightAnswer("A");
 		// question.setqType("1");
 		// question.setqAnalyze("哈哈哈");
+		// question.setqPic("path");
 		// if (dao.uploadQuestion(question)) {
 		// System.out.println("上传成功");
 		// } else {
@@ -273,23 +281,24 @@ public class PractisequestionDAO {
 		// }
 
 		/* 修改一道题 */
-		// PractisequestionDAO dao = new PractisequestionDAO();
-		// Practisequestion question = new Practisequestion();
-		// question.setQuestionId(4);
-		// question.setPid(1);
-		// question.setQuestion("1?");
-		// question.setA("A");
-		// question.setB("B");
-		// question.setC("C");
-		// question.setD("D");
-		// question.setRightAnswer("D");
-		// question.setqType("1");
-		// question.setqAnalyze("嘻嘻");
-		// if (dao.updateSingleQuestion(question)) {
-		// System.out.println("修改成功");
-		// } else {
-		// System.out.println("修改失败");
-		// }
+		PractisequestionDAO dao = new PractisequestionDAO();
+		Practisequestion question = new Practisequestion();
+		question.setQuestionId(7);
+		question.setPid(1);
+		question.setQuestion("1?");
+		question.setA("A");
+		question.setB("B");
+		question.setC("C");
+		question.setD("D");
+		question.setRightAnswer("D");
+		question.setqType("1");
+		question.setqAnalyze("嘻嘻");
+		question.setqPic("Path_");
+		if (dao.updateSingleQuestion(question)) {
+			System.out.println("修改成功");
+		} else {
+			System.out.println("修改失败");
+		}
 
 	}
 

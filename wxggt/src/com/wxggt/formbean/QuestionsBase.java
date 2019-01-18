@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.wxggt.dto.Practisequestion;
 
-public class UploadQuestions {
+public class QuestionsBase {
 	private int Pid;
 	private String cNo;
 	private int pType;

@@ -7,8 +7,8 @@ public class TeacherIncome {
 	private String cno;
 	private String Tno;
 	private Date iDate;
-	private int Sumary;
-	private String Type;
+	private int iSumary;
+	private String iType;
 
 	public int getTid() {
 		return tid;
@@ -42,20 +42,20 @@ public class TeacherIncome {
 		this.iDate = iDate;
 	}
 
-	public int getSumary() {
-		return Sumary;
+	public int getiSumary() {
+		return iSumary;
 	}
 
-	public void setSumary(int sumary) {
-		Sumary = sumary;
+	public void setiSumary(int iSumary) {
+		this.iSumary = iSumary;
 	}
 
-	public String getType() {
-		return Type;
+	public String getiType() {
+		return iType;
 	}
 
-	public void setType(String type) {
-		Type = type;
+	public void setiType(String iType) {
+		this.iType = iType;
 	}
 
 }

@@ -11,6 +11,7 @@ public class Practisequestion {
 	private String rightAnswer;
 	private String qType;
 	private String qAnalyze;
+	private String qPic;
 
 	public int getQuestionId() {
 		return QuestionId;
@@ -90,6 +91,14 @@ public class Practisequestion {
 
 	public void setqAnalyze(String qAnalyze) {
 		this.qAnalyze = qAnalyze;
+	}
+
+	public String getqPic() {
+		return qPic;
+	}
+
+	public void setqPic(String qPic) {
+		this.qPic = qPic;
 	}
 
 }
