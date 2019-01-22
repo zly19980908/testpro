@@ -72,6 +72,34 @@ public class StudentInfoDAO {
 		}
 		return list;
 	}
+	
+	/*微信端学生购买课程根据学生编号减少学生金额*/
+	public boolean descMoney(int money,String Sno){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "update studentinfo set balance=balance-? where Sno=?";
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, money);
+			ps.setString(2, Sno);
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
 
 	public static void main(String[] args) {
 		/* 注册量按天统计 */
@@ -81,6 +109,8 @@ public class StudentInfoDAO {
 			System.out
 					.println(r.getYear_() + "年" + r.getMonth_() + "月" + r.getDay_() + "日,注册量" + r.getRegisterCount_());
 		}
+		boolean result = dao.descMoney(50, "2016010901");
+		System.out.println(result);
 
 		/* 注册量按月统计 */
 		// StudentInfoDAO dao = new StudentInfoDAO();

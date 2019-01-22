@@ -127,6 +127,92 @@ public class CourseDAO {
 		}
 		return list;
 	}
+	
+	/*微信端根据课程名模糊查询课程信息*/
+	public List<Course> getFrontAllCourseInfo(String cName) {
+		List<Course> list = new ArrayList<Course>();
+		String sql = "SELECT pageview,price,price,cName,cNo FROM course WHERE cName like ?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%"+cName+"%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Course csw = new Course();
+				csw.setPageview(rs.getInt(1));
+				csw.setPrice(rs.getInt(2));
+				csw.settNo(rs.getString(3));
+				csw.setcName(rs.getString(4));
+				csw.setcNo(rs.getString(5));
+				list.add(csw);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
+	
+	/*微信端访问一次根据课程id访问量加一*/
+	public boolean addPageView(String cNo){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "update course set pageview=pageview+1 where cNo = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cNo);
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
+	/*微信端购买一次根据课程id购买量加一*/
+	public boolean addStudyquantity(String cNo){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "update course set studyquantity=studyquantity+1 where cNo = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cNo);
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
 
 	public static void main(String[] args) {
 
@@ -148,7 +234,14 @@ public class CourseDAO {
 		/* 查看所有上传课程及其相关信息 */
 		CourseDAO dao = new CourseDAO();
 		String tNo = "2016010901";
+		boolean result = dao.addPageView("126263347916");
+		boolean result2 = dao.addStudyquantity("126263347916");
+		System.out.println(result+" "+result2);
 		List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo);
+		List<Course> list2 = dao.getFrontAllCourseInfo("中");
+		for (Course c : list2) {
+			System.out.println(c.getcName()+' '+c.getPageview()+' '+c.getPrice()+' '+c.gettNo());
+		}
 		for (CourseInfoWithsource c : list) {
 			System.out.println(c.getcNo() + " " + c.getcName() + " " + c.getPageview() + " " + c.getPrice() + " "
 					+ c.getCourseDesc());

@@ -203,10 +203,42 @@ public class TeacherIncomeDAO {
 		}
 		return list;
 	}
+	
+	public boolean insertIncome(TeacherIncome teacherincome){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "insert into teacherincome(cno,Tno,iDate,iSumary,iType) values(?,?,CURRENT_TIME(),?,?)";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, teacherincome.getCno());
+			ps.setString(2, teacherincome.getTno());
+			ps.setInt(3, teacherincome.getiSumary());
+			ps.setString(4, teacherincome.getiType());
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
 
 	public static void main(String[] args) {
 		/* 一门课程的每月收入流水 */
 		TeacherIncomeDAO dao = new TeacherIncomeDAO();
+		TeacherIncome ti = new TeacherIncome("126263347916", "2016010901", 5, "2");
+		boolean result = dao.insertIncome(ti);
+		System.out.println(result);
 		String tno = "2016010901";
 		String cno = "126263347916";
 		List<TeacherIncome_> list = dao.showEveryMonthSingleCourseIncome(tno, cno);

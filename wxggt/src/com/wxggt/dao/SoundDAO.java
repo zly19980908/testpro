@@ -83,6 +83,39 @@ public class SoundDAO {
 		}
 		return list;
 	}
+	/*微信端根据音频标题模糊查询音频*/
+	public List<Sound> getSingleSound(String str) {
+		List<Sound> list = new ArrayList<Sound>();
+		String sql = "SELECT uploadid,soundid,uName,title,surname,Pageview FROM sound WHERE title LIKE ?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%" + str + "%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Sound sound = new Sound();
+				sound.setUploadid(rs.getString(1));
+				sound.setSoundId(rs.getInt(2));
+				sound.setuName(rs.getString(3));
+				sound.setTitle(rs.getString(4));
+				sound.setSurname(rs.getInt(5));
+				sound.setPageview(rs.getInt(6));
+				list.add(sound);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
 
 	/* 显示用户上传的全部音频 */
 	public List<Sound> getAllSound(String uploadid) {
@@ -150,6 +183,10 @@ public class SoundDAO {
 		SoundDAO dao = new SoundDAO();
 		String uploadid = "2016010901";
 		List<Sound> list = dao.getAllSound(uploadid);
+		List<Sound> list2 = dao.getSingleSound("方");
+		for (Sound s : list2){
+			System.out.println(s.getUploadid() + " " + s.getTitle() + " " + s.getuName());
+		}
 		for (Sound s : list) {
 			System.out.println(s.getSoundId() + " " + s.getTitle() + " " + s.getuName());
 		}

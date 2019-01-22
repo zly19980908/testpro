@@ -58,4 +58,16 @@ public class TeacherIncome {
 		this.iType = iType;
 	}
 
+	public TeacherIncome(){
+		
+	}
+	
+	public TeacherIncome(String cno, String tno, int iSumary, String iType) {
+		super();
+		this.cno = cno;
+		Tno = tno;
+		this.iSumary = iSumary;
+		this.iType = iType;
+	}
+
 }
