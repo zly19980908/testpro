@@ -1,0 +1,96 @@
+package com.wxggt.dto;
+
+public class Course {
+	private String cNo;
+	private String cName;
+	private String tNo;
+	private int pageview;
+	private int Studyquantity;
+	private int Price;
+	private int Specialtyid;
+	private String describe;
+
+	public Course() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public Course(String cNo, String cName, String tNo, int pageview,
+			int studyquantity, int price, int specialtyid, String describe) {
+		super();
+		this.cNo = cNo;
+		this.cName = cName;
+		this.tNo = tNo;
+		this.pageview = pageview;
+		Studyquantity = studyquantity;
+		Price = price;
+		Specialtyid = specialtyid;
+		this.describe = describe;
+	}
+
+
+	public String getcNo() {
+		return cNo;
+	}
+
+	public void setcNo(String cNo) {
+		this.cNo = cNo;
+	}
+
+	public String getcName() {
+		return cName;
+	}
+
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+
+	public String gettNo() {
+		return tNo;
+	}
+
+	public void settNo(String tNo) {
+		this.tNo = tNo;
+	}
+
+	public int getPageview() {
+		return pageview;
+	}
+
+	public void setPageview(int pageview) {
+		this.pageview = pageview;
+	}
+
+	public int getStudyquantity() {
+		return Studyquantity;
+	}
+
+	public void setStudyquantity(int studyquantity) {
+		Studyquantity = studyquantity;
+	}
+
+	public int getPrice() {
+		return Price;
+	}
+
+	public void setPrice(int price) {
+		Price = price;
+	}
+
+	public int getSpecialtyid() {
+		return Specialtyid;
+	}
+
+	public void setSpecialtyid(int specialtyid) {
+		Specialtyid = specialtyid;
+	}
+
+	public String getDescribe() {
+		return describe;
+	}
+
+	public void setDescribe(String describe) {
+		this.describe = describe;
+	}
+
+}
