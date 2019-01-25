@@ -29,5 +29,18 @@ public class EvaluateResult {
 	public void setRank(int rank) {
 		this.rank = rank;
 	}
+	
+	public EvaluateResult(){
+		
+	}
+
+	public EvaluateResult(String tNo, String cNo, int rank) {
+		super();
+		this.tNo = tNo;
+		this.cNo = cNo;
+		this.rank = rank;
+	}
+	
+	
 
 }

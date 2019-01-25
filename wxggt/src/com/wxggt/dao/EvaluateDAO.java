@@ -73,6 +73,36 @@ public class EvaluateDAO {
 		}
 		return list;
 	}
+	
+	/*微信端学生评教添加一条评价*/
+	public boolean insertEvaluate(Evaluate evaluate){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "insert into evaluate(tNo,cNo,sNo,context,grade) values(?,?,?,?,?)";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, evaluate.gettNo());
+			ps.setString(2, evaluate.getcNo());
+			ps.setString(3, evaluate.getsNo());
+			ps.setString(4, evaluate.getContext());
+			ps.setInt(5, evaluate.getGrade());
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
 
 	public static void main(String[] args) {
 		/* 查看各课程用户评价 */
@@ -89,6 +119,9 @@ public class EvaluateDAO {
 		/* 删除管理员删除一个用户的评价 */
 		EvaluateDAO dao = new EvaluateDAO();
 		int eid = 1;
+		Evaluate evaluate = new Evaluate("2016010901", "126263347916", "464643", "较好", 4);
+		boolean result = dao.insertEvaluate(evaluate);
+		System.out.println(result);
 		if (dao.deleteSingleEvaluate(eid)) {
 			System.out.println("删除成功");
 		} else {

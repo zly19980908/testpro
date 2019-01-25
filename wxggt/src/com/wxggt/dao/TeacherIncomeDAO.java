@@ -204,6 +204,7 @@ public class TeacherIncomeDAO {
 		return list;
 	}
 	
+	//打赏或购买课程老师添加一笔收入
 	public boolean insertIncome(TeacherIncome teacherincome){
 		Connection conn = null;
 		PreparedStatement ps = null;

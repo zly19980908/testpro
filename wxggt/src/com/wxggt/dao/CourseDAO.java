@@ -46,6 +46,44 @@ public class CourseDAO {
 			return false;
 		}
 	}
+	
+	/*微信端根据教师号查询该教师下所有课程*/
+	public List<Course> findAllCourseByTno(String tno){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<Course> list = new ArrayList<Course>();
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "select cNo,cName,tNo,pageview,studyquantity,price,specialtyid,courseDesc from course where tNo =?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, tno);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				Course course = new Course();
+				course.setcNo(rs.getString(1));
+				course.setcName(rs.getString(2));
+				course.settNo(rs.getString(3));
+				course.setPageview(rs.getInt(4));
+				course.setStudyquantity(rs.getInt(5));
+				course.setPrice(rs.getInt(6));
+				course.setSpecialtyid(rs.getInt(7));
+				course.setCourseDesc(rs.getString(8));
+				list.add(course);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				rs.close();
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
 
 	/* 查看一门上传课程及其相关信息 */
 	public List<CourseInfoWithsource> getSingleCourseInfo(String tNo, String cName) {
@@ -239,6 +277,7 @@ public class CourseDAO {
 		System.out.println(result+" "+result2);
 		List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo);
 		List<Course> list2 = dao.getFrontAllCourseInfo("中");
+		List<Course> list3 = dao.findAllCourseByTno("2016010901");
 		for (Course c : list2) {
 			System.out.println(c.getcName()+' '+c.getPageview()+' '+c.getPrice()+' '+c.gettNo());
 		}
@@ -248,6 +287,10 @@ public class CourseDAO {
 			for (SourceInfo s : c.getSources()) {
 				System.out.println(s.getSourceName() + " " + s.getSourceDesc());
 			}
+		}
+		for (Course c :list3){
+			System.out.println(c.getcNo() + " " + c.getcName() + " " + c.getPageview() + " " + c.getPrice() + " "
+					+ c.getCourseDesc());
 		}
 
 		/* 创建一门课程 */

@@ -55,5 +55,20 @@ public class Evaluate {
 	public void seteId(int eId) {
 		this.eId = eId;
 	}
+	
+	public Evaluate(){
+		
+	}
+
+	public Evaluate(String tNo, String cNo, String sNo, String context, int grade) {
+		super();
+		this.tNo = tNo;
+		this.cNo = cNo;
+		this.sNo = sNo;
+		this.context = context;
+		this.grade = grade;
+	}
+	
+	
 
 }
