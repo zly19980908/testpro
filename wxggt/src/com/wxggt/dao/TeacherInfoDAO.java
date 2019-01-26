@@ -141,9 +141,9 @@ public class TeacherInfoDAO {
 
 	}
 
-	public static void main(String[] args) {
+	//public static void main(String[] args) {
 		/* 获取全部老师信息 */
-		TeacherInfoDAO dao = new TeacherInfoDAO();
+		/*TeacherInfoDAO dao = new TeacherInfoDAO();
 		List<TeacherInfo> list = new ArrayList<TeacherInfo>();
 		list = dao.getAllTeacherInfo();
 		for (TeacherInfo t : list) {
@@ -153,7 +153,7 @@ public class TeacherInfoDAO {
 			System.out.print(t.gettDesc() + " ");
 			System.out.println(t.getFacePic());
 		}
-	}
+	}*/
 
 	public void test() {
 		/* 获取单个老师信息 */

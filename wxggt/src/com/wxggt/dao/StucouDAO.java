@@ -7,6 +7,7 @@ import com.wxggt.dto.Stucou;
 import com.wxggt.util.DBUtil;
 
 public class StucouDAO {
+	//选课表添入记录
 	public boolean insertStucou(String sNo,String cNo){
 		Connection conn = null;
 		PreparedStatement ps = null;

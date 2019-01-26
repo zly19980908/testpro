@@ -205,7 +205,7 @@ public class TeacherIncomeDAO {
 	}
 	
 	//打赏或购买课程老师添加一笔收入
-	public boolean insertIncome(TeacherIncome teacherincome){
+	public boolean insertIncome(String Cno,String Tno,int iSumary,String iType){
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int rs = 0;
@@ -213,10 +213,10 @@ public class TeacherIncomeDAO {
 			conn = DBUtil.getConnection();
 			String sql = "insert into teacherincome(cno,Tno,iDate,iSumary,iType) values(?,?,CURRENT_TIME(),?,?)";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, teacherincome.getCno());
-			ps.setString(2, teacherincome.getTno());
-			ps.setInt(3, teacherincome.getiSumary());
-			ps.setString(4, teacherincome.getiType());
+			ps.setString(1, Cno);
+			ps.setString(2, Tno);
+			ps.setInt(3, iSumary);
+			ps.setString(4, iType);
 			rs = ps.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -238,8 +238,8 @@ public class TeacherIncomeDAO {
 		/* 一门课程的每月收入流水 */
 		TeacherIncomeDAO dao = new TeacherIncomeDAO();
 		TeacherIncome ti = new TeacherIncome("126263347916", "2016010901", 5, "2");
-		boolean result = dao.insertIncome(ti);
-		System.out.println(result);
+		/*boolean result = dao.insertIncome(ti);
+		System.out.println(result);*/
 		String tno = "2016010901";
 		String cno = "126263347916";
 		List<TeacherIncome_> list = dao.showEveryMonthSingleCourseIncome(tno, cno);

@@ -8,7 +8,7 @@ import com.wxggt.util.DBUtil;
 
 public class ConsumeDAO {
 	//购买课程或者打赏插入消费记录
-	public boolean insertConsume(Consume consume){
+	public boolean insertConsume(String Uid,int Money,String Type,int Costid){
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int rs = 0;
@@ -16,10 +16,10 @@ public class ConsumeDAO {
 			conn = DBUtil.getConnection();
 			String sql = "insert into consume(Uid,Money,consumetime,Type,Costid) values(?,?,CURRENT_TIME(),?,?)";//CURRENT_TIME()mysql时间日期函数，数据库自动生成
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, consume.getUid());
-			ps.setInt(2, consume.getMoney());
-			ps.setString(3, consume.getType());
-			ps.setInt(4, consume.getCostid());
+			ps.setString(1, Uid);
+			ps.setInt(2, Money);
+			ps.setString(3, Type);
+			ps.setInt(4, Costid);
 			rs = ps.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -38,9 +38,9 @@ public class ConsumeDAO {
 	}
 	public static void main(String[] args) {
 		ConsumeDAO dao = new ConsumeDAO();
-		Consume consume = new Consume("uid", 50, "测试", 1);
+		/*Consume consume = new Consume("uid", 50, "测试", 1);
 		boolean result = dao.insertConsume(consume);
-		System.out.println(result);
+		System.out.println(result);*/
 	}
 
 }

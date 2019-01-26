@@ -10,6 +10,7 @@ import com.wxggt.dto.SmallVideo;
 import com.wxggt.util.DBUtil;
 
 public class SmallVideoDAO {
+	/*根据小视频描述模糊查询小视频*/
 	public List<SmallVideo> searchFrontAllSvideo(String str){
 		Connection conn = null;
 		PreparedStatement ps = null;
