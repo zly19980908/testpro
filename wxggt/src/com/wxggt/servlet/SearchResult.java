@@ -71,7 +71,7 @@ public class SearchResult extends HttpServlet {
         String json2 = gson.toJson(list2);
         System.out.println(json2);*/
         //返回值给微信小程序
-        Writer out = response.getWriter(); 
+        Writer out = response.getWriter();
         //存值到缓冲区
         out.write(json.toString());
         System.out.println(json.toString());
