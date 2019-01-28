@@ -57,7 +57,9 @@ public class Test extends HttpServlet {
         
         //返回值给微信小程序
         Writer out = response.getWriter(); 
+        //存值到缓冲区
         out.write(json);
+		// flush()表示强制将缓冲区中的数据发送出去,不必等到缓冲区满
         out.flush();   
 	}
 

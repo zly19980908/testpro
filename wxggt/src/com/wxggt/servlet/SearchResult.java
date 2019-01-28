@@ -1,9 +1,13 @@
 package com.wxggt.servlet;
 
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import net.sf.json.JSONObject;  
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -52,15 +56,27 @@ public class SearchResult extends HttpServlet {
         List<Course> list = coursedao.getFrontAllCourseInfo(str);
         List<Sound> list1 = soundao.getSingleSound(str1);
         List<SmallVideo> list2 = svideodao.searchFrontAllSvideo(str2);
-        Gson gson = new Gson();
-        String json = gson.toJson(list);
-        System.out.println(json);
+        //用Map存键值对，将每个数组都做一个键
+        Map map = new HashMap();
+        map.put("CourseResult", list);
+        map.put("SoundResult", list1);
+        map.put("SmallVideoResult",list2);
+        JSONObject json = JSONObject.fromObject(map);
+        /*String json = gson.toJson(list);
+        System.out.println("\"CourseResult\":"+json);
         System.out.println("-------------------");
         String json1 = gson.toJson(list1);
         System.out.println(json1);
         System.out.println("-------------------");
         String json2 = gson.toJson(list2);
-        System.out.println(json2);
+        System.out.println(json2);*/
+        //返回值给微信小程序
+        Writer out = response.getWriter(); 
+        //存值到缓冲区
+        out.write(json.toString());
+        System.out.println(json.toString());
+		// flush()表示强制将缓冲区中的数据发送出去,不必等到缓冲区满
+        out.flush();
 	}
 
 	/**
