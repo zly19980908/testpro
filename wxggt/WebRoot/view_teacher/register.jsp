@@ -39,7 +39,7 @@ body {
 	<div class="row">
 		<div class="eightcol last">
 			<!-- Begin Form -->
-			<form id="my-form">
+			<form id="my-form" action="" method="post">
 
 				<section id="基础信息">
 					<div>
@@ -48,22 +48,22 @@ body {
 					</div>
 					<div>
 						<label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label><input
-							id="pass" name="password" type="password" />
+							id="password" name="" data-ideal="required pass" type="password" />
 					</div>
 					<div>
-						<label>确认密码:</label><input id="repassword" name="repassword"
+						<label>确认密码:</label><input id="repassword" name=""
 							data-ideal="required repass" type="password" />
 					</div>
 					<div>
 						<label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label><input
-							id="email" name="email" data-ideal="required email" type="email" />
+							id="email" name="" data-ideal="required email" type="email" />
 					</div>
 				</section>
 
 				<section id="详细信息">
 					<div>
 						<label>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:</label><input
-							type="tel" name="phone" data-ideal="phone" />
+							id="phone" type="tel" name="" data-ideal="required phone" />
 					</div>
 
 					<div>
@@ -80,7 +80,7 @@ body {
 				<section id="个人简介">
 					<div>
 						<label>简介:</label>
-						<textarea id="comments" name="comments"></textarea>
+						<textarea id="comments" name=""></textarea>
 					</div>
 				</section>
 				<div>
@@ -102,29 +102,37 @@ body {
 <script type="text/javascript" src="../js/register/jquery.idealforms.js"></script>
 <script type="text/javascript">
 	$(function() {
-		/* alert('111');
-		$('section:eq(1)').click(); */
+		$comments = $('#comments')
+		$comments.val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
+		$comments.click(function() {
+			$(this).val('');
+		});
+		$("#password").blur(function() {
+			$("#repassword").focus();
+		});
 		var options = {
 			onFail : function() {
 				alert($myform.getInvalid().length + '个错误.');
-				$('section:eq(0)').click();
 			},
 
 			inputs : {
+				'username' : {
+					filters : 'required username',
+				},
 				'password' : {
 					filters : 'required pass',
 				},
 				'repassword' : {
 					filters : 'required repass',
 				},
-				'username' : {
-					filters : 'required username',
-					data : {
-						//ajax: { url:'validate.php' }
-					}
+				'email' : {
+					filters : 'required email',
+				},
+				'phone' : {
+					filters : 'required phone',
 				},
 				'file' : {
-					filters : 'extension',
+					filters : 'required extension',
 					data : {
 						extension : [ 'jpg', 'png' ]
 					}

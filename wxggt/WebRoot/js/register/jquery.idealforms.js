@@ -1278,7 +1278,7 @@
 					if (!self.isValid()) {
 						e.preventDefault()
 						o.onFail()
-//					    self.focusFirstInvalid()
+//					self.focusFirstInvalid()
 					} else {
 						o.onSuccess(e)
 					}
@@ -1508,17 +1508,17 @@
 			var self = this
 			var o = this.opts
 
-			var userOptions = o.inputs[$input.attr('name')]
+			var userOptions = o.inputs[$input.attr('id')]
 			var userFilters = userOptions.filters && userOptions.filters.split(/\s/)
-			var name = $input.attr('name')
+			var id = $input.attr('id')
 			var value = $input.val()
 
-			var ajaxRequest = $.idealforms.ajaxRequests[name]
+			var ajaxRequest = $.idealforms.ajaxRequests[id]
 			var isRadioCheck = $input.is('[type="checkbox"], [type="radio"]')
 
 			var inputData = {
-				// If is radio or check validate all inputs related by name
-				input : isRadioCheck ? self.$form.find('[name="' + name + '"]') : $input,
+				// If is radio or check validate all inputs related by id
+				input : isRadioCheck ? self.$form.find('[id="' + id + '"]') : $input,
 				userOptions : userOptions
 			}
 
