@@ -43,10 +43,6 @@ body {
 
 				<section id="基础信息">
 					<div>
-						<label>教师编号:</label> <input id="tno" name="" type="text"
-							value='1327126546' readonly="readonly" />
-					</div>
-					<div>
 						<label>教师姓名:</label><input id="username" name="username"
 							type="text" />
 					</div>
@@ -55,10 +51,13 @@ body {
 							id="pass" name="password" type="password" />
 					</div>
 					<div>
-						<label>确认密码:</label><input id="email" name="email"
-							data-ideal="required email" type="email" />
+						<label>确认密码:</label><input id="repassword" name="repassword"
+							data-ideal="required repass" type="password" />
 					</div>
-
+					<div>
+						<label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label><input
+							id="email" name="email" data-ideal="required email" type="email" />
+					</div>
 				</section>
 
 				<section id="详细信息">
@@ -103,8 +102,8 @@ body {
 <script type="text/javascript" src="../js/register/jquery.idealforms.js"></script>
 <script type="text/javascript">
 	$(function() {
-	/* alert('111');
-	$('section:eq(1)').click(); */
+		/* alert('111');
+		$('section:eq(1)').click(); */
 		var options = {
 			onFail : function() {
 				alert($myform.getInvalid().length + '个错误.');
@@ -115,6 +114,9 @@ body {
 				'password' : {
 					filters : 'required pass',
 				},
+				'repassword' : {
+					filters : 'required repass',
+				},
 				'username' : {
 					filters : 'required username',
 					data : {
@@ -124,7 +126,7 @@ body {
 				'file' : {
 					filters : 'extension',
 					data : {
-						extension : [ 'jpg','png' ]
+						extension : [ 'jpg', 'png' ]
 					}
 				},
 				'comments' : {
@@ -141,7 +143,7 @@ body {
 
 		$('#reset').click(function() {
 			/*不让tno被重置*/
-			var x=$('#tno');
+			var x = $('#tno');
 			var tno_val = x.val();
 			$myform.reset().fresh().focusFirst();
 			x.val(tno_val);
