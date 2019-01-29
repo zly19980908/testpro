@@ -818,7 +818,7 @@
 		number : '必须是数字.',
 		digits : '必须是唯一的数字.',
 		name : '必须至少有3个字符长，并且只能包含字母.',
-		username : '必须在32之间和4个字符长，并以字母开头。(.)',
+		username : '必须是中文或英文且不能超过10个字',
 		pass : '必须至少6个字符长，并且至少包含一个数字，一个大写字母和一个小写字母.',
 		repass : '两次密码必须一致.',
 		strongpass : '必须至少为8个字符长，至少包含一个大写字母和一个小写字母和一个数字或特殊字符.',
@@ -870,7 +870,7 @@
 			},
 
 			username : {
-				regex : /^[a-z](?=[\w.]{3,31}$)\w*\.?\w*$/i,
+				regex : /^[a-z\u4e00-\u9fa5A-Z]{1,10}$/,
 				error : $.idealforms.errors.username
 			},
 
@@ -881,7 +881,11 @@
 
 			repass : {
 				regex : function() {
-					return false;
+					if ($('#password').val() == $("#repassword").val()) {
+						return true;
+					} else {
+						return false;
+					}
 				},
 				error : $.idealforms.errors.repass
 			},
@@ -1168,10 +1172,10 @@
 		customFlags : {},
 		globalFlags : '',
 		onSuccess : function(e) {
-			alert('Thank you...')
+			alert('提交成功')
 		},
 		onFail : function() {
-			alert('Invalid!')
+			alert('存在错误')
 		},
 		responsiveAt : 'auto',
 		disableCustom : ''
@@ -1274,7 +1278,7 @@
 					if (!self.isValid()) {
 						e.preventDefault()
 						o.onFail()
-						self.focusFirstInvalid()
+//					    self.focusFirstInvalid()
 					} else {
 						o.onSuccess(e)
 					}
