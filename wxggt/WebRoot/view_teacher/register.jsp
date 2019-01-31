@@ -43,8 +43,7 @@ body {
 
 				<section id="基础信息">
 					<div>
-						<label>教师姓名:</label><input id="username" name="username"
-							type="text" />
+						<label>教师姓名:</label><input id="username" name="" type="text" />
 					</div>
 					<div>
 						<label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label><input
@@ -105,7 +104,12 @@ body {
 		$comments = $('#comments')
 		$comments.val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
 		$comments.click(function() {
-			$(this).val('');
+			$comments.val('');
+		});
+		$comments.blur(function() {
+			if ($comments.val() == "") {
+				$comments.val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
+			}
 		});
 		$("#password").blur(function() {
 			$("#repassword").focus();
@@ -150,11 +154,9 @@ body {
 		var $myform = $('#my-form').idealforms(options).data('idealforms');
 
 		$('#reset').click(function() {
-			/*不让tno被重置*/
-			var x = $('#tno');
-			var tno_val = x.val();
 			$myform.reset().fresh().focusFirst();
-			x.val(tno_val);
+			/*不让comments被清空*/
+			$('#comments').val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
 		});
 	});
 </script>
