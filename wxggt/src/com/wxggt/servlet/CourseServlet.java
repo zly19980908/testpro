@@ -36,6 +36,7 @@ public class CourseServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
+        //购买课程
         String uid = "2016010901";
         String cid = "126263347";
         String tid = "2016010901";

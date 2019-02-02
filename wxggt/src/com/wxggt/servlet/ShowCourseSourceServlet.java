@@ -1,9 +1,9 @@
 package com.wxggt.servlet;
 
 import java.io.IOException;
+import java.io.Writer;
 import java.util.List;
 
-import javax.json.Json;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -41,9 +41,13 @@ public class ShowCourseSourceServlet extends HttpServlet {
         String tNo = "2016010901";
         String cName = "中基";
         CourseDAO dao = new CourseDAO();
+        //查看课程下所有资源
         List<CourseInfoWithsource> list = dao.getSingleCourseInfo(tNo, cName);
         Gson gson = new Gson();
         String json = gson.toJson(list);
+        Writer out = response.getWriter();
+        out.write(json);
+        out.flush();
         System.out.println(json);
 	}
 

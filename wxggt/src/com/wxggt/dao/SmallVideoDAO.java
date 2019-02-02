@@ -18,7 +18,7 @@ public class SmallVideoDAO {
 		List<SmallVideo> list = new ArrayList<SmallVideo>();
 		try{
 			conn = DBUtil.getConnection();
-			String sql = "select svid,uid,Surname,Pageview,sdescribe from smallvideo where sdescribe like ?";
+			String sql = "select svid,uid,uName,Surname,Pageview,sdescribe from smallvideo where sdescribe like ?";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, "%"+str+"%");
 			rs = ps.executeQuery();
@@ -26,9 +26,10 @@ public class SmallVideoDAO {
 				SmallVideo s = new SmallVideo();
 				s.setSvid(rs.getInt(1));
 				s.setUid(rs.getString(2));
-				s.setSurname(rs.getInt(3));
-				s.setPageview(rs.getInt(4));
-				s.setSdescribe(rs.getString(5));
+				s.setuName(rs.getString(3));
+				s.setSurname(rs.getInt(4));
+				s.setPageview(rs.getInt(5));
+				s.setSdescribe(rs.getString(6));
 				list.add(s);
 			}
 		}catch(Exception e){

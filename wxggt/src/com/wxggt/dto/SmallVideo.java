@@ -3,11 +3,18 @@ package com.wxggt.dto;
 public class SmallVideo {
 	private int svid;
 	private String uid;
+	private String uName;
 	private String video;
 	private int Surname;
 	private int Pageview;
 	private int Reward;
 	private String sdescribe;
+	public String getuName() {
+		return uName;
+	}
+	public void setuName(String uName) {
+		this.uName = uName;
+	}
 	public int getSvid() {
 		return svid;
 	}

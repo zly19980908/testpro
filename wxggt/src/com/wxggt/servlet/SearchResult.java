@@ -18,9 +18,11 @@ import com.google.gson.Gson;
 import com.wxggt.dao.CourseDAO;
 import com.wxggt.dao.SmallVideoDAO;
 import com.wxggt.dao.SoundDAO;
+import com.wxggt.dao.TopicDAO;
 import com.wxggt.dto.Course;
 import com.wxggt.dto.SmallVideo;
 import com.wxggt.dto.Sound;
+import com.wxggt.dto.Topic;
 
 /**
  * Servlet implementation class SearchResult
@@ -47,20 +49,24 @@ public class SearchResult extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");  
-        String str = "中";
-        String str1 = "方";
-        String str2 = "骚";
+        String str = request.getParameter("str");
+        String str1 = request.getParameter("str1");
+        String str2 = request.getParameter("str2");
+        String str3 = request.getParameter("str3");
         CourseDAO coursedao = new CourseDAO();
         SoundDAO soundao = new SoundDAO();
         SmallVideoDAO svideodao = new SmallVideoDAO();
+        TopicDAO topicdao = new TopicDAO();
         List<Course> list = coursedao.getFrontAllCourseInfo(str);
         List<Sound> list1 = soundao.getSingleSound(str1);
         List<SmallVideo> list2 = svideodao.searchFrontAllSvideo(str2);
+        List<Topic> list3 = topicdao.searchFrontAllSound(str3);
         //用Map存键值对，将每个数组都做一个键
         Map map = new HashMap();
         map.put("CourseResult", list);
         map.put("SoundResult", list1);
         map.put("SmallVideoResult",list2);
+        map.put("TopicResult",list3);
         JSONObject json = JSONObject.fromObject(map);
         /*String json = gson.toJson(list);
         System.out.println("\"CourseResult\":"+json);

@@ -169,7 +169,7 @@ public class CourseDAO {
 	/*微信端根据课程名模糊查询课程信息*/
 	public List<Course> getFrontAllCourseInfo(String cName) {
 		List<Course> list = new ArrayList<Course>();
-		String sql = "SELECT pageview,price,price,cName,cNo FROM course WHERE cName like ?";
+		String sql = "SELECT pageview,price,tNo,tName,cName,cNo,imageUrl FROM course WHERE cName like ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -183,8 +183,10 @@ public class CourseDAO {
 				csw.setPageview(rs.getInt(1));
 				csw.setPrice(rs.getInt(2));
 				csw.settNo(rs.getString(3));
-				csw.setcName(rs.getString(4));
-				csw.setcNo(rs.getString(5));
+				csw.settName(rs.getString(4));
+				csw.setcName(rs.getString(5));
+				csw.setcNo(rs.getString(6));
+				csw.setImageUrl(rs.getString(7));
 				list.add(csw);
 			}
 		} catch (Exception e) {

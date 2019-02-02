@@ -9,6 +9,24 @@ public class Course {
 	private int Price;
 	private int Specialtyid;
 	private String courseDesc;
+	private String tName;
+	private String imageUrl;
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
+
+	public String gettName() {
+		return tName;
+	}
+
+	public void settName(String tName) {
+		this.tName = tName;
+	}
 
 	public String getcNo() {
 		return cNo;

@@ -19,7 +19,7 @@ public class EvaluateResultDAO {
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, evaluateResult.gettNo());
 			ps.setString(2, evaluateResult.getcNo());
-			ps.setInt(3, evaluateResult.getRank());
+			ps.setDouble(3, evaluateResult.getRank());
 			rs = ps.executeUpdate();
 		}catch(Exception e){
 			e.printStackTrace();
@@ -38,7 +38,7 @@ public class EvaluateResultDAO {
 	
 	public static void main(String[] args) {
 		EvaluateResultDAO dao = new EvaluateResultDAO();
-		EvaluateResult evaluateResult = new EvaluateResult("34567", "78915", 4);
+		EvaluateResult evaluateResult = new EvaluateResult("34567", "78915", 4.0);
 		boolean result = dao.insertEvaluateResult(evaluateResult);
 		System.out.println(result);
 	}
