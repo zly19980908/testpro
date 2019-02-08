@@ -101,7 +101,7 @@ body {
 <script type="text/javascript" src="../js/register/jquery.idealforms.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$comments = $('#comments')
+		$comments = $('#comments');
 		$comments.val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
 		$comments.click(function() {
 			$comments.val('');

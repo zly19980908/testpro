@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<constant name="struts.action.extension" value="action" /> 
-<package name="default" extends="struts-default">
-
-<action name="Test" class="com.wxggt.action.TestAction">
+	<constant name="struts.action.extension" value="action" />
+	<package name="default" extends="struts-default">
+		<!-- 测试 -->
+		<action name="Test" class="com.wxggt.action.TestAction">
 			<result name="success">/success.html</result>
 		</action>
-</package>
+		<!-- 修改信息__头像 -->
+		<action name="ChangeHeadFace" class="com.wxggt.action.ChangeHeadFaceAction">
+			<result name="success">/success.html</result>
+		</action>
+	</package>
 </struts>    
