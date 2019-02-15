@@ -15,17 +15,6 @@
 	<div class="row">
 		<div class="eightcol last">
 		
-		<s:form name="form01" action="" method="post"
-				enctype="multipart/form-data" theme="simple">
-				<div style="text-align: center;">
-				<%-- img的src取session<s:property value="#session.FilePath" /> --%>
-				    <img id="pic" src="../upload/default_attr/xt3.png">
-					<!--  这是file,当图片点击时,触发此元素的点击事件 -->
-					<input id="upload" type="file" name="uploadFile_"
-							style="display: none;"  onchange="submitform()"/>
-				</div>
-			</s:form>
-		
 			<!-- Begin Form -->
 			<form id="my-form" action="" method="post">
 
@@ -131,43 +120,5 @@
 			$('#comments').val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
 		});
 	});
-</script>
-<!-- 修改头像效果 -->
-<script type="text/javascript">
-	$(function() {
-		//alert($("#upload").val());
-		/* 点击图片时，触发input:file的点击事件 */
-		$("#pic").click(function() {
-			$("#upload").click(); //打开本地资源
-			//隐藏了input:file样式后，点击头像就可以本地上传
-			$("#upload").on("change", function() {
-				//alert($("#upload").val());
-				var objUrl = getObjectURL(this.files[0]); //获取图片的路径，该路径不是图片在本地的路径
-				if (objUrl) {
-					$("#pic").attr("src", objUrl); //将图片路径存入src中，显示出图片
-					
-				}
-			});
-		});
-
-	});
-	//获取图片的路径，该路径不是图片在本地的路径(C:\fakepath,假路径)
-	function getObjectURL(file) {
-		var url = null;
-		if (window.createObjectURL != undefined) { //basic
-			url = window.createObjectURL(file);
-		} else if (window.URL != undefined) { //mozilla(firefox) 
-			url = window.URL.createObjectURL(file);
-		} else if (window.webkitURL != undefined) { //webkit or chrome
-			url = window.webkitURL.createObjectURL(file);
-		}
-		return url;
-	}
-	
-	//图片改变时自动提交form表单
-	 function submitform(){   
-        //document.form01.action="upload.php";   
-        document.form01.submit();   
-    }  
 </script>
 </html>

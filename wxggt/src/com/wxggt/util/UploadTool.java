@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -30,7 +29,7 @@ public class UploadTool {
 	public static String upload(String uId, String base64) {
 		HttpServletRequest request = ServletActionContext.getRequest();
 		// upload是图片上传路径
-		String dir = request.getRealPath("/upload/"+uId);
+		String dir = request.getRealPath("/upload/headFace/"+uId);
 		File fileLocation = new File(dir);
 		// 判断上传路径是否存在，如果不存在就创建
 		if (!fileLocation.exists()) {
@@ -46,7 +45,7 @@ public class UploadTool {
 			base64 = base64.replaceFirst("jpeg", "jpg");
 		}
 		// 生成一个唯一的文件名
-		String upName = UUID.randomUUID().toString().substring(0,7) + "."
+		String upName = "headFace" + "."
 				+ base64.substring(11, 14);
 		FileOutputStream out;
 		String iconBase64 = base64.substring(22);

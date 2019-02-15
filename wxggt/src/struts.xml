@@ -9,7 +9,7 @@
 		</action>
 		<!-- 修改信息__头像 -->
 		<action name="ChangeHeadFace" class="com.wxggt.action.ChangeHeadFaceAction">
-			<result name="success">/success.html</result>
+			<result name="success">/view_teacher/index.html</result>
 		</action>
 	</package>
 </struts>    
