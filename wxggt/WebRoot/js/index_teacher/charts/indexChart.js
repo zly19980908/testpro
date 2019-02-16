@@ -23,14 +23,14 @@ var labelFromatter = {
     normal : {
         label : {
             formatter : function (params){
-                return 100 - params.value + '%'
+                return 100 - params.value + '%';
             },
             textStyle: {
                 baseline : 'center'
             }
         }
     },
-}
+};
 var labelBottom = {
     normal : {
         color: '#ccc',
@@ -78,7 +78,7 @@ option = {
                             normal : {
                                 label : {
                                     formatter : function (params){
-                                        return 'other\n' + params.value + '%\n'
+                                        return 'other\n' + params.value + '%\n';
                                     },
                                     textStyle: {
                                         baseline : 'middle'

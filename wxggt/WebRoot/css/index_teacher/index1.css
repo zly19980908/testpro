@@ -1,12 +1,12 @@
 nav .Inav {
-	width: 938px;
+	width: 900px;
 }
-
+/* 控制轮播窗体的位置 */
 .bannerBase {
 	height: 450px;
 	margin-top: 20px;
-	width: 980px;
-	left: -10px;
+	width: 900px;
+	left: 50px;
 	position: relative;
 	overflow: hidden;
 }
@@ -14,7 +14,8 @@ nav .Inav {
 .tempWrap {
 	overflow: hidden;
 	position: relative;
-	width: 980px;
+	width: 1080px;
+	left:0px;
 }
 
 .lt-ie9 .bannerBase {
@@ -24,14 +25,14 @@ nav .Inav {
 .bannerBase .Banners {
 	position: absolute;
 	top: 0px;
-	left: 40px;
+	left: 0px;
 	height: 100%;
-	width: 980px;
+	width: 900px;
 }
 
 .bannerBase .tools {
 	position: absolute;
-	right: 30px;
+	right: 160px;
 	top: 0px;
 	height: 100%;
 	width: 256px;
@@ -1233,7 +1234,7 @@ nav .Inav {
 		display: none;
 	}
 	.bannerBase .Banners {
-		left: 0px;
+		left: 10px;
 	}
 	.AnimUl li img {
 		left: 0px;
@@ -1309,7 +1310,7 @@ nav .Inav {
 		bottom: 70px;
 	}
 	.othersBase .right {
-		width: 980px;
+		width: 900px;
 		margin-top: 22px;
 		height: 105px;
 		float: none;
