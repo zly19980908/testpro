@@ -1,6 +1,6 @@
 package com.wxggt.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class SourceInfo {
 	private int id;
@@ -8,7 +8,7 @@ public class SourceInfo {
 	private String sourceName;
 	private String sourceSort;
 	private int sourceTime;
-	private Date downloadDate;
+	private String downloadDate;
 	private String sourceOrgin;
 	private int sourceId;
 	private int isMajorType;
@@ -38,11 +38,11 @@ public class SourceInfo {
 		this.sourceTime = sourceTime;
 	}
 
-	public Date getDownloadDate() {
+	public String getDownloadDate() {
 		return downloadDate;
 	}
 
-	public void setDownloadDate(Date downloadDate) {
+	public void setDownloadDate(String downloadDate) {
 		this.downloadDate = downloadDate;
 	}
 

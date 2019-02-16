@@ -8,7 +8,7 @@ public class Topic {
 	private String initiator;//话题发起人
 	private String TopicDetail;//话题内容
 	private int Pv;//话题评论量
-	private Date openTime;//话题发起时间
+	private String openTime;//话题发起时间
 	private String cNo;//话题相关课程编号
 	private int pageview;//话题访问量
 	private int liked;//点赞量
@@ -75,10 +75,10 @@ public class Topic {
 	public void setPv(int pv) {
 		Pv = pv;
 	}
-	public Date getOpenTime() {
+	public String getOpenTime() {
 		return openTime;
 	}
-	public void setOpenTime(Date openTime) {
+	public void setOpenTime(String openTime) {
 		this.openTime = openTime;
 	}
 	public String getcNo() {

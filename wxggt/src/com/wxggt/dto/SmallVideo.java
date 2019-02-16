@@ -1,14 +1,21 @@
 package com.wxggt.dto;
 
 public class SmallVideo {
-	private int svid;
-	private String uid;
-	private String uName;
-	private String video;
-	private int Surname;
-	private int Pageview;
-	private int Reward;
-	private String sdescribe;
+	private int svid;//小视频编号
+	private String uid;//发布人编号
+	private String uName;//发布人姓名
+	private String video;//视频名
+	private int Surname;//点赞量
+	private int Pageview;//访问量
+	private int Reward;//打赏金额
+	private String sdescribe;//视频描述
+	private String imageUrl;//视频封页路径
+	public String getImageUrl() {
+		return imageUrl;
+	}
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 	public String getuName() {
 		return uName;
 	}

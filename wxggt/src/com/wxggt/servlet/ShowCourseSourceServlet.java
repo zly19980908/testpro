@@ -2,7 +2,9 @@ package com.wxggt.servlet;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,13 +12,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
 import com.wxggt.dao.CourseDAO;
+import com.wxggt.dao.SourceInfoDAO;
+import com.wxggt.dao.TopicDAO;
+import com.wxggt.dto.SourceInfo;
+import com.wxggt.dto.Topic;
 import com.wxggt.formbean.CourseInfoWithsource;
 
-/**
- * Servlet implementation class ShowCourseSourceSevlet
- */
+import net.sf.json.JSONObject;
+import net.sf.json.JsonConfig;
+import net.sf.json.processors.JsDateJsonBeanProcessor;
 @WebServlet("/ShowCourseSourceSevlet")
 public class ShowCourseSourceServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -38,17 +43,26 @@ public class ShowCourseSourceServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        String tNo = "2016010901";
-        String cName = "中基";
+        String cno = request.getParameter("cno");
         CourseDAO dao = new CourseDAO();
-        //查看课程下所有资源
-        List<CourseInfoWithsource> list = dao.getSingleCourseInfo(tNo, cName);
-        Gson gson = new Gson();
-        String json = gson.toJson(list);
+        TopicDAO topicdao = new TopicDAO();
+        //根据课程号查询教师号
+        String tNo = dao.SearchTnoByCno(cno);
+        //查询课程与教师部分信息
+        List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo,cno);
+        //根据课程号选取课程下所有讨论
+        List<Topic> list1 = topicdao.SearchSomeTopicByCno(cno);
+        
+        Map map = new HashMap();
+        map.put("CourseInfoWithsource",list);
+        map.put("TopicResult",list1);
+        JsonConfig jsonConfig = new JsonConfig();
+        jsonConfig.registerJsonBeanProcessor(java.sql.Date.class, new JsDateJsonBeanProcessor());
+        JSONObject json = JSONObject.fromObject(map, jsonConfig);
+        System.out.println(json.toString());
         Writer out = response.getWriter();
-        out.write(json);
+        out.write(json.toString());
         out.flush();
-        System.out.println(json);
 	}
 
 	/**

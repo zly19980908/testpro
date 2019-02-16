@@ -7,13 +7,6 @@ public class Attention {
 	private String Uid;//粉丝编号
 	private String attendUid;//关注目标编号
 	private Date createTime;//关注时间
-	private int fensCount;//粉丝数
-	public int getFensCount() {
-		return fensCount;
-	}
-	public void setFensCount(int fensCount) {
-		this.fensCount = fensCount;
-	}
 	public String getUid() {
 		return Uid;
 	}

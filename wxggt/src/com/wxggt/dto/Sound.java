@@ -3,16 +3,25 @@ package com.wxggt.dto;
 import java.util.Date;
 
 public class Sound {
-	private int soundId;
-	private String uName;
-	private String soundPath;
-	private int surname;
-	private int pageview;
-	private int reward;
-	private String uploadid;
-	private Date sTime;
-	private String sDescribe;
-	private String title;
+	private int soundId;//音频编号
+	private String uName;//发布人姓名
+	private String soundPath;//音频路径
+	private int surname;//点赞量
+	private int pageview;//访问量
+	private int reward;//打赏金额
+	private String uploadid;//上传者编号
+	private Date sTime;//发布时间
+	private String sDescribe;//音频描述
+	private String title;//标题
+	private String imageUrl;//音频封页路径
+
+	public String getImageUrl() {
+		return imageUrl;
+	}
+
+	public void setImageUrl(String imageUrl) {
+		this.imageUrl = imageUrl;
+	}
 
 	public int getSoundId() {
 		return soundId;
