@@ -2,9 +2,7 @@ package com.wxggt.servlet;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,24 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.wxggt.dao.CourseDAO;
-import com.wxggt.dao.SourceInfoDAO;
-import com.wxggt.dao.TopicDAO;
-import com.wxggt.dto.SourceInfo;
-import com.wxggt.dto.Topic;
-import com.wxggt.formbean.CourseInfoWithsource;
+import com.wxggt.dto.Course;
 
-import net.sf.json.JSONObject;
-import net.sf.json.JsonConfig;
-import net.sf.json.processors.JsDateJsonBeanProcessor;
-@WebServlet("/ShowCourseSourceSevlet")
-public class ShowCourseSourceServlet extends HttpServlet {
+/**
+ * Servlet implementation class ShowCourseOfTeacherServlet
+ */
+@WebServlet("/ShowCourseOfTeacherServlet")
+public class ShowCourseOfTeacherServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowCourseSourceServlet() {
+    public ShowCourseOfTeacherServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,25 +38,14 @@ public class ShowCourseSourceServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        String cno = request.getParameter("cno");
-        CourseDAO dao = new CourseDAO();
-        TopicDAO topicdao = new TopicDAO();
-        //根据课程号查询教师号
-        String tNo = dao.SearchTnoByCno(cno);
-        //查询课程与教师部分信息
-        List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo,cno);
-        //根据课程号选取课程下所有讨论
-        List<Topic> list1 = topicdao.SearchSomeTopicByCno(cno);
-        
-        Map map = new HashMap();
-        map.put("CourseInfoWithsource",list);
-        map.put("TopicResult",list1);
-        JsonConfig jsonConfig = new JsonConfig();
-        jsonConfig.registerJsonBeanProcessor(java.sql.Date.class, new JsDateJsonBeanProcessor());
-        JSONObject json = JSONObject.fromObject(map, jsonConfig);
-        System.out.println(json.toString());
+        String tid = "2016010901";
+        CourseDAO coursedao = new CourseDAO();
+        List<Course> list = coursedao.findAllCourseByTno(tid);
+        //将数据转化为Json字符串
+        Gson gson = new Gson();
+        String Json = gson.toJson(list);
         Writer out = response.getWriter();
-        out.write(json.toString());
+        out.write(Json);
         out.flush();
 	}
 

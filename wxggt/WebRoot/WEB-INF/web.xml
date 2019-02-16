@@ -7,7 +7,11 @@
   </filter>
   <filter-mapping>
     <filter-name>struts2</filter-name>
+<<<<<<< HEAD
     <url-pattern>/*</url-pattern>
+=======
+    <url-pattern>*.action</url-pattern>
+>>>>>>> branch 'alway_beach' of https://github.com/zly19980908/testpro.git
   </filter-mapping>
   <servlet>
     <servlet-name>Quercus Servlet</servlet-name>

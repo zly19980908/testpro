@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.wxggt.dto.Course;
 import com.wxggt.dto.SourceInfo;
+import com.wxggt.formbean.CSTSinputComplete;
 import com.wxggt.formbean.CourseInfoWithsource;
 import com.wxggt.util.CreateCno;
 import com.wxggt.util.DBUtil;
@@ -127,9 +128,9 @@ public class CourseDAO {
 	}
 
 	/* 查看一个老师所有上传课程及其相关信息 */
-	public List<CourseInfoWithsource> getAllCourseInfo(String tNo) {
+	public List<CourseInfoWithsource> getAllCourseInfo(String tNo,String cNo) {
 		List<CourseInfoWithsource> list = new ArrayList<CourseInfoWithsource>();
-		String sql = "SELECT cNo,cName,pageview,studyquantity,price,specialtyid,courseDesc FROM course WHERE tno=?";
+		String sql = "SELECT cNo,cName,pageview,studyquantity,price,specialtyid,courseDesc,tName FROM course WHERE tno=? and cNo=?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -137,6 +138,7 @@ public class CourseDAO {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, tNo);
+			ps.setString(2, cNo);
 			rs = ps.executeQuery();
 			while (rs.next()) {
 				CourseInfoWithsource csw = new CourseInfoWithsource();
@@ -151,6 +153,7 @@ public class CourseDAO {
 				csw.setPrice(rs.getInt(5));
 				csw.setSpecialtyid(rs.getInt(6));
 				csw.setCourseDesc(rs.getString(7));
+				csw.settName(rs.getString(8));
 				csw.setSources(list_);
 				list.add(csw);
 			}
@@ -166,10 +169,37 @@ public class CourseDAO {
 		return list;
 	}
 	
+	/*微信端讨论区模糊补全输入*/
+	public List<String> CompleteInput(String str){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<String> list = new ArrayList<String>();//不new出来报错
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select cName from course where cName like ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, str+"%");
+			rs = ps.executeQuery();
+			while(rs.next()){
+				list.add(rs.getString(1));
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return list;
+	}
+	
 	/*微信端根据课程名模糊查询课程信息*/
 	public List<Course> getFrontAllCourseInfo(String cName) {
 		List<Course> list = new ArrayList<Course>();
-		String sql = "SELECT pageview,price,price,cName,cNo FROM course WHERE cName like ?";
+		String sql = "SELECT pageview,price,tNo,tName,cName,cNo,imageUrl FROM course WHERE cName like ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -183,8 +213,10 @@ public class CourseDAO {
 				csw.setPageview(rs.getInt(1));
 				csw.setPrice(rs.getInt(2));
 				csw.settNo(rs.getString(3));
-				csw.setcName(rs.getString(4));
-				csw.setcNo(rs.getString(5));
+				csw.settName(rs.getString(4));
+				csw.setcName(rs.getString(5));
+				csw.setcNo(rs.getString(6));
+				csw.setImageUrl(rs.getString(7));
 				list.add(csw);
 			}
 		} catch (Exception e) {
@@ -251,6 +283,64 @@ public class CourseDAO {
 		else
 			return false;
 	}
+	
+	/*微信端课程区模糊补全输入*/
+	public List<CSTSinputComplete> completeInput(String str){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<CSTSinputComplete> list = new ArrayList<CSTSinputComplete>();//不new出来报错
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select cNo,cName from course where cName like ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, str+"%");
+			rs = ps.executeQuery();
+			while(rs.next()){
+				CSTSinputComplete course = new CSTSinputComplete();
+				course.setcName(rs.getString(1));
+				course.setName(rs.getString(2));
+				list.add(course);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return list;
+	}
+	
+	//根据课程号查询教师号
+	public String SearchTnoByCno(String cno){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String Tno = null;
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select tNo from course where cNo = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cno);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				Tno = rs.getString(1);
+				return Tno;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return null;
+	}
 
 	public static void main(String[] args) {
 
@@ -270,12 +360,12 @@ public class CourseDAO {
 		// }
 		
 		/* 查看所有上传课程及其相关信息 */
-		CourseDAO dao = new CourseDAO();
+		/*CourseDAO dao = new CourseDAO();
 		String tNo = "2016010901";
 		boolean result = dao.addPageView("126263347916");
 		boolean result2 = dao.addStudyquantity("126263347916");
 		System.out.println(result+" "+result2);
-		List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo);
+		List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo,);
 		List<Course> list2 = dao.getFrontAllCourseInfo("中");
 		List<Course> list3 = dao.findAllCourseByTno("2016010901");
 		for (Course c : list2) {

@@ -1,28 +1,27 @@
 package com.wxggt.servlet;
 
 import java.io.IOException;
+import java.io.Writer;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wxggt.dao.ConsumeDAO;
-import com.wxggt.dao.CourseDAO;
-import com.wxggt.dao.StucouDAO;
-import com.wxggt.dao.TeacherIncomeDAO;
+import com.wxggt.dao.AttentionDAO;
 
 /**
- * Servlet implementation class CourseServlet
+ * Servlet implementation class SearchAttentionServlet
  */
-@WebServlet("/CourseServlet")
-public class CourseServlet extends HttpServlet {
+@WebServlet("/SearchAttentionServlet")
+public class SearchAttentionServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CourseServlet() {
+    public SearchAttentionServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,25 +35,23 @@ public class CourseServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        //购买课程
-        String uid = "2016010901";
-        String cid = "126263347";
-        String tid = "2016010901";
-        int price = 50;
-        String type = "购买";
-        StucouDAO stucoudao = new StucouDAO();
-        ConsumeDAO consumedao = new ConsumeDAO();
-        CourseDAO coursedao = new CourseDAO();
-        TeacherIncomeDAO teacherincomedao = new TeacherIncomeDAO();
-        //学生购买课程则选课一门
-        boolean result = stucoudao.insertStucou(uid, cid);
-        //学生购买课程添加一条消费记录
-        boolean result1 = consumedao.insertConsume(uid, price, type, 126263347);
-        //学生购买课程课程购买次数加一
-        boolean result2 = coursedao.addStudyquantity(cid);
-        //学生购买课程老师加入一笔收益;
-        boolean result3 = teacherincomedao.insertIncome(cid, tid, price, type);
-        System.out.println(result+" "+result1+" "+result2+" "+result3);
+        AttentionDAO dao = new AttentionDAO();
+        String Uid = request.getParameter("Uid");
+        String AttendUid = request.getParameter("AttendUid");
+        String returnString = null;
+        //查询是否已关注
+        boolean result = dao.searchAttentionByUidAndAUid(Uid, AttendUid);
+        if(result){
+        	//关注则使用关注图标
+        	returnString = "true";
+        }
+        else{
+        	//未关注则使用未关注图标
+        	returnString = "false";
+        }
+        Writer out = response.getWriter();
+        out.write(returnString);
+        out.flush();
 	}
 
 	/**

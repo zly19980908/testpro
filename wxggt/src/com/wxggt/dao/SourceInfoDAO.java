@@ -3,12 +3,15 @@ package com.wxggt.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
 import java.util.List;
 
 import com.wxggt.dto.SourceInfo;
 import com.wxggt.util.DBUtil;
-
+import com.wxggt.util.ManagerTime;
 public class SourceInfoDAO {
 	/* 这是关于视频资源的DAO */
 
@@ -49,10 +52,12 @@ public class SourceInfoDAO {
 	/* 根据课程号查出所有视频资源(按视频序号递增) */
 	public List<SourceInfo> getSourcesByCno(String cno) {
 		List<SourceInfo> list = new ArrayList<SourceInfo>();
-		String sql = "SELECT id,cNo,sourceName,sourceSort,sourceTime,downloadDate,sourceOrgin,isMajorType,sourceDesc FROM sourceinfo WHERE cno=? order by id ASC";
+		//TIMESTAMPDIFF(SECOND,downloadDate,CURRENT_TIME())以秒为单位获取数据库中时间与当前时间差
+		String sql = "SELECT id,cNo,sourceName,sourceSort,sourceTime,TIMESTAMPDIFF(SECOND,downloadDate,CURRENT_TIME()),sourceOrgin,isMajorType,sourceDesc FROM sourceinfo WHERE cno=? order by id ASC";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
+		ManagerTime manager = new ManagerTime();
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -65,7 +70,8 @@ public class SourceInfoDAO {
 				sourceInfo.setSourceName(rs.getString(3));
 				sourceInfo.setSourceSort(rs.getString(4));
 				sourceInfo.setSourceTime(rs.getInt(5));
-				sourceInfo.setDownloadDate(rs.getDate(6));
+				String time = manager.jisuanTime(rs.getLong(6));
+				sourceInfo.setDownloadDate(time);
 				sourceInfo.setSourceOrgin(rs.getString(7));
 				sourceInfo.setIsMajorType(rs.getInt(8));
 				sourceInfo.setSourceDesc(rs.getString(9));

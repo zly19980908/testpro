@@ -18,7 +18,7 @@ public class SoundDAO {
 		Connection conn = null;
 		PreparedStatement ps = null;
 		int rs = 0;
-		String sql = "INSERT INTO sound(uName,soundPath,uploadid,sTime,Sdescribe,title) VALUES(?,?,?,CURRENT_TIME(),?,?)";
+		String sql = "INSERT INTO sound(uName,soundPath,uploadid,sTime,Sdescribe,title,imageUrl) VALUES(?,?,?,CURRENT_TIME(),?,?,?)";
 		try {
 			conn = DBUtil.getConnection();
 			ps = conn.prepareStatement(sql);
@@ -27,6 +27,7 @@ public class SoundDAO {
 			ps.setString(3, sound.getUploadid());
 			ps.setString(4, sound.getsDescribe());
 			ps.setString(5, sound.getTitle());
+			ps.setString(6, sound.getImageUrl());
 			rs = ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -86,7 +87,7 @@ public class SoundDAO {
 	/*微信端根据音频标题模糊查询音频*/
 	public List<Sound> getSingleSound(String str) {
 		List<Sound> list = new ArrayList<Sound>();
-		String sql = "SELECT uploadid,soundid,uName,title,surname,Pageview FROM sound WHERE title LIKE ?";
+		String sql = "SELECT uploadid,soundid,uName,title,surname,Pageview,imageUrl FROM sound WHERE title LIKE ?";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -103,6 +104,7 @@ public class SoundDAO {
 				sound.setTitle(rs.getString(4));
 				sound.setSurname(rs.getInt(5));
 				sound.setPageview(rs.getInt(6));
+				sound.setImageUrl(rs.getString(7));
 				list.add(sound);
 			}
 		} catch (Exception e) {
@@ -153,6 +155,33 @@ public class SoundDAO {
 			}
 		}
 		return list;
+	}
+	
+	/*微信端讨论区模糊补全输入*/
+	public List<String> CompleteInput(String str){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<String> list = new ArrayList<String>();//不new出来报错
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select title from sound where title like ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, str+"%");
+			rs = ps.executeQuery();
+			while(rs.next()){
+				list.add(rs.getString(1));
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return list;
 	}
 
 	public static void main(String[] args) {

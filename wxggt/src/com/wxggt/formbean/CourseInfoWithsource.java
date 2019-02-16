@@ -9,11 +9,20 @@ public class CourseInfoWithsource {
 	private String cNo;
 	private String cName;
 	private String tNo;
+	private String tName;
 	private int pageview;
 	private int Studyquantity;
 	private int Price;
 	private int Specialtyid;
 	private String courseDesc;
+	public String gettName() {
+		return tName;
+	}
+
+	public void settName(String tName) {
+		this.tName = tName;
+	}
+
 	private List<SourceInfo> sources;
 
 	public String getcNo() {

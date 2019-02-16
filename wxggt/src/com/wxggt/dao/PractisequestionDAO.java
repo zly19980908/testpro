@@ -259,8 +259,8 @@ public class PractisequestionDAO {
 		return list;
 	}
 	
-	/*随堂测试根据视频名模糊查询题目五十道*/
-	public List<Practisequestion> termsTest(String source){
+	/*随堂测试根据课程名模糊查询题目五十道*/
+	public List<Practisequestion> termsTest(String course){
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -270,7 +270,7 @@ public class PractisequestionDAO {
 			//随机抽取十条问题
 			String sql = "select question,a,b,c,d,rightAnswer,qType,qAnalyze,qPic from practisequestion where question like ? and questionId >= ((SELECT MAX(questionId) FROM practisequestion)-(SELECT MIN(questionId) FROM practisequestion)) * RAND() + (SELECT MIN(questionId) FROM practisequestion)  LIMIT 50";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, "%"+source+"%");
+			ps.setString(1, "%"+course+"%");
 			rs = ps.executeQuery();
 			while(rs.next()){
 				Practisequestion question = new Practisequestion();

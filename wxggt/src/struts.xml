@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
+<<<<<<< HEAD
 	<constant name="struts.action.extension" value="action" />
 	<package name="default" extends="struts-default">
 		<!-- 测试 -->
@@ -12,4 +13,7 @@
 			<result name="success" type="redirect">/view_teacher/index.html</result>
 		</action>
 	</package>
+=======
+
+>>>>>>> branch 'alway_beach' of https://github.com/zly19980908/testpro.git
 </struts>    

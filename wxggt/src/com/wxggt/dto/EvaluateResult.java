@@ -4,7 +4,15 @@ public class EvaluateResult {
 
 	private String tNo;
 	private String cNo;
-	private int rank;
+	private Double rank;
+
+	public void setRank(Double rank) {
+		this.rank = rank;
+	}
+	
+	public Double getRank(){
+		return rank;
+	}
 
 	public String gettNo() {
 		return tNo;
@@ -21,20 +29,12 @@ public class EvaluateResult {
 	public void setcNo(String cNo) {
 		this.cNo = cNo;
 	}
-
-	public int getRank() {
-		return rank;
-	}
-
-	public void setRank(int rank) {
-		this.rank = rank;
-	}
 	
 	public EvaluateResult(){
 		
 	}
 
-	public EvaluateResult(String tNo, String cNo, int rank) {
+	public EvaluateResult(String tNo, String cNo, Double rank) {
 		super();
 		this.tNo = tNo;
 		this.cNo = cNo;
