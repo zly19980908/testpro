@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>教师管理</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教师管理系统</title>
 <link rel="stylesheet" href="../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../css/index_teacher/menu.css" />
@@ -14,7 +13,8 @@
 <link rel="stylesheet" href="../css/index_teacher/page/form.css" />
 <link rel="stylesheet" href="../css/index_teacher/component.css" />
 <!-- 链接轮播窗的css样式 -->
-<link rel="stylesheet" href="../css/index_teacher/index1.css" type="text/css" />
+<link rel="stylesheet" href="../css/index_teacher/index.css" type="text/css" />
+<link rel="stylesheet" href="../css/index_teacher/normalize.css" type="text/css" />
 <style type="text/css">
 .info-num {
 	position: absolute;
@@ -36,31 +36,33 @@
 }
 </style>
 </head>
-
-<body class="am-with-topbar-fixed-top">
-	<!-- Begin page -->
+<body>
+	<!-- 页面开始 -->
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="index.html" class="logo">
-				<span>悬壶学堂</span>
+				<span> 教师管理系统 </span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
+
 		<div class="contain">
 			<ul class="am-nav am-navbar-nav am-navbar-left">
+
 				<li>
-					<h4 class="page-title">首页</h4>
+					<h4 class="page-title">基本表格</h4>
 				</li>
 			</ul>
+
 			<ul class="am-nav am-navbar-nav am-navbar-right">
 				<li class="inform">
 					<i class="am-icon-bell-o"></i> <i id="letterNum" class="info-num">2</i>
 				</li>
 				<li class="hidden-xs am-hide-sm-only">
 					<form class="app-search">
-						<input type="text" placeholder="搜索..." class="form-control">
-						<a href="javasript:;">
-							<i class="am-icon-search"></i>
+						<input type="text" placeholder="Search..." class="form-control">
+						<a href="javascript:;">
+							<img src="../images/index_teacher/search.png">
 						</a>
 					</form>
 				</li>
@@ -68,15 +70,16 @@
 		</div>
 	</header>
 	<!-- end page -->
+
+
 	<div class="admin">
+		<!-- ========== 侧边栏开始 ========== -->
 		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
 			<div class="am-offcanvas-bar admin-offcanvas-bar">
-				<!-- User -->
+				<!-- start User -->
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
-						<a href="photoCut.html">
-							<img src="../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
-						</a>
+						<img src="../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
 						</div>
@@ -84,20 +87,9 @@
 					<h5>
 						<a href="#">张 三</a>
 					</h5>
-					<ul class="list-inline">
-						<li>
-							<a href="#">
-								<i class="fa fa-cog"></i>
-							</a>
-						</li>
-						<li>
-							<a href="#" class="text-custom">
-								<i class="fa fa-cog"></i>
-							</a>
-						</li>
-					</ul>
 				</div>
-				<!-- End User -->
+				<!-- End 用户 -->
+
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
@@ -135,7 +127,8 @@
 					<!-- 副标题---资金管理-->
 					<li class="admin-parent">
 						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav2'}">
-							<i class="am-icon-briefcase"></i>资金管理
+							<span class="am-icon-briefcase"></span>
+							资金管理
 							<span class="am-icon-angle-right am-fr am-margin-right"></span>
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav2" style="height: 0px;">
@@ -164,69 +157,117 @@
 				<!-- 导航栏结束 -->
 			</div>
 		</div>
+		<!-- ========== 侧边栏结束 ========== -->
 
-		<!-- 在这里开始右边的页面 -->
-		<section class="bannerBase BaseMark">
-			<div class="Banners">
-				<div class="tempWrap">
-					<ul class="AnimUl">
-						<li>
-							<a href="javascript:;" title="院党委举行学习党的十八届六中全会精神和 省十次党代会精神专题辅导">
-								<img src="../images/index_teacher/carousel/2016072719555688.jpg" />
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" title="2016湖南省眼科医师大会开启眼科发展新篇章">
-								<img src="../images/index_teacher/carousel/201607271939462.jpg" />
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" title="立足中原 开放合作  “直通梅奥国际诊疗中心中原中心”启动">
-								<img src="../images/index_teacher/carousel/2016072719535748.jpg" />
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" title="湖南省中医院自媒体联盟成立了！">
-								<img src="../images/index_teacher/carousel/2016072719393541.jpg" />
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" title="“爱心传递 防治出生缺陷”公益行活动走进小区">
-								<img src="../images/index_teacher/carousel/2016072720014091.jpg" />
-							</a>
-						</li>
-						<li>
-							<a href="javascript:;" title="我院空中救护成功转运首位重症患者—首个“中国紧急救援山西航空救援基地”落户省医">
-								<img src="../images/index_teacher/carousel/2016072719395872.JPG" />
-							</a>
-						</li>
-					</ul>
-					<div class="tools">
-						<a href="javascript:;" class="prev">
-							<img alt="上一幅" src="../images/index_teacher/btn_prev01.png" width="34" height="34" />
-						</a>
-						<a href="javascript:void(0)" class="next">
-							<img alt="下一幅" src="../images/index_teacher/btn_next01.png" width="34" height="34" />
-						</a>
-						<div class="text" id="BannerInfo"></div>
-						<ul class="ulMark">
-							<li class="animated"></li>
-							<li class="animated"></li>
-							<li class="animated"></li>
-							<li class="animated"></li>
-							<li class="animated"></li>
-							<li class="animated"></li>
-						</ul>
-						<div class="clear"></div>
-						<div id="BannerSwitch" class="animated" data-type="0" data-right="0">
-							<img src="../images/index_teacher/ico_027.png" width="5" height="7" class="animated">
-							<span>隐藏</span>
+		<!-- 右边内容从此处开始 -->
+		<div class="content-page">
+			<!-- 内容开始 -->
+			<div class="content">
+				<!-- 第一部分开始 -->
+				<div class="am-g">
+					<!-- 新闻速览板块 开始-->
+					<h3 class="page-title">新闻速览</h3>
+					<section class="bannerBase BaseMark">
+						<div class="Banners">
+							<div class="tempWrap">
+								<ul class="AnimUl">
+									<li>
+										<a href="javascript:;" title="院党委举行学习党的十八届六中全会精神和 省十次党代会精神专题辅导">
+											<img src="../images/index_teacher/carousel/2016072719555688.jpg" />
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" title="2016湖南省眼科医师大会开启眼科发展新篇章">
+											<img src="../images/index_teacher/carousel/201607271939462.jpg" />
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" title="立足中原 开放合作  “直通梅奥国际诊疗中心中原中心”启动">
+											<img src="../images/index_teacher/carousel/2016072719535748.jpg" />
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" title="湖南省中医院自媒体联盟成立了！">
+											<img src="../images/index_teacher/carousel/2016072719393541.jpg" />
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" title="“爱心传递 防治出生缺陷”公益行活动走进小区">
+											<img src="../images/index_teacher/carousel/2016072720014091.jpg" />
+										</a>
+									</li>
+									<li>
+										<a href="javascript:;" title="我院空中救护成功转运首位重症患者—首个“中国紧急救援山西航空救援基地”落户省医">
+											<img src="../images/index_teacher/carousel/2016072719395872.JPG" />
+										</a>
+									</li>
+								</ul>
+								<div class="tools">
+									<a href="javascript:;" class="prev">
+										<img alt="上一幅" src="../images/index_teacher/btn_prev01.png" width="34" height="34" />
+									</a>
+									<a href="javascript:void(0)" class="next">
+										<img alt="下一幅" src="../images/index_teacher/btn_next01.png" width="34" height="34" />
+									</a>
+									<div class="text" id="BannerInfo"></div>
+									<ul class="ulMark">
+										<li class="animated"></li>
+										<li class="animated"></li>
+										<li class="animated"></li>
+										<li class="animated"></li>
+										<li class="animated"></li>
+										<li class="animated"></li>
+									</ul>
+									<div class="clear"></div>
+									<div id="BannerSwitch" class="animated" data-type="0" data-right="0">
+										<img src="../images/index_teacher/ico_027.png" width="5" height="7" class="animated">
+										<span>隐藏</span>
+									</div>
+								</div>
+							</div>
 						</div>
-					</div>
+					</section>
+					<!-- 新闻速览板块结束 -->
 				</div>
+				<!-- 第一部分结束 -->
+
+				<!-- 第二部分开始 -->
+				<div class="am-g">
+					<h3 class="page-title">数据展示</h3>
+					<section class="bannerBase BaseMark">
+						<!-- Row start -->
+						<div class="am-u-md-4">
+							<div class="card-box">
+								<h4 class="header-title m-t-0">环形图</h4>
+								<div id="index-pie-1" style="height: 345px;height: 300px;"></div>
+							</div>
+						</div>
+
+						<div class="am-u-md-4">
+							<div class="card-box">
+								<h4 class="header-title m-t-0">环形图</h4>
+								<div id="index-bar-1" style="height: 345px;height: 300px;"></div>
+							</div>
+						</div>
+
+						<div class="am-u-md-4">
+							<div class="card-box">
+								<h4 class="header-title m-t-0">环形图</h4>
+								<div id="index-line-1" style="height: 345px;height: 300px;"></div>
+							</div>
+						</div>
+					</section>
+					<!-- Row end -->
+				</div>
+				<!-- 第二部分结束 -->
+
 			</div>
-		</section>
+			<!-- 内容结束 -->
+		</div>
+		<!-- 右边内容在此处结束-->
+
 	</div>
+	<!-- 页面结束 -->
 </body>
 <script type="text/javascript" src="../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../js/index_teacher/amazeui.min.js"></script>
@@ -236,6 +277,8 @@
 <script type="text/javascript" src="../js/index_teacher/charts/indexChart.js"></script>
 <!-- 轮播效果 -->
 <script type="text/javascript" src="../js/index_teacher/library.js"></script>
+<!-- 上面这个影响滑动效果 -->
 <script type="text/javascript" src="../js/index_teacher/Common.js"></script>
 <script type="text/javascript" src="../js/index_teacher/Index.js"></script>
+
 </html>

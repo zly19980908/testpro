@@ -1,3 +1,26 @@
+/* 这里控制每一个板块的整体样式 */
+.div_1 {
+	display:block;
+	position:absolute;
+	left:350px;
+	top:20px;
+	width:950px;
+	height:500px;
+	padding:0;
+	background: red;
+}
+
+.div_2 {
+	display:block;
+	position:absolute;
+	left:300px;
+	top:600px;
+	width:200px;
+	height:100px;
+	padding:0;
+	background: blue;
+}
+
 nav .Inav {
 	width: 900px;
 }
@@ -15,7 +38,7 @@ nav .Inav {
 	overflow: hidden;
 	position: relative;
 	width: 1080px;
-	left:0px;
+	left: 0px;
 }
 
 .lt-ie9 .bannerBase {
