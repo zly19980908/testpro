@@ -2,7 +2,6 @@ package com.wxggt.servlet;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -12,7 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.wxggt.dao.TeacherInfoDAO;
 import com.wxggt.dto.TeacherInfo;
 
@@ -21,8 +19,8 @@ import com.wxggt.dto.TeacherInfo;
  */
 @WebServlet("/Test")
 public class Test extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
+    private static final long serialVersionUID = 1L;
+
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -31,44 +29,45 @@ public class Test extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    /**
+     * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // TODO Auto-generated method stub
-        
-        response.setContentType("text/html;charset=utf-8");          
-        /* ÉèÖÃÏìÓ¦Í·ÔÊĞíajax¿çÓò·ÃÎÊ */  
-        response.setHeader("Access-Control-Allow-Origin", "*");  
-        /* ĞÇºÅ±íÊ¾ËùÓĞµÄÒìÓòÇëÇó¶¼¿ÉÒÔ½ÓÊÜ£¬ */  
-        response.setHeader("Access-Control-Allow-Methods", "GET,POST");  
-       
-        //»ñÈ¡Î¢ĞÅĞ¡³ÌĞògetµÄ²ÎÊıÖµ²¢´òÓ¡
+
+        response.setContentType("text/html;charset=utf-8");
+        /* è®¾ç½®å“åº”å¤´å…è®¸ajaxè·¨åŸŸè®¿é—® */
+        response.setHeader("Access-Control-Allow-Origin", "*");
+        /* æ˜Ÿå·è¡¨ç¤ºæ‰€æœ‰çš„å¼‚åŸŸè¯·æ±‚éƒ½å¯ä»¥æ¥å—ï¼Œ */
+        response.setHeader("Access-Control-Allow-Methods", "GET,POST");
+
+        // è·å–å¾®ä¿¡å°ç¨‹åºgetçš„å‚æ•°å€¼å¹¶æ‰“å°
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         TeacherInfoDAO dao = new TeacherInfoDAO();
         List<TeacherInfo> l = dao.getAllTeacherInfo();
-        for(TeacherInfo t : l){
-        	System.out.println(t.gettNo()+' '+t.gettName());
+        for (TeacherInfo t : l) {
+            System.out.println(t.gettNo() + ' ' + t.gettName());
         }
         Gson gson = new Gson();
         String json = gson.toJson(l);
         System.out.println(json);
-        
-        //·µ»ØÖµ¸øÎ¢ĞÅĞ¡³ÌĞò
-        Writer out = response.getWriter(); 
-        //´æÖµµ½»º³åÇø
-        out.write(json);
-		// flush()±íÊ¾Ç¿ÖÆ½«»º³åÇøÖĞµÄÊı¾İ·¢ËÍ³öÈ¥,²»±ØµÈµ½»º³åÇøÂú
-        out.flush();   
-	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+        // è¿”å›å€¼ç»™å¾®ä¿¡å°ç¨‹åº
+        Writer out = response.getWriter();
+        // å­˜å€¼åˆ°ç¼“å†²åŒº
+        out.write(json);
+        // flush()è¡¨ç¤ºå¼ºåˆ¶å°†ç¼“å†²åŒºä¸­çš„æ•°æ®å‘é€å‡ºå»,ä¸å¿…ç­‰åˆ°ç¼“å†²åŒºæ»¡
+        out.flush();
+    }
+
+    /**
+     * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+     */
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,
+            IOException {
+        // TODO Auto-generated method stub
+        doGet(request, response);
+    }
 
 }
