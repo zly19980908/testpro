@@ -45,7 +45,7 @@
 					<form class="app-search">
 						<input type="text" placeholder="Search..." class="form-control">
 						<a href="javascript:;">
-							<img src="../../images/index_teacher/search.png">
+							<img src="../../images/index_teacher/search.png" ondragstart="return false;">
 						</a>
 					</form>
 				</li>
@@ -62,8 +62,8 @@
 				<!-- start User -->
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
-						<a href="photoCut.html">
-							<img src="../../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
+						<a href="../photoCut.html">
+							<img src="../../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;" ondragstart="return false;">
 						</a>
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
@@ -159,11 +159,11 @@
 						<div class="course-card-box">
 							<div class="div-content">
 								<div class="on-center">
-									<img src="../../images/index_teacher/plus.png" class="img-plus">
+									<img src="../../images/index_teacher/plus.png" class="img-plus" ondragstart="return false;">
 								</div>
 							</div>
 							<div class="div-title">
-								创建课程
+								<a href="t_createCourse.jsp">创建新的课程</a>
 								<!-- <h4 class="header-title m-t-0">创建课程</h4> -->
 							</div>
 						</div>
@@ -174,7 +174,8 @@
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/x.jpg" class="img-content">
+								<!-- ondragstart="return false;"--禁止拖动图片 -->
+								<img src="../../images/index_teacher/course/x.jpg" class="img-content" ondragstart="return false;">
 							</div>
 							<div class="div-title">
 								<h4 class="header-title m-t-0">孩子叛逆早知道</h4>
@@ -185,7 +186,7 @@
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/web.jpg" class="img-content">
+								<img src="../../images/index_teacher/course/web.jpg" class="img-content" ondragstart="return false;">
 							</div>
 							<div class="div-title">
 								<h4 class="header-title m-t-0">web前端</h4>
@@ -196,7 +197,7 @@
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/h.jpg" class="img-content">
+								<img src="../../images/index_teacher/course/h.jpg" class="img-content" ondragstart="return false;">
 							</div>
 							<div class="div-title">
 								<h4 class="header-title m-t-0">家庭财务学</h4>
@@ -207,14 +208,14 @@
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/o.jpg" class="img-content">
+								<img src="../../images/index_teacher/course/o.jpg" class="img-content" ondragstart="return false;">
 							</div>
 							<div class="div-title">
 								<h4 class="header-title m-t-0">OCP修炼之道</h4>
 							</div>
 						</div>
 					</div>
-					
+
 					<!--  此处结束循环该教师所有的课程 -->
 					<!-- Row end -->
 
@@ -228,4 +229,12 @@
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
+<script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('.img-plus').click(function() {
+			$(location).attr('href', 't_createCourse.jsp');
+		});
+	});
+</script>
 </html>

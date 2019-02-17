@@ -63,7 +63,7 @@
 					<form class="app-search">
 						<input type="text" placeholder="Search..." class="form-control">
 						<a href="javascript:;">
-							<img src="../../images/index_teacher/search.png">
+							<img src="../../images/index_teacher/search.png" ondragstart="return false;">
 						</a>
 					</form>
 				</li>
@@ -80,8 +80,8 @@
 				<!-- start User -->
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
-						<a href="photoCut.html">
-							<img src="../../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
+						<a href="../photoCut.html">
+							<img src="../../upload/headFace/201601090127/headFace.png" ondragstart="return false;" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
 						</a>
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
