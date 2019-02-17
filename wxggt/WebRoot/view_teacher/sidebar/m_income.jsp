@@ -63,7 +63,7 @@
 					<form class="app-search">
 						<input type="text" placeholder="Search..." class="form-control">
 						<a href="javascript:;">
-							<img src="../../images/index_teacher/search.png" ondragstart="return false;">
+							<img src="../../images/index_teacher/search.png">
 						</a>
 					</form>
 				</li>
