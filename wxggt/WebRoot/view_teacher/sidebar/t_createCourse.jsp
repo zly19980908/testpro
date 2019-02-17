@@ -1,9 +1,13 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>后台模板</title>
+<title>课程管理</title>
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
@@ -47,7 +51,7 @@
 			<ul class="am-nav am-navbar-nav am-navbar-left">
 
 				<li>
-					<h4 class="page-title">首页</h4>
+					<h4 class="page-title">我创建的课程</h4>
 				</li>
 			</ul>
 
@@ -77,7 +81,7 @@
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
 						<a href="photoCut.html">
-							<img src="../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
+							<img src="../../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
 						</a>
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
@@ -93,7 +97,7 @@
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
 					<li>
-						<a href="index.html">
+						<a href="../index.html">
 							<span class="am-icon-home"></span>
 							首页
 						</a>
@@ -107,19 +111,19 @@
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse am-in" id="collapse-nav1" style="">
 							<li>
-								<a href="m_course.html" class="am-cf">课程管理</a>
+								<a href="t_course.jsp" class="am-cf">课程管理</a>
 							</li>
 							<li>
-								<a href="html/table_complete.html">资料管理</a>
+								<a href="t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="html/table_basic.html">练习管理</a>
+								<a href="t_practice.jsp">练习管理</a>
 							</li>
 							<li>
-								<a href="html/table_complete.html">考试管理</a>
+								<a href="t_exam.jsp">考试管理</a>
 							</li>
 							<li>
-								<a href="html/table_basic.html">音频管理</a>
+								<a href="t_audio.jsp">音频管理</a>
 							</li>
 						</ul>
 					</li>
@@ -132,7 +136,7 @@
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav2" style="height: 0px;">
 							<li>
-								<a href="html/chart_line.html" class="am-cf">收益管理</a>
+								<a href="m_income.jsp" class="am-cf">收益管理</a>
 							</li>
 						</ul>
 					</li>
@@ -145,7 +149,7 @@
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav5" style="height: 0px;">
 							<li>
-								<a href="resetInfo.jsp" class="am-cf">信息管理</a>
+								<a href="../resetInfo.jsp" class="am-cf">信息管理</a>
 							</li>
 						</ul>
 					</li>
@@ -477,3 +481,4 @@
 <script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 </html>
+

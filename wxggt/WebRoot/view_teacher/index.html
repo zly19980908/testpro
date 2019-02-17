@@ -7,11 +7,8 @@
 <link rel="stylesheet" href="../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../css/index_teacher/menu.css" />
-<link rel="stylesheet" href="../css/index_teacher/index.css" />
 <link rel="stylesheet" href="../css/index_teacher/admin.css" />
 <link rel="stylesheet" href="../css/index_teacher/page/typography.css" />
-<link rel="stylesheet" href="../css/index_teacher/page/form.css" />
-<link rel="stylesheet" href="../css/index_teacher/component.css" />
 <!-- 链接轮播窗的css样式 -->
 <link rel="stylesheet" href="../css/index_teacher/index.css" type="text/css" />
 <link rel="stylesheet" href="../css/index_teacher/normalize.css" type="text/css" />
@@ -50,7 +47,7 @@
 			<ul class="am-nav am-navbar-nav am-navbar-left">
 
 				<li>
-					<h4 class="page-title">基本表格</h4>
+					<h4 class="page-title">首页</h4>
 				</li>
 			</ul>
 
@@ -79,13 +76,15 @@
 				<!-- start User -->
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
-						<img src="../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+						<a href="photoCut.html">
+							<img src="../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
+						</a>
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
 						</div>
 					</div>
 					<h5>
-						<a href="#">张 三</a>
+						<a href="#">周 娜</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->
@@ -108,19 +107,19 @@
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav1" style="height: 0px;">
 							<li>
-								<a href="html/table_basic.html" class="am-cf">课程管理</a>
+								<a href="sidebar/t_course.jsp" class="am-cf">课程管理</a>
 							</li>
 							<li>
-								<a href="html/table_complete.html">资料管理</a>
+								<a href="sidebar/t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="html/table_basic.html">练习管理</a>
+								<a href="sidebar/t_practice.jsp">练习管理</a>
 							</li>
 							<li>
-								<a href="html/table_complete.html">考试管理</a>
+								<a href="sidebar/t_exam.jsp">考试管理</a>
 							</li>
 							<li>
-								<a href="html/table_basic.html">音频管理</a>
+								<a href="sidebar/t_audio.jsp">音频管理</a>
 							</li>
 						</ul>
 					</li>
@@ -133,7 +132,7 @@
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav2" style="height: 0px;">
 							<li>
-								<a href="html/chart_line.html" class="am-cf">收益管理</a>
+								<a href="sidebar/m_income.jsp" class="am-cf">收益管理</a>
 							</li>
 						</ul>
 					</li>

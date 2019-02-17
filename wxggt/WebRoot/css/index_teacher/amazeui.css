@@ -702,7 +702,7 @@ select {
   position: relative;
 }
 [class*="am-u-"] + [class*="am-u-"]:last-child {
-  float: right;
+  float: left;
 }
 [class*="am-u-"] + [class*="am-u-"].am-u-end {
   float: left;
@@ -4646,6 +4646,7 @@ a.am-close:hover {
   font-size: 250%;
   vertical-align: -22%;
 }
+
 /* Modifier: `.am-icon-btn`
 ============================================================================= */
 .am-icon-btn {

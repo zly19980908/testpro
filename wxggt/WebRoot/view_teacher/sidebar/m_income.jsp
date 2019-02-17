@@ -1,3 +1,7 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page contentType="text/html;charset=utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +81,7 @@
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
 						<a href="photoCut.html">
-							<img src="../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
+							<img src="../../upload/headFace/201601090127/headFace.png" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
 						</a>
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
@@ -93,46 +97,46 @@
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
 					<li>
-						<a href="index.html">
+						<a href="../index.html">
 							<span class="am-icon-home"></span>
 							首页
 						</a>
 					</li>
 					<!-- 副标题---教学管理-->
 					<li class="admin-parent">
-						<a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}">
+						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav1'}">
 							<span class="am-icon-book"></span>
 							教学管理
 							<span class="am-icon-angle-right am-fr am-margin-right"></span>
 						</a>
-						<ul class="am-list admin-sidebar-sub am-collapse am-in" id="collapse-nav1" style="">
+						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav1" style="height: 0px;">
 							<li>
-								<a href="m_course.html" class="am-cf">课程管理</a>
+								<a href="t_course.jsp" class="am-cf">课程管理</a>
 							</li>
 							<li>
-								<a href="html/table_complete.html">资料管理</a>
+								<a href="t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="html/table_basic.html">练习管理</a>
+								<a href="t_practice.jsp">练习管理</a>
 							</li>
 							<li>
-								<a href="html/table_complete.html">考试管理</a>
+								<a href="t_exam.jsp">考试管理</a>
 							</li>
 							<li>
-								<a href="html/table_basic.html">音频管理</a>
+								<a href="t_audio.jsp">音频管理</a>
 							</li>
 						</ul>
 					</li>
 					<!-- 副标题---资金管理-->
 					<li class="admin-parent">
-						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav2'}">
+						<a class="am-cf" data-am-collapse="{target: '#collapse-nav2'}">
 							<span class="am-icon-briefcase"></span>
 							资金管理
 							<span class="am-icon-angle-right am-fr am-margin-right"></span>
 						</a>
-						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav2" style="height: 0px;">
+						<ul class="am-list admin-sidebar-sub am-collapse am-in" id="collapse-nav2" style="">
 							<li>
-								<a href="html/chart_line.html" class="am-cf">收益管理</a>
+								<a href="m_income.jsp" class="am-cf">收益管理</a>
 							</li>
 						</ul>
 					</li>
@@ -145,7 +149,7 @@
 						</a>
 						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav5" style="height: 0px;">
 							<li>
-								<a href="resetInfo.jsp" class="am-cf">信息管理</a>
+								<a href="../resetInfo.jsp" class="am-cf">信息管理</a>
 							</li>
 						</ul>
 					</li>

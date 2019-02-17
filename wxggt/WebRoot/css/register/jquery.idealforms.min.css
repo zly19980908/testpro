@@ -9,27 +9,26 @@ legend {
 	padding: 0
 }
 
-button, input, select, textarea {
+button,input,select,textarea {
 	font-family: inherit;
 	font-size: 100%;
 	margin: 0
 }
 
-button, input {
+button,input {
 	line-height: normal
 }
 
-button, html input[type="button"], input[type="reset"], input[type="submit"]
-	{
+button,html input[type="button"],input[type="reset"],input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer
 }
 
-button[disabled], input[disabled] {
+button[disabled],input[disabled] {
 	cursor: default
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],input[type="radio"] {
 	box-sizing: border-box;
 	padding: 0
 }
@@ -41,12 +40,11 @@ input[type="search"] {
 	box-sizing: content-box
 }
 
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration
-	{
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,input::-moz-focus-inner {
 	border: 0;
 	padding: 0
 }
@@ -84,7 +82,7 @@ textarea {
 	box-shadow: 0, transparent 0 0 0
 }
 
-.ideal-form:before, .ideal-form:after {
+.ideal-form:before,.ideal-form:after {
 	content: "";
 	display: table
 }
@@ -108,7 +106,7 @@ textarea {
 	margin-top: 0
 }
 
-.ideal-form .ideal-label, .ideal-form .ideal-field {
+.ideal-form .ideal-label,.ideal-form .ideal-field {
 	float: left;
 	position: relative
 }
@@ -121,11 +119,7 @@ textarea {
 	color: #222
 }
 
-.ideal-form input[type="text"], .ideal-form input[type="password"],
-	.ideal-form input[type="email"], .ideal-form input[type="number"],
-	.ideal-form input[type="search"], .ideal-form input[type="url"],
-	.ideal-form input[type="tel"], .ideal-form textarea, .ideal-form select
-	{
+.ideal-form input[type="text"],.ideal-form input[type="password"],.ideal-form input[type="email"],.ideal-form input[type="number"],.ideal-form input[type="search"],.ideal-form input[type="url"],.ideal-form input[type="tel"],.ideal-form textarea,.ideal-form select {
 	font-size: 15px;
 	font-family: sans-serif;
 	padding: 7.5px;
@@ -136,8 +130,7 @@ textarea {
 	color: #666;
 	border-radius: 3px;
 	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), transparent 0 0 0;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), transparent 0 0
-		0;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), transparent 0 0 0;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), transparent 0 0 0;
 	-webkit-transition: background .3s ease-in-out;
 	-moz-transition: background .3s ease-in-out;
@@ -149,7 +142,7 @@ textarea {
 	resize: none
 }
 
-.ideal-form input[type="radio"], .ideal-form input[type="checkbox"] {
+.ideal-form input[type="radio"],.ideal-form input[type="checkbox"] {
 	margin-right: .5em
 }
 
@@ -157,8 +150,7 @@ textarea {
 	display: none
 }
 
-.ideal-form button, .ideal-form input[type="reset"], .ideal-form input[type="submit"]
-	{
+.ideal-form button,.ideal-form input[type="reset"],.ideal-form input[type="submit"] {
 	font-family: sans-serif;
 	height: 33px;
 	line-height: 33px;
@@ -168,8 +160,7 @@ textarea {
 	margin-bottom: 1em
 }
 
-.ideal-form button, .ideal-form select, .ideal-form input[type="reset"],
-	.ideal-form input[type="submit"] {
+.ideal-form button,.ideal-form select,.ideal-form input[type="reset"],.ideal-form input[type="submit"] {
 	font-size: 85%
 }
 
@@ -178,15 +169,12 @@ textarea {
 	position: relative;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#fff));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
 	background-image: -webkit-linear-gradient(#fff, #fff);
 	background-image: -moz-linear-gradient(#fff, #fff);
 	background-image: -o-linear-gradient(top, #fff, #fff);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#ffffff', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0))";
 	border-color: #aaa;
 	border-style: solid;
 	border-width: 0 0 1px 0;
@@ -197,9 +185,7 @@ textarea {
 	font-family: sans-serif
 }
 
-.ideal-form .ideal-heading h1, .ideal-form .ideal-heading h2,
-	.ideal-form .ideal-heading h3, .ideal-form .ideal-heading h4,
-	.ideal-form .ideal-heading h5, .ideal-form .ideal-heading h6 {
+.ideal-form .ideal-heading h1,.ideal-form .ideal-heading h2,.ideal-form .ideal-heading h3,.ideal-form .ideal-heading h4,.ideal-form .ideal-heading h5,.ideal-form .ideal-heading h6 {
 	display: block;
 	margin: 0;
 	padding: 0 0 .5em 0;
@@ -211,10 +197,7 @@ textarea {
 	padding: 0
 }
 
-.ideal-form .ideal-heading h1, .ideal-form .ideal-heading h2,
-	.ideal-form .ideal-heading h3, .ideal-form .ideal-heading h4,
-	.ideal-form .ideal-heading h5, .ideal-form .ideal-heading h6,
-	.ideal-form .ideal-heading p {
+.ideal-form .ideal-heading h1,.ideal-form .ideal-heading h2,.ideal-form .ideal-heading h3,.ideal-form .ideal-heading h4,.ideal-form .ideal-heading h5,.ideal-form .ideal-heading h6,.ideal-form .ideal-heading p {
 	padding-left: 0;
 	padding-right: 15px
 }
@@ -244,10 +227,7 @@ textarea {
 	background: url("../../images/register/validation.png")
 }
 
-.ideal-form textarea ~ .ideal-icon-valid, .ideal-form textarea ~
-	.ideal-icon-invalid, .ideal-form .ideal-select ~ .ideal-icon-valid,
-	.ideal-form .ideal-select ~ .ideal-icon-invalid, .ideal-form .ideal-radiocheck .ideal-icon-valid,
-	.ideal-form .ideal-radiocheck .ideal-icon-invalid {
+.ideal-form textarea ~ .ideal-icon-valid,.ideal-form textarea ~ .ideal-icon-invalid,.ideal-form .ideal-select ~ .ideal-icon-valid,.ideal-form .ideal-select ~ .ideal-icon-invalid,.ideal-form .ideal-radiocheck .ideal-icon-valid,.ideal-form .ideal-radiocheck .ideal-icon-invalid {
 	top: 7.5px;
 	margin-top: 0
 }
@@ -262,40 +242,28 @@ textarea {
 }
 
 .ideal-form .ajax .ideal-icon-invalid {
-	background: url('../../images/register/loading.gif')
+	background: url(../../images/register/loading.gif)
 }
 
-.ideal-form .invalid input[type="text"], .ideal-form .invalid input[type="password"],
-	.ideal-form .invalid input[type="email"], .ideal-form .invalid input[type="number"],
-	.ideal-form .invalid input[type="search"], .ideal-form .invalid input[type="url"],
-	.ideal-form .invalid input[type="tel"], .ideal-form .invalid textarea,
-	.ideal-form .invalid select {
+.ideal-form .invalid input[type="text"],.ideal-form .invalid input[type="password"],.ideal-form .invalid input[type="email"],.ideal-form .invalid input[type="number"],.ideal-form .invalid input[type="search"],.ideal-form .invalid input[type="url"],.ideal-form .invalid input[type="tel"],.ideal-form .invalid textarea,.ideal-form .invalid select {
 	background: #faebeb;
 	color: #8f2424;
 	border: 1px solid #d14848
 }
 
-.ideal-form .valid input[type="text"], .ideal-form .valid input[type="password"],
-	.ideal-form .valid input[type="email"], .ideal-form .valid input[type="number"],
-	.ideal-form .valid input[type="search"], .ideal-form .valid input[type="url"],
-	.ideal-form .valid input[type="tel"], .ideal-form .valid textarea,
-	.ideal-form .valid select {
+.ideal-form .valid input[type="text"],.ideal-form .valid input[type="password"],.ideal-form .valid input[type="email"],.ideal-form .valid input[type="number"],.ideal-form .valid input[type="search"],.ideal-form .valid input[type="url"],.ideal-form .valid input[type="tel"],.ideal-form .valid textarea,.ideal-form .valid select {
 	background: #edf7fc;
 	color: #1a719d;
 	border: 1px solid #3ea9df
 }
 
-.ideal-form .ajax input[type="text"], .ideal-form .ajax input[type="password"],
-	.ideal-form .ajax input[type="email"], .ideal-form .ajax input[type="number"],
-	.ideal-form .ajax input[type="search"], .ideal-form .ajax input[type="url"],
-	.ideal-form .ajax input[type="tel"], .ideal-form .ajax textarea,
-	.ideal-form .ajax select {
+.ideal-form .ajax input[type="text"],.ideal-form .ajax input[type="password"],.ideal-form .ajax input[type="email"],.ideal-form .ajax input[type="number"],.ideal-form .ajax input[type="search"],.ideal-form .ajax input[type="url"],.ideal-form .ajax input[type="tel"],.ideal-form .ajax textarea,.ideal-form .ajax select {
 	background: #faf9e8;
 	color: #918a1f;
 	border: 1px solid #d6cd40
 }
 
-.ideal-form .valid textarea, .ideal-form .invalid textarea {
+.ideal-form .valid textarea,.ideal-form .invalid textarea {
 	color: #666;
 	background: #fff
 }
@@ -311,15 +279,12 @@ textarea {
 	font-size: 85%;
 	background-color: #285d85;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#285d85),
-		to(#3478ac));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#285d85), to(#3478ac));
 	background-image: -webkit-linear-gradient(#285d85, #3478ac);
 	background-image: -moz-linear-gradient(#285d85, #3478ac);
 	background-image: -o-linear-gradient(top, #285d85, #3478ac);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#285d85',
-		EndColorStr='#3478ac', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#285d85', EndColorStr='#3478ac', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#285d85', EndColorStr='#3478ac', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#285d85', EndColorStr='#3478ac', GradientType=0))";
 	color: #fff;
 	border: 1px solid #214d6d;
 	border-bottom: 1px solid #214d6d;
@@ -329,7 +294,7 @@ textarea {
 	border-radius: 0 3px 3px 3px
 }
 
-.ideal-form .ideal-error:after, .ideal-form .ideal-error:before {
+.ideal-form .ideal-error:after,.ideal-form .ideal-error:before {
 	content: "";
 	position: absolute;
 	top: 0;
@@ -364,17 +329,11 @@ textarea {
 	visibility: hidden
 }
 
-.ideal-form.stack .ideal-field, .ideal-form.stack .ideal-full-width,
-	.ideal-form.stack .ideal-heading, .ideal-form.stack .ideal-separator,
-	.ideal-form.stack .ideal-error {
+.ideal-form.stack .ideal-field,.ideal-form.stack .ideal-full-width,.ideal-form.stack .ideal-heading,.ideal-form.stack .ideal-separator,.ideal-form.stack .ideal-error {
 	width: 87.54863813229572% !important
 }
 
-.ideal-form.stack .ideal-wrap, .ideal-form.stack input[type="text"],
-	.ideal-form.stack input[type="password"], .ideal-form.stack input[type="email"],
-	.ideal-form.stack input[type="number"], .ideal-form.stack input[type="search"],
-	.ideal-form.stack input[type="url"], .ideal-form.stack input[type="tel"],
-	.ideal-form.stack textarea, .ideal-form.stack select {
+.ideal-form.stack .ideal-wrap,.ideal-form.stack input[type="text"],.ideal-form.stack input[type="password"],.ideal-form.stack input[type="email"],.ideal-form.stack input[type="number"],.ideal-form.stack input[type="search"],.ideal-form.stack input[type="url"],.ideal-form.stack input[type="tel"],.ideal-form.stack textarea,.ideal-form.stack select {
 	width: 100% !important;
 	max-width: 337.5px
 }
@@ -396,8 +355,7 @@ textarea {
 	border-radius: 3px
 }
 
-.ideal-form.stack .ideal-error:after, .ideal-form.stack .ideal-error:before
-	{
+.ideal-form.stack .ideal-error:after,.ideal-form.stack .ideal-error:before {
 	content: ".";
 	line-height: 0;
 	text-indent: -9999px;
@@ -423,7 +381,7 @@ textarea {
 	position: absolute
 }
 
-.ideal-tabs-content:before, .ideal-tabs-content:after {
+.ideal-tabs-content:before,.ideal-tabs-content:after {
 	content: "";
 	display: table
 }
@@ -437,29 +395,22 @@ textarea {
 	border-radius: 3px;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#e5e5e5));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
 	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
 	background-image: -moz-linear-gradient(#fff, #e5e5e5);
 	background-image: -o-linear-gradient(top, #fff, #e5e5e5);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#e5e5e5', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
-	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 	border: 1px solid #b2b2b2;
 	border-bottom-color: #999;
 	border-radius: 3px;
 	color: #000
 }
 
-.ideal-tabs .ideal-tabs-wrap:before, .ideal-tabs .ideal-tabs-wrap:after
-	{
+.ideal-tabs .ideal-tabs-wrap:before,.ideal-tabs .ideal-tabs-wrap:after {
 	content: "";
 	display: table
 }
@@ -529,8 +480,7 @@ textarea {
 	border-left-color: #d5e3ed
 }
 
-.ideal-tabs .ideal-tabs-tab-active, .ideal-tabs .ideal-tabs-tab-active:hover
-	{
+.ideal-tabs .ideal-tabs-tab-active,.ideal-tabs .ideal-tabs-tab-active:hover {
 	color: #2191c9;
 	background: #fff;
 	font-weight: bold;
@@ -538,13 +488,11 @@ textarea {
 	cursor: default
 }
 
-.ideal-tabs .ideal-tabs-tab-active:hover, .ideal-tabs .ideal-tabs-tab-active:hover:hover
-	{
+.ideal-tabs .ideal-tabs-tab-active:hover,.ideal-tabs .ideal-tabs-tab-active:hover:hover {
 	text-decoration: none
 }
 
-.ideal-tabs .ideal-tabs-tab-active:after, .ideal-tabs .ideal-tabs-tab-active:hover:after
-	{
+.ideal-tabs .ideal-tabs-tab-active:after,.ideal-tabs .ideal-tabs-tab-active:hover:after {
 	border-left-color: #fff
 }
 
@@ -587,8 +535,7 @@ textarea {
 	border-top: 1px solid white
 }
 
-.ideal-form.stack .ideal-tabs .ideal-tabs-tab:after, .ideal-form.stack .ideal-tabs .ideal-tabs-tab:before
-	{
+.ideal-form.stack .ideal-tabs .ideal-tabs-tab:after,.ideal-form.stack .ideal-tabs .ideal-tabs-tab:before {
 	border: 0
 }
 
@@ -601,12 +548,12 @@ textarea {
 	border-radius: 0 0 3px 3px
 }
 
-.ideal-select, .ideal-select * {
+.ideal-select,.ideal-select * {
 	padding: 0;
 	margin: 0
 }
 
-.ideal-select, .ideal-select-sub {
+.ideal-select,.ideal-select-sub {
 	list-style: none;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -615,7 +562,7 @@ textarea {
 	user-select: none
 }
 
-.ideal-select-title, .ideal-select-item {
+.ideal-select-title,.ideal-select-item {
 	font-family: sans-serif;
 	height: 33px;
 	line-height: 33px;
@@ -632,21 +579,15 @@ textarea {
 .ideal-select-title {
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#e5e5e5));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
 	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
 	background-image: -moz-linear-gradient(#fff, #e5e5e5);
 	background-image: -o-linear-gradient(top, #fff, #e5e5e5);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#e5e5e5', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
-	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 	border: 1px solid #b2b2b2;
 	border-bottom-color: #999;
 	border-radius: 3px;
@@ -667,8 +608,7 @@ textarea {
 	border-left: 1px solid #b2b2b2;
 	border-radius: 0 3px 3px 0;
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #fff;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0
-		#fff;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #fff;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #fff
 }
 
@@ -685,35 +625,29 @@ textarea {
 	border-top-color: #7f7f7f
 }
 
-.ideal-select-focus .ideal-select-title, .ideal-select-title:hover {
+.ideal-select-focus .ideal-select-title,.ideal-select-title:hover {
 	border: 1px solid #8eb3ce;
 	border-bottom-color: #6a9cbf;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#d5e3ed));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d5e3ed));
 	background-image: -webkit-linear-gradient(#fff, #d5e3ed);
 	background-image: -moz-linear-gradient(#fff, #d5e3ed);
 	background-image: -o-linear-gradient(top, #fff, #d5e3ed);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#d5e3ed', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0))";
 	color: #2b4d65
 }
 
-.ideal-select-focus .ideal-select-title:before, .ideal-select-title:hover:before
-	{
+.ideal-select-focus .ideal-select-title:before,.ideal-select-title:hover:before {
 	background: #d5e3ed;
 	border-left: 1px solid #8eb3ce;
 	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #fff;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0
-		#fff;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #fff;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), -1px 0 0 0 #fff
 }
 
-.ideal-select-focus .ideal-select-title:after, .ideal-select-title:hover:after
-	{
+.ideal-select-focus .ideal-select-title:after,.ideal-select-title:hover:after {
 	border-top-color: #4a83ac
 }
 
@@ -747,15 +681,12 @@ textarea {
 	border-radius: 0 0 3px 3px;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#fff));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
 	background-image: -webkit-linear-gradient(#fff, #fff);
 	background-image: -moz-linear-gradient(#fff, #fff);
 	background-image: -o-linear-gradient(top, #fff, #fff);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#ffffff', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0))";
 	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), transparent 0 0 0;
 	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), transparent 0 0 0;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2), transparent 0 0 0
@@ -775,21 +706,17 @@ textarea {
 	border-radius: 0 0 3px 3px
 }
 
-.ideal-select-item:hover, .ideal-select-item-selected {
+.ideal-select-item:hover,.ideal-select-item-selected {
 	background-color: #285d85;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#285d85),
-		to(#3478ac));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#285d85), to(#3478ac));
 	background-image: -webkit-linear-gradient(#285d85, #3478ac);
 	background-image: -moz-linear-gradient(#285d85, #3478ac);
 	background-image: -o-linear-gradient(top, #285d85, #3478ac);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#285d85',
-		EndColorStr='#3478ac', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#285d85', EndColorStr='#3478ac', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#285d85', EndColorStr='#3478ac', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#285d85', EndColorStr='#3478ac', GradientType=0))";
 	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), transparent 0 0 0;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), transparent 0 0
-		0;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), transparent 0 0 0;
 	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), transparent 0 0 0;
 	color: #fff
 }
@@ -798,37 +725,28 @@ textarea {
 	width: auto
 }
 
-.ideal-select-list.ideal-select-focus .title:after .ideal-select-title:after,
-	.ideal-select-list .ideal-select-title:before, .ideal-select-list .ideal-select-title:hover
-	{
+.ideal-select-list.ideal-select-focus .title:after .ideal-select-title:after,.ideal-select-list .ideal-select-title:before,.ideal-select-list .ideal-select-title:hover {
 	content: ".";
 	line-height: 0;
 	text-indent: -9999px;
 	border: 0;
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0
-		0;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent
-		0 0 0;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
 	background: 0
 }
 
-.ideal-select-list.ideal-select-open .ideal-select-title,
-	.ideal-select-list .ideal-select-title {
+.ideal-select-list.ideal-select-open .ideal-select-title,.ideal-select-list .ideal-select-title {
 	border-radius: 3px 3px 0 0
 }
 
-.ideal-select-list.ideal-select-open .ideal-select-title:after,
-	.ideal-select-list .ideal-select-title:after, .ideal-select-list.ideal-select-open .ideal-select-title:before,
-	.ideal-select-list .ideal-select-title:before {
+.ideal-select-list.ideal-select-open .ideal-select-title:after,.ideal-select-list .ideal-select-title:after,.ideal-select-list.ideal-select-open .ideal-select-title:before,.ideal-select-list .ideal-select-title:before {
 	content: ".";
 	line-height: 0;
 	text-indent: -9999px;
 	border: 0;
-	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0
-		0;
-	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent
-		0 0 0;
+	-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
+	-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
 	box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), transparent 0 0 0;
 	background: 0
 }
@@ -854,30 +772,23 @@ textarea {
 	border: 1px solid #aaa;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#fff));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
 	background-image: -webkit-linear-gradient(#fff, #fff);
 	background-image: -moz-linear-gradient(#fff, #fff);
 	background-image: -o-linear-gradient(top, #fff, #fff);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#ffffff', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0))"
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#ffffff', GradientType=0))"
 }
 
-.ideal-radiocheck label, .ideal-radiocheck input {
+.ideal-radiocheck label,.ideal-radiocheck input {
 	cursor: pointer
 }
 
 .ideal-radiocheck label {
-	-webkit-transition: background .15s ease-in-out, color .15s ease-in-out,
-		border .15s ease-in-out;
-	-moz-transition: background .15s ease-in-out, color .15s ease-in-out,
-		border .15s ease-in-out;
-	-ms-transition: background .15s ease-in-out, color .15s ease-in-out,
-		border .15s ease-in-out;
-	-o-transition: background .15s ease-in-out, color .15s ease-in-out,
-		border .15s ease-in-out;
+	-webkit-transition: background .15s ease-in-out, color .15s ease-in-out, border .15s ease-in-out;
+	-moz-transition: background .15s ease-in-out, color .15s ease-in-out, border .15s ease-in-out;
+	-ms-transition: background .15s ease-in-out, color .15s ease-in-out, border .15s ease-in-out;
+	-o-transition: background .15s ease-in-out, color .15s ease-in-out, border .15s ease-in-out;
 	float: left;
 	clear: both;
 	margin: 0 1em;
@@ -890,7 +801,7 @@ textarea {
 	padding-left: 40px
 }
 
-.ideal-check, .ideal-radio {
+.ideal-check,.ideal-radio {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -948,21 +859,15 @@ textarea {
 	user-select: none;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#e5e5e5));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
 	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
 	background-image: -moz-linear-gradient(#fff, #e5e5e5);
 	background-image: -o-linear-gradient(top, #fff, #e5e5e5);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#e5e5e5', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
-	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 	border: 1px solid #b2b2b2;
 	border-bottom-color: #999;
 	border-radius: 3px;
@@ -974,32 +879,26 @@ textarea {
 	cursor: pointer
 }
 
-.ideal-button:hover, .ideal-button:focus {
+.ideal-button:hover,.ideal-button:focus {
 	border: 1px solid #8eb3ce;
 	border-bottom-color: #6a9cbf;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#d5e3ed));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d5e3ed));
 	background-image: -webkit-linear-gradient(#fff, #d5e3ed);
 	background-image: -moz-linear-gradient(#fff, #d5e3ed);
 	background-image: -o-linear-gradient(top, #fff, #d5e3ed);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#d5e3ed', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0))";
 	color: #2b4d65
 }
 
 .ideal-button:active {
 	background: #d5e3ed;
 	filter: 0;
-	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px
-		rgba(0, 0, 0, 0.08);
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px
-		rgba(0, 0, 0, 0.08);
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px
-		rgba(0, 0, 0, 0.08)
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.08);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.08)
 }
 
 .ideal-file-wrap {
@@ -1011,7 +910,7 @@ input.ideal-file-filename {
 	height: 33px
 }
 
-label.ideal-file-upload, button.ideal-file-upload {
+label.ideal-file-upload,button.ideal-file-upload {
 	font-family: sans-serif;
 	height: 33px;
 	line-height: 33px;
@@ -1023,21 +922,15 @@ label.ideal-file-upload, button.ideal-file-upload {
 	user-select: none;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#e5e5e5));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#e5e5e5));
 	background-image: -webkit-linear-gradient(#fff, #e5e5e5);
 	background-image: -moz-linear-gradient(#fff, #e5e5e5);
 	background-image: -o-linear-gradient(top, #fff, #e5e5e5);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#e5e5e5', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
-	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0
-		rgba(255, 255, 255, 0.5);
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#e5e5e5', GradientType=0))";
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.5);
 	border: 1px solid #b2b2b2;
 	border-bottom-color: #999;
 	border-radius: 3px;
@@ -1055,33 +948,26 @@ label.ideal-file-upload, button.ideal-file-upload {
 	border-radius: 0 3px 3px 0
 }
 
-label.ideal-file-upload:hover, button.ideal-file-upload:hover, label.ideal-file-upload:focus,
-	button.ideal-file-upload:focus {
+label.ideal-file-upload:hover,button.ideal-file-upload:hover,label.ideal-file-upload:focus,button.ideal-file-upload:focus {
 	border: 1px solid #8eb3ce;
 	border-bottom-color: #6a9cbf;
 	background-color: #fff;
 	background-repeat: no-repeat;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff),
-		to(#d5e3ed));
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#d5e3ed));
 	background-image: -webkit-linear-gradient(#fff, #d5e3ed);
 	background-image: -moz-linear-gradient(#fff, #d5e3ed);
 	background-image: -o-linear-gradient(top, #fff, #d5e3ed);
-	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff',
-		EndColorStr='#d5e3ed', GradientType=0);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0))";
+	filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0);
+	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#ffffff', EndColorStr='#d5e3ed', GradientType=0))";
 	color: #2b4d65
 }
 
-label.ideal-file-upload:active, button.ideal-file-upload:active {
+label.ideal-file-upload:active,button.ideal-file-upload:active {
 	background: #d5e3ed;
 	filter: 0;
-	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px
-		rgba(0, 0, 0, 0.08);
-	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px
-		rgba(0, 0, 0, 0.08);
-	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px
-		rgba(0, 0, 0, 0.08)
+	-moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.08);
+	-webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.08);
+	box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2), inset 0 4px 2px rgba(0, 0, 0, 0.08)
 }
 
 .ideal-form.stack .ideal-file-wrap {
@@ -1128,28 +1014,25 @@ label.ideal-file-upload:active, button.ideal-file-upload:active {
 	margin-bottom: .75em
 }
 
-.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+.ui-datepicker .ui-datepicker-prev,.ui-datepicker .ui-datepicker-next {
 	position: absolute;
 	top: 50%;
 	margin-top: -8px;
 	cursor: pointer;
 	width: 16px;
 	height: 16px;
-	background: url("../images/register/datepicker.png") left no-repeat
+	background: url("../../images/register/datepicker.png") left no-repeat
 }
 
-.ui-datepicker .ui-datepicker-prev span, .ui-datepicker .ui-datepicker-next span
-	{
+.ui-datepicker .ui-datepicker-prev span,.ui-datepicker .ui-datepicker-next span {
 	display: none
 }
 
-.ui-datepicker .ui-datepicker-prev:hover, .ui-datepicker .ui-datepicker-next:hover
-	{
+.ui-datepicker .ui-datepicker-prev:hover,.ui-datepicker .ui-datepicker-next:hover {
 	border: 0
 }
 
-.ui-datepicker .ui-datepicker-prev:active, .ui-datepicker .ui-datepicker-next:active
-	{
+.ui-datepicker .ui-datepicker-prev:active,.ui-datepicker .ui-datepicker-next:active {
 	margin-top: -7px
 }
 
@@ -1200,8 +1083,7 @@ label.ideal-file-upload:active, button.ideal-file-upload:active {
 	font-weight: normal
 }
 
-.ui-datepicker .ui-datepicker-calendar .ui-state-hover, .ui-datepicker .ui-datepicker-calendar .ui-state-active
-	{
+.ui-datepicker .ui-datepicker-calendar .ui-state-hover,.ui-datepicker .ui-datepicker-calendar .ui-state-active {
 	color: #1a8fc9;
 	font-weight: bold
 }
@@ -1231,8 +1113,7 @@ input.hasDatepicker.open {
 	border-right: 1px solid #aaa
 }
 
-.ie8 .ideal-form .ideal-tabs-tab:after, .ie8 .ideal-form .ideal-tabs-tab:before
-	{
+.ie8 .ideal-form .ideal-tabs-tab:after,.ie8 .ideal-form .ideal-tabs-tab:before {
 	border: 0
 }
 
