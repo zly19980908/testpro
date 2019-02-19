@@ -52,6 +52,7 @@
 			</ul>
 		</div>
 	</header>
+	-
 	<!-- end page -->
 
 
@@ -151,19 +152,56 @@
 			<div class="content">
 				<!-- 创建一门新的课程开始 -->
 				<div class="am-g">
-					<h3 class="page-title">创建一门新的课程</h3>
-
 					<!-- Row start -->
+					<div class="am-u-sm-12">
+						<div class="card-box">
 
-					<div class="am-u-md-12">a</div>
-					<div class="am-u-md-12">a</div>
+							<form action="" class="am-form" data-am-validator onsubmit="autoCompleteDesc()">
+								<fieldset>
+									<legend>创建一门新课程</legend>
+									<div class="am-form-group">
+										<label for="doc-vld-name-2">课程名称：</label>
+										<input type="text" id="doc-vld-name-2" value="中基" minlength="1" maxlength="20" placeholder="输入课程名字（20个字以内）" autocomplete="off" required />
+									</div>
 
+									<div class="am-form-group">
+										<label for="doc-vld-name-2">教师姓名：</label>
+										<input type="text" placeholder="输入用户名（至少 3 个字符）" required value="张三" readonly="readonly" />
+									</div>
 
-					<!--  此处结束循环该教师所有的课程 -->
+									<div class="am-form-group">
+										<label for="doc-select-1">所属专业</label>
+										<select id="doc-select-1" required>
+										<option value="">-=请选择一项=-</option>
+										</select>
+										<span class="am-form-caret"></span>
+									</div>
+
+									<div class="am-form-group">
+										<label for="doc-vld-age-2">价格：</label>
+										<input type="number" value="0" id="doc-vld-age-2" placeholder="输入价格" min="0" max="10000" required />
+									</div>
+
+									<div class="am-form-group">
+										<label for="doc-vld-ta-2">课程封面：</label>
+										<br />
+										<button class="am-btn am-btn-secondary" style="border-radius:5px;" onclick="document.getElementById('course_img_file').click()">选择图片</button>
+										<input id="course_img_file" type="file" style="display:none;" accept=".jpg,.png" />
+										<input type="text" id="show_course_img" placeholder="未选择任何图片" required readonly="readonly" />
+									</div>
+
+									<div class="am-form-group">
+										<label for="doc-vld-ta-2">课程描述：</label>
+										<textarea id="doc-vld-ta-2" maxlength="100"></textarea>
+									</div>
+									<button class="am-btn am-btn-secondary" type="submit" style="border-radius:5px;">保存</button>
+								</fieldset>
+							</form>
+						</div>
+					</div>
 					<!-- Row end -->
-
+					<!-- 创建一门新的课程结束 -->
 				</div>
-				<!-- 创建一门新的课程结束 -->
 			</div>
 		</div>
 	</div>
@@ -172,4 +210,49 @@
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		/* 当老师没有填写描述时自动填写描述 */
+		autoCompleteDesc = function() {
+			var textarea_ = $('#doc-vld-ta-2');
+			if (textarea_.val() == "") {
+				textarea_.val("老师没有添加描述哦~");
+			}
+		};
+		/* 选择文件后显示文件名 */
+		$('#course_img_file').change(function() {
+			$('#show_course_img').val($('#course_img_file').val());
+		});
+
+		/* 动态生成专业信息 */
+		$.ajax({
+			url : '../../php/getMajorInfo.php',
+			type : 'GET',
+			dataType : 'json',
+			timeout : 1000,
+			cache : false,
+			beforeSend : LoadFunction, //加载执行方法  
+			error : erryFunction, //错误执行方法  
+			success : succFunction
+		//成功执行方法  
+		});
+		function LoadFunction() {
+			$("#list").html('加载中...');
+		}
+		function erryFunction() {
+			alert("error");
+		}
+		function succFunction(tt) {
+			var datalist = $('#doc-select-1');
+			var majorInfo = eval(tt); //数组       
+			$.each(majorInfo, function(index, item) {
+				//循环获取数据  
+				var mNo_ = majorInfo[index].mNo;
+				var mName_ = majorInfo[index].mName;
+				datalist.append("<option value="+mNo_+">" + mName_ + "</option>");
+			});
+		}
+	});
+</script>
 </html>

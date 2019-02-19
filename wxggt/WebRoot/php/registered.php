@@ -2,9 +2,7 @@
 include ('DBUtil.php');
 $q = $_GET['tno'];
 $sql = "SELECT COUNT(*) FROM teacherinfo WHERE tno='$q'";
-if ($result = mysqli_query($link, $sql)) {
-	/* 将结果存在My_array中 */
-	$My_array = array ();
+if ($result = mysqli_query($conn, $sql)) {
 	/* 返回查询的结果 */
 	while ($row = mysqli_fetch_assoc($result)) {
 		/* 防止中文乱码 */
@@ -17,5 +15,5 @@ if ($result = mysqli_query($link, $sql)) {
 /*传值*/
 echo json_encode($data);
 /* 关闭连接 */
-mysqli_close($link);
+mysqli_close($conn);
 ?>

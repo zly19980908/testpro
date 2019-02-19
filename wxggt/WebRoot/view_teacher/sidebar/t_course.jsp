@@ -163,7 +163,7 @@
 								</div>
 							</div>
 							<div class="div-title">
-								<a href="t_createCourse.jsp">创建新的课程</a>
+								<a href="t_createCourse.jsp" id="createCourse">创建新的课程</a>
 								<!-- <h4 class="header-title m-t-0">创建课程</h4> -->
 							</div>
 						</div>

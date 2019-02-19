@@ -1,9 +1,9 @@
-a {
+#createCourse {
 	text-decoration: none;
 	color: gray;
 }
 
-a:hover {
+#createCourse:hover {
 	color: green;
 }
 
@@ -63,3 +63,4 @@ a:hover {
 	width: 60px;
 	height: 60px;
 }
+/* 课程封面上传 */
