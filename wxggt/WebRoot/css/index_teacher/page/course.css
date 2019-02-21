@@ -21,10 +21,6 @@
 	font-size: 1px;
 }
 
-.x {
-	
-}
-
 .info-num_ {
 	display: none;
 	list-style-type: none;
@@ -45,22 +41,179 @@
 /* 课程介绍图片的大小 */
 .img-content {
 	width: 215px;
-	height: 120px;
+	height: 130px;
 }
 
-.div-title {
+.div-plus {
 	text-align: center;
+	height: 110px;
 	width: 100%;
-	height: 40px;
-	/* background: yellow; */
+}
+
+.createCourse-position {
+	position: absolute;
+	top: 160px;
+	left: 77px;
+}
+
+.div-content {
+	width: 100%;
+	height: 110px;
 }
 
 .on-center {
 	/* background: red; */
 	position: absolute;
-	top: 40px;
+	top: 65px;
 	left: 95px;
 	width: 60px;
 	height: 60px;
 }
-/* 课程封面上传 */
+
+.title-name {
+	color: #fff;
+	font-family: ’宋体’;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+.edit-course-button {
+	color: #ffffff;
+	background-color: #3bb4f2;
+	border-color: #3bb4f2;
+	position: relative;
+	display: block;
+	top: -27px;
+	left: 123px;
+	margin-bottom: 0;
+	padding: 0.5em 1em;
+	vertical-align: middle;
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	background-image: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+/* 从这里开始是编辑课时的css代码 */
+.row-unit {
+	height: 55px;
+	padding: 0;
+	margin-bottom: 0rem;
+}
+
+.row-part {
+	height: 47px;
+	padding: 0;
+	margin-bottom: 0rem;
+}
+
+.row-line {
+	height: 20px;
+	padding: 0;
+	margin-bottom: 0rem;
+}
+
+.title-unit {
+	position: relative;
+	padding: 0;
+	display: inline;
+	left: -2px;
+	top: 29px;
+	font-size: 1.1em;
+}
+
+.circle-unit {
+	position: relative;
+	padding: 0;
+	width: 28px;
+	height: 28px;
+	border-radius: 14px;
+	border: solid gray 2px;
+	left: 41px;
+}
+
+.num-unit {
+	position: relative;
+	display: inline;
+	left: 7px;
+	top: 0px;
+}
+
+.title-part {
+	position: relative;
+	padding: 0;
+	display: inline;
+	left: 4px;
+	top: 24px;
+	font-size: 0.9em;
+}
+
+.circle-part {
+	position: relative;
+	padding: 0;
+	width: 22px;
+	height: 22px;
+	border-radius: 11px;
+	border: solid gray 2px;
+	left: 45px;
+}
+
+.new-part-content {
+	position: relative;
+	padding: 0;
+	left:500px;
+	top: -25px;
+	width: 120px;
+	height: 22px;
+}
+.new-part-text {
+	position: relative;
+	padding: 0;
+	left:40px;
+	top: -27px;
+	width: 120px;
+	height: 22px;
+}
+
+.new-unit-content {
+	position: relative;
+	padding: 0;
+	left:496px;
+	top: -25px;
+	width: 120px;
+	height: 22px;
+}
+.new-unit-text {
+	position: relative;
+	padding: 0;
+	left:44px;
+	top: -27px;
+	width: 120px;
+	height: 22px;
+}
+
+.name-unit {
+	position: relative;
+	padding: 0;
+	left:100px;
+	top: -30px;
+	width: 90%;
+	height: 30px;
+	font-size:22px;
+	color:#000000b8;
+}
+
+.name-part {
+	position: relative;
+	padding: 0;
+	left:100px;
+	top: -27px;
+	width: 90%;
+	height: 22px;
+}
+/* 编辑课时的css代码到这里结束 */

@@ -150,36 +150,35 @@
 		<div class="content-page">
 			<!-- Start content -->
 			<div class="content">
-				<!-- 创建一门新的课程开始 -->
+				<!-- 修改课程信息开始 -->
 				<div class="am-g">
 					<!-- Row start -->
 					<div class="am-u-sm-12">
 						<div class="card-box">
-
 							<form action="" class="am-form" data-am-validator onsubmit="autoCompleteDesc()">
 								<fieldset>
-									<legend>创建一门新课程</legend>
+									<legend>修改课程信息</legend>
 									<div class="am-form-group">
 										<label for="doc-vld-name-2">课程名称：</label>
-										<input type="text" id="doc-vld-name-2" value="" minlength="1" maxlength="20" placeholder="输入课程名字（20个字以内）" autocomplete="off" required />
+										<input type="text" id="doc-vld-name-2" value="中基" minlength="1" maxlength="20" placeholder="输入课程名字（20个字以内）" autocomplete="off" required />
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-vld-name-2">教师姓名：</label>
-										<input type="text" placeholder="输入用户名（至少 3 个字符）" required value="" readonly="readonly" />
+										<input type="text" placeholder="输入用户名（至少 3 个字符）" required value="张三" readonly="readonly" />
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-select-1">所属专业</label>
 										<select id="doc-select-1" required>
-										<option value="">-=请选择一项=-</option>
+											<option value="">-=请选择一项=-</option>
 										</select>
 										<span class="am-form-caret"></span>
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-vld-age-2">价格：</label>
-										<input type="number" value="" id="doc-vld-age-2" placeholder="输入价格" min="0" max="10000" required />
+										<input type="number" value="0" id="doc-vld-age-2" placeholder="输入价格" min="0" max="10000" required />
 									</div>
 
 									<div class="am-form-group">
@@ -200,7 +199,7 @@
 						</div>
 					</div>
 					<!-- Row end -->
-					<!-- 创建一门新的课程结束 -->
+					<!--修改课程信息结束 -->
 				</div>
 			</div>
 		</div>

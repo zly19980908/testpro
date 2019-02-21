@@ -162,23 +162,70 @@
 									<img src="../../images/index_teacher/plus.png" class="img-plus" ondragstart="return false;">
 								</div>
 							</div>
-							<div class="div-title">
-								<a href="t_createCourse.jsp" id="createCourse">创建新的课程</a>
-								<!-- <h4 class="header-title m-t-0">创建课程</h4> -->
+							<div class="div-plus">
+								<div class="createCourse-position">
+									<a href="t_createCourse.jsp" id="createCourse">创建新的课程</a>
+								</div>
 							</div>
 						</div>
 					</div>
+					<!-- 这是第一个创建面板到这里结束 -->
 
 					<!--  此处开始循环该教师所有的课程 -->
+					<div class="am-u-md-3">
+						<div class="course-card-box">
+							<div class="div-content">
+								<!-- ondragstart="return false;"--禁止拖动图片 -->
+								<img src="../../images/index_teacher/course/x.jpg" class="img-content x" ondragstart="return false;">
+								<!-- 这里存放课程号 -->
+								<input type="hidden" value="1" />
+							</div>
+							<div class="div-content">
+								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-book">&nbsp;孩子叛逆早知道</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-user">&nbsp;111人学习</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-shopping-cart">&nbsp;0元</span>
+									<button class="edit-course-button" onclick="window.location.href='t_editCourse.jsp'">编辑课时</button>
+									<!-- 这里存放课程号 -->
+									<input type="hidden" value="1" />
+								</div>
+							</div>
+						</div>
+					</div>
 
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
 								<!-- ondragstart="return false;"--禁止拖动图片 -->
-								<img src="../../images/index_teacher/course/x.jpg" class="img-content" ondragstart="return false;">
+								<img src="../../images/index_teacher/course/web.jpg" class="img-content x" ondragstart="return false;">
+								<!-- 这里存放课程号 -->
+								<input type="hidden" value="2" />
 							</div>
-							<div class="div-title">
-								<h4 class="header-title m-t-0">孩子叛逆早知道</h4>
+							<div class="div-content">
+								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-book">&nbsp;web前端</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-user">&nbsp;52人学习</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-shopping-cart">&nbsp;18元</span>
+									<button class="edit-course-button" onclick="window.location.href='t_editCourse.jsp'">编辑课时</button>
+									<!-- 这里存放课程号 -->
+									<input type="hidden" value="2" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -186,10 +233,28 @@
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/web.jpg" class="img-content" ondragstart="return false;">
+								<!-- ondragstart="return false;"--禁止拖动图片 -->
+								<img src="../../images/index_teacher/course/h.jpg" class="img-content x" ondragstart="return false;">
+								<!-- 这里存放课程号 -->
+								<input type="hidden" value="3" />
 							</div>
-							<div class="div-title">
-								<h4 class="header-title m-t-0">web前端</h4>
+							<div class="div-content">
+								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-book">&nbsp;家庭财务学</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-user">&nbsp;332人学习</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-shopping-cart">&nbsp;0元</span>
+									<button class="edit-course-button" onclick="window.location.href='t_editCourse.jsp'">编辑课时</button>
+									<!-- 这里存放课程号 -->
+									<input type="hidden" value="3" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -197,25 +262,31 @@
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/h.jpg" class="img-content" ondragstart="return false;">
+								<!-- ondragstart="return false;"--禁止拖动图片 -->
+								<img src="../../images/index_teacher/course/o.jpg" class="img-content x" ondragstart="return false;">
+								<!-- 这里存放课程号 -->
+								<input type="hidden" value="4" />
 							</div>
-							<div class="div-title">
-								<h4 class="header-title m-t-0">家庭财务学</h4>
-							</div>
-						</div>
-					</div>
-
-					<div class="am-u-md-3">
-						<div class="course-card-box">
 							<div class="div-content">
-								<img src="../../images/index_teacher/course/o.jpg" class="img-content" ondragstart="return false;">
-							</div>
-							<div class="div-title">
-								<h4 class="header-title m-t-0">OCP修炼之道</h4>
+								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-book">&nbsp;OCP修炼之道</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-user">&nbsp;215人学习</span>
+								</div>
+								<div>
+									&nbsp;&nbsp;
+									<span class="am-icon-shopping-cart">&nbsp;88元</span>
+									<button class="edit-course-button">编辑课时</button>
+									<!-- 这里存放课程号 -->
+									<input type="hidden" value="4" />
+								</div>
 							</div>
 						</div>
 					</div>
-
 					<!--  此处结束循环该教师所有的课程 -->
 					<!-- Row end -->
 
@@ -232,8 +303,21 @@
 <script type="text/javascript" src="../../js/jquery-1.8.2.min.js"></script>
 <script type="text/javascript">
 	$(function() {
+		/* 点击加号跳转到创建课程信息页面 */
 		$('.img-plus').click(function() {
 			$(location).attr('href', 't_createCourse.jsp');
+		});
+		/* 点击图片跳转到修改课程信息页面 */
+		$('.x').click(function() {
+			var cNo = $(this).next().val();
+			alert("课程号："+cNo);
+			$(location).attr('href', 't_changeCourseInfo.jsp?cNo=' + cNo);
+		});
+		/* 点击按钮跳转到编辑课程课时页面 */
+		$('.edit-course-button').click(function() {
+			var cNo = $(this).next().val();
+			alert("课程号："+cNo);
+			$(location).attr('href', 't_editCourse.jsp?cNo=' + cNo);
 		});
 	});
 </script>

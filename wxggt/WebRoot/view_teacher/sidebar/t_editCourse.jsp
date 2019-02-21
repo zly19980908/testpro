@@ -52,7 +52,6 @@
 			</ul>
 		</div>
 	</header>
-	-
 	<!-- end page -->
 
 
@@ -155,48 +154,116 @@
 					<!-- Row start -->
 					<div class="am-u-sm-12">
 						<div class="card-box">
+							<h3 class="header-title">编辑课程</h3>
 
-							<form action="" class="am-form" data-am-validator onsubmit="autoCompleteDesc()">
-								<fieldset>
-									<legend>创建一门新课程</legend>
-									<div class="am-form-group">
-										<label for="doc-vld-name-2">课程名称：</label>
-										<input type="text" id="doc-vld-name-2" value="" minlength="1" maxlength="20" placeholder="输入课程名字（20个字以内）" autocomplete="off" required />
-									</div>
+							<!-- 单元 -->
+							<div class="row-unit">
+								<div class="title-unit">单元</div>
+								<div class="circle-unit">
+									<span class="num-unit">1</span>
+								</div>
+								<div class="name-unit">绪论</div>
+							</div>
 
-									<div class="am-form-group">
-										<label for="doc-vld-name-2">教师姓名：</label>
-										<input type="text" placeholder="输入用户名（至少 3 个字符）" required value="" readonly="readonly" />
-									</div>
+							<!-- 连接线 -->
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
 
-									<div class="am-form-group">
-										<label for="doc-select-1">所属专业</label>
-										<select id="doc-select-1" required>
-										<option value="">-=请选择一项=-</option>
-										</select>
-										<span class="am-form-caret"></span>
-									</div>
+							<!-- 课时1 -->
+							<div class="row-part">
+								<div class="title-part">
+									课时<i>1</i>
+								</div>
+								<div class="circle-part"></div>
+								<div class="name-part">爬虫</div>
+							</div>
 
-									<div class="am-form-group">
-										<label for="doc-vld-age-2">价格：</label>
-										<input type="number" value="" id="doc-vld-age-2" placeholder="输入价格" min="0" max="10000" required />
-									</div>
+							<!-- 连接线 -->
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
 
-									<div class="am-form-group">
-										<label for="doc-vld-ta-2">课程封面：</label>
-										<br />
-										<button class="am-btn am-btn-secondary" style="border-radius:5px;" onclick="document.getElementById('course_img_file').click()">选择图片</button>
-										<input id="course_img_file" type="file" style="display:none;" accept=".jpg,.png" />
-										<input type="text" id="show_course_img" placeholder="未选择任何图片" required readonly="readonly" />
-									</div>
+							<!-- 课时2 -->
+							<div class="row-part">
+								<div class="title-part">
+									课时<i>2</i>
+								</div>
+								<div class="circle-part"></div>
+								<div class="name-part">爬虫可以做什么</div>
+							</div>
 
-									<div class="am-form-group">
-										<label for="doc-vld-ta-2">课程描述：</label>
-										<textarea id="doc-vld-ta-2" maxlength="100" rows="5"></textarea>
-									</div>
-									<button class="am-btn am-btn-secondary" type="submit" style="border-radius:5px;">保存</button>
-								</fieldset>
-							</form>
+							<!-- 课时2 -->
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
+
+							<!-- 添加新课时 -->
+							<div class="row-part">
+								<div class="title-part">&nbsp;</div>
+								<div class="circle-part"></div>
+								<div class="new-part-content">
+									<span class="am-icon-plus"></span>
+									<div class="new-part-text">添加新课时</div>
+								</div>
+							</div>
+
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
+
+							<div class="row-unit">
+								<div class="title-unit">单元</div>
+								<div class="circle-unit">
+									<span class="num-unit">2</span>
+								</div>
+								<div class="name-unit">Python基础</div>
+							</div>
+
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
+
+							<div class="row-part">
+								<div class="title-part">
+									课时<i>3</i>
+								</div>
+								<div class="circle-part"></div>
+								<div class="name-part">Python的安装与运行</div>
+							</div>
+
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
+
+							<!-- 添加新课时 -->
+							<div class="row-part">
+								<div class="title-part">&nbsp;</div>
+								<div class="circle-part"></div>
+								<div class="new-part-content">
+									<span class="am-icon-plus"></span>
+									<div class="new-part-text">添加新课时</div>
+								</div>
+							</div>
+
+							<div class="row-line">
+								<canvas class="c"></canvas>
+							</div>
+
+
+							<!-- 添加新单元 -->
+							<div class="row-unit">
+								<div class="title-unit">&nbsp;</div>
+								<div class="circle-unit">
+									<span class="num-unit"></span>
+								</div>
+								<div class="new-unit-content">
+									<span class="am-icon-plus am-icon-sm"></span>
+									<div class="new-unit-text">添加新单元</div>
+								</div>
+							</div>
+
+
 						</div>
 					</div>
 					<!-- Row end -->
@@ -211,48 +278,46 @@
 <script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../js/jcanvas.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		/* 当老师没有填写描述时自动填写描述 */
-		autoCompleteDesc = function() {
-			var textarea_ = $('#doc-vld-ta-2');
-			if (textarea_.val() == "") {
-				textarea_.val("老师没有添加描述哦~");
-			}
-		};
-		/* 选择文件后显示文件名 */
-		$('#course_img_file').change(function() {
-			$('#show_course_img').val($('#course_img_file').val());
+		$(".a").on("click", function() {
+			alert("111");
 		});
 
-		/* 动态生成专业信息 */
-		$.ajax({
-			url : '../../php/getMajorInfo.php',
-			type : 'GET',
-			dataType : 'json',
-			timeout : 1000,
-			cache : false,
-			beforeSend : LoadFunction, //加载执行方法  
-			error : erryFunction, //错误执行方法  
-			success : succFunction
-		//成功执行方法  
+		$(".x").on("click", function() {
+			alert("111");
 		});
-		function LoadFunction() {
-			$("#list").html('加载中...');
-		}
-		function erryFunction() {
-			alert("error");
-		}
-		function succFunction(tt) {
-			var datalist = $('#doc-select-1');
-			var majorInfo = eval(tt); //数组       
-			$.each(majorInfo, function(index, item) {
-				//循环获取数据  
-				var mNo_ = majorInfo[index].mNo;
-				var mName_ = majorInfo[index].mName;
-				datalist.append("<option value="+mNo_+">" + mName_ + "</option>");
-			});
-		}
+
+		$("#append_line_1").click(function() {
+			alert("111");
+			$(this).after("<div class='row-group'>" + "<canvas id='myCanvas1'></canvas>" + "</div>");
+			drawLine("myCanvas1");
+		});
+		/* 画所有连接线 */
+		drawVerticalLine();
+
+		/* 鼠标覆盖效果 */
+		$(".name-unit,.name-part").mouseover(function() {
+			$(this).append("<a class='a' href='http://www.baidu.com'>删除</a>");
+			$(this).css({"background": "#c5eef3b1"});
+		});
+		$(".name-unit,.name-part").mouseout(function() {
+			$(this).css({"background": ""});
+		});
 	});
+
+	/* 画连接线 */
+	function drawVerticalLine() {
+		var $myCanvas = $(".c");
+		$myCanvas.drawLine({
+			strokeStyle : "#808080",
+			strokeWidth : 2,
+			x1 : 55,
+			y1 : 0,
+			x2 : 55,
+			y2 : 47.5,
+		});
+	};
 </script>
 </html>
