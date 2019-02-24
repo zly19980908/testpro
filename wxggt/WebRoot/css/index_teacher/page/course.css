@@ -245,6 +245,7 @@
 	height: 36px;
 	font-size: 22px;
 	color: #000000b8;
+	outline:0;
 }
 
 .change-unit-input {

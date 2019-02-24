@@ -321,10 +321,11 @@
 		$(document).on("click", "a:contains('编辑')[href='javascript:void(0);']", function() {
 			var unit_num = parseInt($(this).parent().parent().prev().text());
 			var unit_title = $(this).parent().parent().prop("firstChild").nodeValue;
-			$(this).parent().parent().replaceWith("<div class='change-unit-content'><input type='text' class='change-unit-input' maxlength='25' /><div class='change-unit-button-group'><input type='button' class='change-unit-button' value='保存' />&nbsp;&nbsp;<input type='button' class='change-unit-button' value='取消' id='exit_' /></div></div>");
+			$(this).parent().parent().replaceWith("<div class='change-unit-content' tabindex='1'><input type='text' class='change-unit-input' maxlength='25' /><div class='change-unit-button-group'><input type='button' class='change-unit-button' value='保存' />&nbsp;&nbsp;<input type='button' class='change-unit-button' value='取消' id='exit_' /></div></div>");
 			$(".change-unit-input").focus().val(unit_title);
 			$(".change-unit-input").blur(function() {
-				$(this).parent().replaceWith("<div class='content-unit'>" + unit_title + "</div>");
+				console.log("触发了失去焦点事件");
+				$(".change-unit-input").parent().replaceWith("<div class='content-unit'>" + unit_title + "</div>");
 			});
 			//alert("单元" + unit_num + "的原标题是:" + unit_title);
 		});
