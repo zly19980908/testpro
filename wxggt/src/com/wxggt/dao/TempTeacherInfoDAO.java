@@ -1,14 +1,76 @@
 package com.wxggt.dao;
 
-/*´¦ÀíÀÏÊ¦×¢²áÊ±ÐÅÏ¢µÄDAO*/
-/*Ö÷Òª¹¦ÄÜ£º
-1.×¢²áÒ»¸öÁÙÊ±ÀÏÊ¦
-2.ÉóºËÍ¨¹ý£¬ÏÈ°ÑÐÅÏ¢Ìí¼Óµ½ÀÏÊ¦±í£¬È»ºóÈ·ÈÏ³É¹¦ºóÔÚÁÙÊ±±íÖÐÉ¾³ýÕâÌõ¼ÇÂ¼£¬·¢ËÍÒ»Ìõ³É¹¦ÐÅÏ¢£¿
-3.ÉóºË²»Í¨¹ý£¬·¢ËÍÒ»ÌõÊ§°ÜÐÅÏ¢£¿*/
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.wxggt.dto.TempTeacherInfo;
+import com.wxggt.util.DBUtil;
+
+/* å¤„ç†è€å¸ˆæ³¨å†Œæ—¶ä¿¡æ¯çš„DAO */
+/*
+ * ä¸»è¦åŠŸèƒ½ï¼š
+ * 1.æ³¨å†Œä¸€ä¸ªä¸´æ—¶è€å¸ˆ
+ * 2.å®¡æ ¸é€šè¿‡ï¼Œå…ˆæŠŠä¿¡æ¯æ·»åŠ åˆ°è€å¸ˆè¡¨ï¼Œç„¶åŽç¡®è®¤æˆåŠŸåŽåœ¨ä¸´æ—¶è¡¨ä¸­åˆ é™¤è¿™æ¡è®°å½•ï¼Œå‘é€ä¸€æ¡æˆåŠŸä¿¡æ¯ï¼Ÿ
+ * 3.å®¡æ ¸ä¸é€šè¿‡ï¼Œå‘é€ä¸€æ¡å¤±è´¥ä¿¡æ¯ï¼Ÿ
+ */
 public class TempTeacherInfoDAO {
 
-	public static void main(String[] args) {
+    // æ³¨å†Œä¸€ä¸ªä¸´æ—¶è€å¸ˆ
+    public boolean tmpTeacher(TempTeacherInfo tmp) throws SQLException {
+        boolean flag = false;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        // ResultSet rs = null;
+        try {
+            conn = DBUtil.getConnection();
+            ps = conn
+                    .prepareStatement("insert into tempteacherinfo(tno,tname,tsex,teacherlicense,tdesc) values(?,?,?,?,?)");
+            ps.setString(1, tmp.gettNo());
+            ps.setString(2, tmp.gettName());
+            ps.setString(3, tmp.gettSex());
+            ps.setString(4, tmp.getTeacherLicense());
+            ps.setString(5, tmp.gettDesc());
+            int result = ps.executeUpdate();
+            System.out.println(result);
+            if (result > 0) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ps.close();
+            conn.close();
+        }
+        return flag;
+    }
 
-	}
+    // å®¡æ ¸é€šè¿‡ï¼Œåˆ é™¤ä¸´æ—¶è¡¨ä¿¡æ¯
+    public boolean delTmp(String id) throws SQLException {
+        boolean flag = false;
+        Connection conn = null;
+        PreparedStatement ps = null;
+        // ResultSet rs = null;
+        try {
+            conn = DBUtil.getConnection();
+            ps = conn.prepareStatement("delete from tempteacherinfo where tno=?");
+            ps.setString(1, id);
+            int result = ps.executeUpdate();
+            System.out.println(result);
+            if (result > 0) {
+                flag = true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            ps.close();
+            conn.close();
+        }
+        return flag;
+    }
+
+    public static void main(String[] args) {
+
+    }
 
 }

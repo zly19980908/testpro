@@ -216,7 +216,7 @@
 	left: 100px;
 	top: -24px;
 	width: 90%;
-	height: 22px;
+	height: 25px;
 }
 /* 单元的编辑\删除 */
 .action-unit {
@@ -231,7 +231,7 @@
 .action-part {
 	padding: 0;
 	position: absolute;
-	top: 0px;
+	top: 1px;
 	left: 700px;
 	font-size: 15px;
 }

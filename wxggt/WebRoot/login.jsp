@@ -17,14 +17,14 @@
 		<div class="tab_box">
 			<!-- 教师登录开始 -->
 			<div>
-				<form action="" method="post" class="stu_login_error" onsubmit="return verify_1(this);">
+				<form action="teacherlogin.action" method="post" class="stu_login_error" onsubmit="return verify_1(this);">
 					<div id="username">
 						<label>账&nbsp;&nbsp;&nbsp;号：</label>
-						<input type="text" id="t_id" name="" value="输入教师账号" class="input_init" />
+						<input type="text" id="t_id" name="account" value="输入教师账号" class="input_init" />
 					</div>
 					<div id="password">
 						<label>密&nbsp;&nbsp;&nbsp;码：</label>
-						<input type="password" id="t_pwd" class="input_init" name="" />
+						<input type="password" id="t_pwd" class="input_init" name="password" />
 					</div>
 					<div id="code">
 						<label>验证码：</label>

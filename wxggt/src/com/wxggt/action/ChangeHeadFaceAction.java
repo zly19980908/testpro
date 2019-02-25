@@ -12,7 +12,7 @@ public class ChangeHeadFaceAction extends ActionSupport {
         try {
             String uId = "201601090127";
             String fileUrl = UploadTool.upload(uId, base64);
-            System.out.println("上传文件路径是：upload/headFace/" + uId + "/" + fileUrl);
+            System.out.println("上传文件路径是：../../upload/headFace/" + uId + "/" + fileUrl);
         } catch (Exception e) {
             System.out.println(e);
         }

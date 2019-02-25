@@ -155,14 +155,15 @@
 					<div class="am-u-sm-12">
 						<div class="card-box">
 							<h3 class="header-title">编辑课程</h3>
-
+							<!-- 这里填入课程号 -->
+							<input id="cNo" type="hidden" value="126263347" />
 							<!-- 单元 -->
 							<div class="row-unit">
 								<div class="title-unit">单元</div>
 								<div class="circle-unit">
 									<span class="num-unit">1</span>
 								</div>
-								<div class="content-unit">绪论</div>
+								<div class="content-unit">随堂测试</div>
 							</div>
 
 							<!-- 连接线 -->
@@ -217,7 +218,7 @@
 								<div class="circle-unit">
 									<span class="num-unit">2</span>
 								</div>
-								<div class="content-unit">Python基础</div>
+								<div class="content-unit">看视频</div>
 							</div>
 
 							<div class="row-line">
@@ -279,89 +280,6 @@
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/jcanvas.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-
-		/* 画所有连接线 */
-		drawVerticalLine();
-
-		/* 单元鼠标覆盖效果 */
-		$(document).on("mouseenter", ".content-unit", function() {
-			$(this).append("<div class='action-unit'><a class='bj' href='javascript:void(0);'>编辑</a>&nbsp;<a href='javascript:void(0);'>删除</a></div>");
-			$(this).css({
-				"background" : "#c5eef3b1"
-			});
-		});
-
-		/* 课时鼠标覆盖效果 */
-		$(document).on("mouseenter", ".content-part", function() {
-			$(this).append("<div class='action-part'><a href='#'>编辑</a>&nbsp;<a href='#'>删除</a></div>");
-			$(this).css({
-				"background" : "#c5eef3b1"
-			});
-		});
-
-		/* 单元鼠标离开事件 */
-		$(document).on("mouseleave", ".content-unit", function() {
-			$(this).children(".action-unit").remove();
-			$(this).css({
-				"background" : ""
-			});
-		});
-
-		/* 课时鼠标离开事件 */
-		$(document).on("mouseleave", ".content-part", function() {
-			$(this).children(".action-part").remove();
-			$(this).css({
-				"background" : ""
-			});
-		});
-
-		/* 单元点击编辑-动态元素的绑定 */
-		$(document).on("click", "a:contains('编辑')[href='javascript:void(0);']", function() {
-			var unit_num = parseInt($(this).parent().parent().prev().text());
-			var unit_title = $(this).parent().parent().prop("firstChild").nodeValue;
-			$(this).parent().parent().replaceWith("<div class='change-unit-content' tabindex='1'><input type='text' class='change-unit-input' maxlength='25' /><div class='change-unit-button-group'><input type='button' class='change-unit-button' value='保存' />&nbsp;&nbsp;<input type='button' class='change-unit-button' value='取消' id='exit_' /></div></div>");
-			$(".change-unit-input").focus().val(unit_title);
-			$(".change-unit-input").blur(function() {
-				console.log("触发了失去焦点事件");
-				$(".change-unit-input").parent().replaceWith("<div class='content-unit'>" + unit_title + "</div>");
-			});
-			//alert("单元" + unit_num + "的原标题是:" + unit_title);
-		});
-
-		/* 课时点击编辑-动态元素的绑定 */
-		$(document).on("click", "a:contains('编辑')[href='#']", function() {
-			var part_num = $(this).parent().parent().prev().prev().children().text();
-			var part_title = $(this).parent().parent().prop("firstChild").nodeValue;
-			alert("课时" + part_num + "原标题是:" + part_title);
-		});
-
-		/* 单元点击删除-动态元素的绑定 */
-		$(document).on("click", "a:contains('删除')[href='javascript:void(0);']", function() {
-			var unit_num = parseInt($(this).parent().parent().prev().text());
-			alert("删除单元:" + unit_num);
-		});
-
-		/* 课时点击删除-动态元素的绑定 */
-		$(document).on("click", "a:contains('删除')[href='#']", function() {
-			var part_num = parseInt($(this).parent().parent().prev().prev().children().text());
-			alert("课时" + part_num);
-		});
-
-	});
-
-	/* 画连接线 */
-	function drawVerticalLine() {
-		var $myCanvas = $(".c");
-		$myCanvas.drawLine({
-			strokeStyle : "#808080",
-			strokeWidth : 2,
-			x1 : 55,
-			y1 : 0,
-			x2 : 55,
-			y2 : 47.5,
-		});
-	};
-</script>
+<!-- 课时编辑页面的动态效果 -->
+<script type="text/javascript" src="../../js/index_teacher/editCourse.js"></script>
 </html>

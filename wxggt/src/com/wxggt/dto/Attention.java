@@ -3,34 +3,42 @@ package com.wxggt.dto;
 import java.util.Date;
 
 public class Attention {
-	private int attentionId;//¹Ø×¢±àºÅ£¬´úÀíÖ÷¼ü
-	private String Uid;//·ÛË¿±àºÅ
-	private String attendUid;//¹Ø×¢Ä¿±ê±àºÅ
-	private Date createTime;//¹Ø×¢Ê±¼ä
-	public String getUid() {
-		return Uid;
-	}
-	public void setUid(String uid) {
-		Uid = uid;
-	}
-	public String getAttendUid() {
-		return attendUid;
-	}
-	public void setAttendUid(String attendUid) {
-		this.attendUid = attendUid;
-	}
-	public Date getCreateTime() {
-		return createTime;
-	}
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-	public Attention(){
-		
-	}
-	public Attention(String uid, String attendUid) {
-		super();
-		Uid = uid;
-		this.attendUid = attendUid;
-	}
+    private int attentionId;// å…³æ³¨ç¼–å·ï¼Œä»£ç†ä¸»é”®
+    private String Uid;// ç²‰ä¸ç¼–å·
+    private String attendUid;// å…³æ³¨ç›®æ ‡ç¼–å·
+    private Date createTime;// å…³æ³¨æ—¶é—´
+
+    public String getUid() {
+        return Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
+    }
+
+    public String getAttendUid() {
+        return attendUid;
+    }
+
+    public void setAttendUid(String attendUid) {
+        this.attendUid = attendUid;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Attention() {
+
+    }
+
+    public Attention(String uid, String attendUid) {
+        super();
+        Uid = uid;
+        this.attendUid = attendUid;
+    }
 }

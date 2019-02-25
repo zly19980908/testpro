@@ -9,7 +9,22 @@
 		</action>
 		<!-- 修改信息__头像 -->
 		<action name="ChangeHeadFace" class="com.wxggt.action.ChangeHeadFaceAction">
-			<result name="success" type="redirect">/view_teacher/index.html</result>
+			<result name="success">/view_teacher/index.html</result>
+		</action>
+		<!-- 教师登陆 -->
+		<action name="teacherlogin" class="com.wxggt.action.TeacherLoginAction">
+		    <result name="login" type="redirect">/view_teacher/index.html</result>
+		    <result name="error" type="redirect">/error.html</result>
+		</action>
+		
+		<action name="teacherRegist" class="com.wxggt.action.TeacherRegistAction">
+		    <result name="regist" type="redirect">/view_teacher/register.jsp</result>
+		    <result name="error" type="redirect">/error.html</result>
+		</action>
+		<!-- 老师修改信息 -->
+		<action name="modifyInfo" class="com.wxggt.action.ModifyInfoAction">
+		    <result name="modify" type="redirect">/view_teacher/resetInfo.jsp</result>
+		    <result name="error" type="redirect">/error.html</result>
 		</action>
 	</package>
 </struts>    

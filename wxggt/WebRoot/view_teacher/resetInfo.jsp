@@ -16,36 +16,36 @@
 		<div class="eightcol last">
 		
 			<!-- Begin Form -->
-			<form id="my-form" action="" method="post">
+			<form id="my-form" action="modifyInfo.action" method="post" >
 
 				<section id="第一步">
 					<div>
-						<label>教师编号:</label><input id="tno" name="" type="text"
-							readonly="readonly" value="1234567890" />
+						<label>教师编号:</label><input id="tno" name="tno" type="text"
+							readonly="readonly" value='<s:property value="list.tno"/>' />
 					</div>
 					<div>
-						<label>教师姓名:</label><input id="username" name="" type="text"
+						<label>教师姓名:</label><input id="username" name="username" type="text"
 							value="哈哈" data-ideal="username" />
 					</div>
 					<div>
 						<label>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:</label><input
-							id="phone" type="tel" name="" data-ideal="phone" />
+							id="phone" type="tel" name="phone" data-ideal="phone" />
 					</div>
 					<div>
 						<label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label><input
-							id="email" name="" data-ideal="email" type="email" />
+							id="email" name="email" data-ideal="email" type="email" />
 					</div>
 				</section>
 
 				<section id="第二步">
 					<div>
 						<label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:</label> <label><input
-							type="radio" name="radio" checked />男</label> <label><input
-							type="radio" name="radio" />女</label>
+							type="radio" name="sex" checked />男</label> <label><input
+							type="radio" name="sex" />女</label>
 					</div>
 					<div>
 						<label>简介:</label>
-						<textarea id="comments" name=""></textarea>
+						<textarea id="comments" name="intro" value=""></textarea>
 					</div>
 				</section>
 				<div>
@@ -67,7 +67,7 @@
 <script type="text/javascript" src="../js/register/jquery.idealforms.js"></script>
 <script type="text/javascript">
 	$(function() {
-		$comments = $('#comments');
+		$comments = $('#comments')
 		$comments.val("这个人懒死了,什么都没有写（╯' - ')╯︵ ┻━┻");
 		$comments.click(function() {
 			$comments.val('');

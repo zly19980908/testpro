@@ -39,47 +39,47 @@ body {
 	<div class="row">
 		<div class="eightcol last">
 			<!-- Begin Form -->
-			<form id="my-form" action="" method="post">
+			<form id="my-form" action="teacherRegist.action" method="post">
 
 				<section id="基础信息">
 					<div>
-						<label>教师姓名:</label><input id="username" name="" type="text" />
+						<label>教师姓名:</label><input id="username" name="username" type="text" />
 					</div>
 					<div>
 						<label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:</label><input
-							id="password" name="" data-ideal="required pass" type="password" />
+							id="password" name="password" data-ideal="required pass" type="password" />
 					</div>
 					<div>
-						<label>确认密码:</label><input id="repassword" name=""
+						<label>确认密码:</label><input id="repassword" name="repassword"
 							data-ideal="required repass" type="password" />
 					</div>
 					<div>
 						<label>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:</label><input
-							id="email" name="" data-ideal="required email" type="email" />
+							id="email" name="email" data-ideal="required email" type="email" />
 					</div>
 				</section>
 
 				<section id="详细信息">
 					<div>
 						<label>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话:</label><input
-							id="phone" type="tel" name="" data-ideal="required phone" />
+							id="phone" type="tel" name="phone" data-ideal="required phone" />
 					</div>
 
 					<div>
-						<label>教资证书:</label><input id="file" name="file" multiple
+						<label>教资证书:</label><input id="file" name="filename" multiple
 							type="file" />
 					</div>
 					<div>
 						<label>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:</label> <label><input
-							type="radio" name="radio" checked />男</label> <label><input
-							type="radio" name="radio" />女</label>
+							type="radio" name="sex" checked />男</label> <label><input
+							type="radio" name="sex" />女</label>
 					</div>
 				</section>
 
 				<section id="个人简介">
 					<div>
 						<label>简介:</label>
-						<textarea id="comments" name=""></textarea>
+						<textarea id="comments" name="intro"></textarea>
 					</div>
 				</section>
 				<div>

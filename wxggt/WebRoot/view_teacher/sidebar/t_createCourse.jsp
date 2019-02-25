@@ -161,38 +161,38 @@
 									<legend>创建一门新课程</legend>
 									<div class="am-form-group">
 										<label for="doc-vld-name-2">课程名称：</label>
-										<input type="text" id="doc-vld-name-2" value="" minlength="1" maxlength="20" placeholder="输入课程名字（20个字以内）" autocomplete="off" required />
+										<input type="text" name="cname" id="doc-vld-name-2" value="" minlength="1" maxlength="20" placeholder="输入课程名字（20个字以内）" autocomplete="off" required />
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-vld-name-2">教师姓名：</label>
-										<input type="text" placeholder="输入用户名（至少 3 个字符）" required value="" readonly="readonly" />
+										<input type="text" name="tname" placeholder="输入用户名（至少 3 个字符）" required value="" readonly="readonly" />
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-select-1">所属专业</label>
 										<select id="doc-select-1" required>
-										<option value="">-=请选择一项=-</option>
+										<option value="" name="cno">-=请选择一项=-</option>
 										</select>
 										<span class="am-form-caret"></span>
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-vld-age-2">价格：</label>
-										<input type="number" value="" id="doc-vld-age-2" placeholder="输入价格" min="0" max="10000" required />
+										<input type="number" name="price" value="" id="doc-vld-age-2" placeholder="输入价格" min="0" max="10000" required />
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-vld-ta-2">课程封面：</label>
 										<br />
 										<button class="am-btn am-btn-secondary" style="border-radius:5px;" onclick="document.getElementById('course_img_file').click()">选择图片</button>
-										<input id="course_img_file" type="file" style="display:none;" accept=".jpg,.png" />
-										<input type="text" id="show_course_img" placeholder="未选择任何图片" required readonly="readonly" />
+										<input id="course_img_file" name="file" type="file" style="display:none;" accept=".jpg,.png" />
+										<input type="text" id="show_course_img" name="filename" placeholder="未选择任何图片" required readonly="readonly" />
 									</div>
 
 									<div class="am-form-group">
 										<label for="doc-vld-ta-2">课程描述：</label>
-										<textarea id="doc-vld-ta-2" maxlength="100" rows="5"></textarea>
+										<textarea id="doc-vld-ta-2" name="cintro" maxlength="100" rows="5"></textarea>
 									</div>
 									<button class="am-btn am-btn-secondary" type="submit" style="border-radius:5px;">保存</button>
 								</fieldset>
@@ -227,23 +227,22 @@
 
 		/* 动态生成专业信息 */
 		$.ajax({
-			url : '../../php/getMajorInfo.php',
-			type : 'GET',
-			dataType : 'json',
-			timeout : 1000,
+			url : "../../php/getMajorInfo.php",
+			type : "GET",
+			dataType : "json",
 			cache : false,
 			beforeSend : LoadFunction, //加载执行方法  
-			error : erryFunction, //错误执行方法  
-			success : succFunction
+			error : errorFunction, //错误执行方法  
+			success : succseFunction
 		//成功执行方法  
 		});
 		function LoadFunction() {
 			$("#list").html('加载中...');
 		}
-		function erryFunction() {
+		function errorFunction() {
 			alert("error");
 		}
-		function succFunction(tt) {
+		function succseFunction(tt) {
 			var datalist = $('#doc-select-1');
 			var majorInfo = eval(tt); //数组       
 			$.each(majorInfo, function(index, item) {
