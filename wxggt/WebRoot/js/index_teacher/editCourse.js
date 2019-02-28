@@ -2,12 +2,11 @@ $(function() {
 	var cNo = $("#cNo").val();
 	/* 画所有连接线 */
 	drawVerticalLine();
-
 	/* 单元鼠标覆盖效果 */
 	$(document).on("mouseenter", ".content-unit", function() {
 		$(this).append("<div class='action-unit'><a class='bj' href='javascript:void(0);'>编辑</a>&nbsp;<a href='javascript:void(0);'>删除</a></div>");
 		$(this).css({
-			"background" : "#c5eef3b1"
+			"background" : "#e6fbe6"
 		});
 	});
 
@@ -15,7 +14,7 @@ $(function() {
 	$(document).on("mouseenter", ".content-part", function() {
 		$(this).append("<div class='action-part'><a href='#'>编辑</a>&nbsp;<a href='#'>删除</a></div>");
 		$(this).css({
-			"background" : "#c5eef3b1"
+			"background" : "#e6fbe6"
 		});
 	});
 
@@ -92,13 +91,6 @@ $(function() {
 		});
 	});
 
-	/* 课时点击编辑-动态元素的绑定 */
-	$(document).on("click", "a:contains('编辑')[href='#']", function() {
-		var part_num = $(this).parent().parent().prev().prev().children().text();
-		var part_title = $(this).parent().parent().prop("firstChild").nodeValue;
-		alert("课时" + part_num + "原标题是:" + part_title);
-	});
-
 	/* 单元点击删除-动态元素的绑定 */
 	$(document).on("click", "a:contains('删除')[href='javascript:void(0);']", function() {
 		var unit_num = parseInt($(this).parent().parent().prev().text());
@@ -107,18 +99,15 @@ $(function() {
 		}
 	});
 
-	/* 课时点击删除-动态元素的绑定 */
-	$(document).on("click", "a:contains('删除')[href='#']", function() {
-		var part_num = parseInt($(this).parent().parent().prev().prev().children().text());
-		alert("课时" + part_num);
-	});
-
 	function changeUnitTitle(cNo,unit_num, unit_title, new_unit_title) {
-		unit_title_="单元"+unit_num+"--"+unit_title;
-		new_unit_title_="单元"+unit_num+"--"+new_unit_title;
+		var num_group=["","一","二","三","四","五","六","七","八","九","十",
+		               "十一","十一","十二","十三","十四","十五","十六","十七","十八","十九","二十",
+		               "二十一","二十一","二十二","二十三","二十四","二十五","二十六","二十七","二十八","二十九","三十"];
+		unit_title_="单元"+num_group[unit_num]+"--"+unit_title;
+		new_unit_title_="单元"+num_group[unit_num]+"--"+new_unit_title;
 		$.ajax({
 			url : "../../php/changeUnitName.php?cNo=" + cNo + "&unit_title=" + unit_title_ + "&new_unit_title=" + new_unit_title_,
-			type : "GET",
+			type : "post",
 			success : succseFunction
 		});
 		function succseFunction(tt) {
@@ -133,7 +122,7 @@ $(function() {
 		return flag;
 	}
 
-	/* 画连接线 */
+	/* 画普通连接线 */
 	function drawVerticalLine() {
 		var $myCanvas = $(".c");
 		$myCanvas.drawLine({
@@ -145,6 +134,5 @@ $(function() {
 			y2 : 47.5,
 		});
 	}
-	;
 
 });

@@ -117,6 +117,19 @@
 	padding: 0;
 	margin-bottom: 0rem;
 }
+/* 编辑课时时的间距 */
+.row-line_editPart {
+	height: 280px;
+	padding: 0;
+	margin-bottom: 0rem;
+}
+
+/* 编辑单元时的间距 */
+.row-line_editUnit {
+	height: 20px;
+	padding: 0;
+	margin-bottom: 0rem;
+}
 
 .title-unit {
 	position: relative;
@@ -135,6 +148,7 @@
 	border-radius: 14px;
 	border: solid gray 2px;
 	left: 41px;
+	top:-1.5px;
 }
 
 .num-unit {
@@ -194,7 +208,7 @@
 	position: relative;
 	padding: 0;
 	left: 44px;
-	top: -27px;
+	top: -30px;
 	width: 120px;
 	height: 22px;
 }
@@ -245,7 +259,7 @@
 	height: 36px;
 	font-size: 22px;
 	color: #000000b8;
-	outline:0;
+	outline: 0;
 }
 
 .change-unit-input {
@@ -282,4 +296,72 @@
 	font-size: 16px;
 }
 
+.edit_part {
+	position: relative;
+	padding: 0;
+	top: -310px;
+	left: 100px;
+	width: 530px;
+	height: 280px;
+	background: #e6fbe6;
+}
+
+.edit-part-title {
+	position: relative;
+	padding: 0;
+	top: -2px;
+	left: 0px;
+	width: 450px;
+}
+
+.edit-part-desc {
+	position: relative;
+	padding: 0;
+	top: 4px;
+	left: 0px;
+	width: 450px;
+	height: 110px;
+	resize: none;
+}
+
+.upload_box {
+	position: relative;
+	padding: 0;
+	top: 15px;
+	left: 0px;
+	width: 530px;
+	height: 60px;
+}
+
+.button_box {
+	position: relative;
+	padding: 0;
+	top: 15px;
+	left: 75px;
+	width: 200px;
+	height: 40px;
+}
+
+.edit-part-button {
+	color: #ffffff;
+	background-color: #3bb4f2;
+	border-color: #3bb4f2;
+	margin-bottom: 0;
+	padding: 0.2em 0.5em;
+	vertical-align: middle;
+	font-size: 1.2rem;
+	font-weight: normal;
+	line-height: 1.2;
+	text-align: center;
+	white-space: nowrap;
+	border: 1px solid transparent;
+	cursor: pointer;
+	border-radius: 5px;
+	font-size: 16px;
+}
+
 /* 编辑课时的css代码到这里结束 */
+
+/* canvas大小 */
+.c{width: 300px;height:150px;}
+.d{width: 300px;height:310px;}

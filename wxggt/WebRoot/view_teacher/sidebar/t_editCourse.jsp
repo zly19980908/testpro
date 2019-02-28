@@ -204,7 +204,7 @@
 								<div class="title-part">&nbsp;</div>
 								<div class="circle-part"></div>
 								<div class="new-part-content">
-									<span class="am-icon-plus"></span>
+									<span class="am-icon-plus am-icon-sm"></span>
 									<div class="new-part-text">添加新课时</div>
 								</div>
 							</div>
@@ -237,12 +237,11 @@
 								<canvas class="c"></canvas>
 							</div>
 
-							<!-- 添加新课时 -->
 							<div class="row-part">
 								<div class="title-part">&nbsp;</div>
 								<div class="circle-part"></div>
 								<div class="new-part-content">
-									<span class="am-icon-plus"></span>
+									<span class="am-icon-plus am-icon-sm"></span>
 									<div class="new-part-text">添加新课时</div>
 								</div>
 							</div>
@@ -251,7 +250,6 @@
 								<canvas class="c"></canvas>
 							</div>
 
-
 							<!-- 添加新单元 -->
 							<div class="row-unit">
 								<div class="title-unit">&nbsp;</div>
@@ -259,7 +257,7 @@
 									<span class="num-unit"></span>
 								</div>
 								<div class="new-unit-content">
-									<span class="am-icon-plus am-icon-sm"></span>
+									<span class="am-icon-plus am-icon-md"></span>
 									<div class="new-unit-text">添加新单元</div>
 								</div>
 							</div>
@@ -282,4 +280,6 @@
 <script type="text/javascript" src="../../js/jcanvas.min.js"></script>
 <!-- 课时编辑页面的动态效果 -->
 <script type="text/javascript" src="../../js/index_teacher/editCourse.js"></script>
+<!-- 编辑课时 -->
+<script type="text/javascript" src="../../js/index_teacher/editPart.js"></script>
 </html>
