@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>课程管理</title>
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../../css/index_teacher/index.css" />
@@ -23,7 +22,7 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="index.html" class="logo">
-				<span> 教师管理系统 </span>
+				<span class="logo-span"><img src="../../images/main_page/logo.png" class="img-logo"></img></span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
@@ -172,7 +171,7 @@
 									<div class="am-form-group">
 										<label for="doc-select-1">所属专业</label>
 										<select id="doc-select-1" required>
-										<option value="" name="cno">-=请选择一项=-</option>
+											<option value="" name="cno">-=请选择一项=-</option>
 										</select>
 										<span class="am-form-caret"></span>
 									</div>
@@ -208,26 +207,13 @@
 </body>
 <script type="text/javascript" src="../../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
-<script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
-		/* 当老师没有填写描述时自动填写描述 */
-		autoCompleteDesc = function() {
-			var textarea_ = $('#doc-vld-ta-2');
-			if (textarea_.val() == "") {
-				textarea_.val("老师没有添加描述哦~");
-			}
-		};
-		/* 选择文件后显示文件名 */
-		$('#course_img_file').change(function() {
-			$('#show_course_img').val($('#course_img_file').val());
-		});
-
 		/* 动态生成专业信息 */
 		$.ajax({
-			url : "../../php/getMajorInfo.php",
+			url : "../../php/t_getMajorInfo.php",
 			type : "GET",
 			dataType : "json",
 			cache : false,
@@ -252,6 +238,17 @@
 				datalist.append("<option value="+mNo_+">" + mName_ + "</option>");
 			});
 		}
+	});
+	/* 当老师没有填写描述时自动填写描述 */
+	autoCompleteDesc = function() {
+		var textarea_ = $('#doc-vld-ta-2');
+		if (textarea_.val() == "") {
+			textarea_.val("老师没有添加描述哦~");
+		}
+	};
+	/* 选择文件后显示文件名 */
+	$('#course_img_file').change(function() {
+		$('#show_course_img').val($('#course_img_file').val());
 	});
 </script>
 </html>

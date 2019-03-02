@@ -148,7 +148,7 @@
 	border-radius: 14px;
 	border: solid gray 2px;
 	left: 41px;
-	top:-1.5px;
+	top: -1.5px;
 }
 
 .num-unit {
@@ -298,12 +298,12 @@
 
 .edit_part {
 	position: relative;
-	padding: 0;
+	padding: 10px 0px 0px 0px;
 	top: -310px;
 	left: 100px;
 	width: 530px;
 	height: 280px;
-	background: #e6fbe6;
+	background: #f0fff0;
 }
 
 .edit-part-title {
@@ -333,11 +333,20 @@
 	height: 60px;
 }
 
+.video_box {
+	position: relative;
+	padding: 0;
+	top: -30px;
+	left: 170px;
+	width: 500px;
+	height: 27px;
+}
+
 .button_box {
 	position: relative;
 	padding: 0;
 	top: 15px;
-	left: 75px;
+	left: 70px;
 	width: 200px;
 	height: 40px;
 }
@@ -363,5 +372,12 @@
 /* 编辑课时的css代码到这里结束 */
 
 /* canvas大小 */
-.c{width: 300px;height:150px;}
-.d{width: 300px;height:310px;}
+.c {
+	width: 300px;
+	height: 150px;
+}
+
+.d {
+	width: 300px;
+	height: 310px;
+}

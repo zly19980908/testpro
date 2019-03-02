@@ -1,5 +1,15 @@
+.logo-span {
+	position: relative;
+	top: -10px;
+	left: -22px;
+}
+
+.img-logo {
+	width: 314px;
+	height: 100px;
+}
 .am-topbar {
-	border-top: 3px solid #71b6f9;
+	/* border-top: 3px solid #71b6f9; */
 	background: none;
 	border-bottom: none;
 }
@@ -8,7 +18,7 @@
 	background: #ffffff;
 	float: left;
 	text-align: center;
-	height: 73px;
+	height: 76px;
 	position: relative;
 	width: 290px;
 	z-index: 1;

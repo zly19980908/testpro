@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>课程管理</title>
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../../css/index_teacher/index.css" />
@@ -23,7 +22,7 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="index.html" class="logo">
-				<span> 教师管理系统 </span>
+				<span class="logo-span"><img src="../../images/main_page/logo.png" class="img-logo"></img></span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
@@ -174,7 +173,7 @@
 							<!-- 课时1 -->
 							<div class="row-part">
 								<div class="title-part">
-									课时<i>1</i>
+									课时<i class="part_num_xixi">1</i>
 								</div>
 								<div class="circle-part"></div>
 								<div class="content-part">爬虫</div>
@@ -188,7 +187,7 @@
 							<!-- 课时2 -->
 							<div class="row-part">
 								<div class="title-part">
-									课时<i>2</i>
+									课时<i class="part_num_xixi">2</i>
 								</div>
 								<div class="circle-part"></div>
 								<div class="content-part">爬虫可以做什么</div>
@@ -227,10 +226,10 @@
 
 							<div class="row-part">
 								<div class="title-part">
-									课时<i>3</i>
+									课时<i class="part_num_xixi">3</i>
 								</div>
 								<div class="circle-part"></div>
-								<div class="content-part">Python的安装与运行</div>
+								<div class="content-part">望闻问切</div>
 							</div>
 
 							<div class="row-line">
@@ -253,16 +252,12 @@
 							<!-- 添加新单元 -->
 							<div class="row-unit">
 								<div class="title-unit">&nbsp;</div>
-								<div class="circle-unit">
-									<span class="num-unit"></span>
-								</div>
+								<div class="circle-unit"></div>
 								<div class="new-unit-content">
 									<span class="am-icon-plus am-icon-md"></span>
 									<div class="new-unit-text">添加新单元</div>
 								</div>
 							</div>
-
-
 						</div>
 					</div>
 					<!-- Row end -->
@@ -274,12 +269,16 @@
 </body>
 <script type="text/javascript" src="../../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
-<script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/jcanvas.min.js"></script>
 <!-- 课时编辑页面的动态效果 -->
 <script type="text/javascript" src="../../js/index_teacher/editCourse.js"></script>
+<!-- 编辑课程的序号 -->
+<script type="text/javascript" src="../../js/index_teacher/editCourceNum.js"></script>
+<!-- 编辑单元 -->
+<script type="text/javascript" src="../../js/index_teacher/editUnit.js"></script>
 <!-- 编辑课时 -->
 <script type="text/javascript" src="../../js/index_teacher/editPart.js"></script>
+
 </html>

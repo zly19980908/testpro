@@ -9,7 +9,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>后台模板</title>
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../../css/index_teacher/index.css" />
@@ -42,7 +41,7 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="index.html" class="logo">
-				<span> 教师管理系统 </span>
+				<span class="logo-span"><img src="../../images/main_page/logo.png" class="img-logo"></img></span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
@@ -478,6 +477,5 @@
 </body>
 <script type="text/javascript" src="../../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
-<script type="text/javascript" src="../../js/index_teacher/app.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 </html>
