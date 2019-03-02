@@ -180,7 +180,7 @@
 .new-part-content {
 	position: relative;
 	padding: 0;
-	left: 500px;
+	left: 470px;
 	top: -25px;
 	width: 120px;
 	height: 22px;
@@ -198,8 +198,8 @@
 .new-unit-content {
 	position: relative;
 	padding: 0;
-	left: 496px;
-	top: -25px;
+	left: 467px;
+	top: -29px;
 	width: 120px;
 	height: 22px;
 }

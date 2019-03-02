@@ -156,6 +156,7 @@
 							<h3 class="header-title">编辑课程</h3>
 							<!-- 这里填入课程号 -->
 							<input id="cNo" type="hidden" value="126263347" />
+							<input id="cSort" type="hidden" value="中基" />
 							<!-- 单元 -->
 							<div class="row-unit">
 								<div class="title-unit">单元</div>
@@ -272,10 +273,8 @@
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/jcanvas.min.js"></script>
-<!-- 课时编辑页面的动态效果 -->
+<!-- 课时编辑页面的动态效果,及工具函数 -->
 <script type="text/javascript" src="../../js/index_teacher/editCourse.js"></script>
-<!-- 编辑课程的序号 -->
-<script type="text/javascript" src="../../js/index_teacher/editCourceNum.js"></script>
 <!-- 编辑单元 -->
 <script type="text/javascript" src="../../js/index_teacher/editUnit.js"></script>
 <!-- 编辑课时 -->
