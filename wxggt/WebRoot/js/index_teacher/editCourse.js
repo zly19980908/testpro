@@ -4,6 +4,7 @@ $(function() {
 	/* 画所有初始竖直连接线 */
 	drawVerticalLine();
 });
+refreshTitleGather();
 /*----------------------------------------功能区----------------------------------------*/
 /* 单元鼠标覆盖效果 */
 $(document).on("mouseenter", ".content-unit", function() {
@@ -39,19 +40,19 @@ $(document).on("mouseleave", ".content-part", function() {
 /*----------------------------------------下面是被调用的函数----------------------------------------*/
 
 /*----------------------------------------1.重置序号----------------------------------------*/
-/*重置所有单元数*/
-function resetUnitNum(){
-	var num_unit=$('.num-unit');
-	num_unit.each(function(index){
-		$(this).text(index+1);
+/* 重置所有单元数 */
+function resetUnitNum() {
+	var num_unit = $('.num-unit');
+	num_unit.each(function(index) {
+		$(this).text(index + 1);
 	});
 }
 
-/*重置所有课时数*/
-function resetPartNum(){
-	var num_part=$('.part_num_xixi');
-	num_part.each(function(index){
-		$(this).text(index+1);
+/* 重置所有课时数 */
+function resetPartNum() {
+	var num_part = $('.part_num_xixi');
+	num_part.each(function(index) {
+		$(this).text(index + 1);
 	});
 }
 /*----------------------------------------------------------------------------------------*/
@@ -85,7 +86,7 @@ function drawVerticalLine_addPart() {
 /*----------------------------------------------------------------------------------------*/
 
 /*--------------------------------------3.单元ajax代码--------------------------------------*/
-/*改变单元标题*/
+/* 改变单元标题 */
 function changeUnitTitle(unit_title, new_unit_title) {
 	var unit_title_ = "单元--" + unit_title;
 	var new_unit_title_ = "单元--" + new_unit_title;
@@ -100,15 +101,17 @@ function changeUnitTitle(unit_title, new_unit_title) {
 			alert("保存失败,请稍后再试");
 			toOrdinaryUnit(unit_title);
 		} else {
+			alert("修改成功");
 			toOrdinaryUnit(new_unit_title);
+			refreshTitleGather();
 		}
 	}
 }
 
-/*新增单元标题*/
-function insertUnitTitle(y,title) {
+/* 新增单元标题 */
+function insertUnitTitle(y, title) {
 	var unit_title = "单元--" + title;
-	var url_ = "../../php/t_insertUnitName.php?cNo=" + cNo + "&unit_title=" + unit_title + "&part_sort=" + cSort ;
+	var url_ = "../../php/t_insertUnitName.php?cNo=" + cNo + "&unit_title=" + unit_title + "&part_sort=" + cSort;
 	$.ajax({
 		url : url_,
 		type : "GET",
@@ -118,9 +121,35 @@ function insertUnitTitle(y,title) {
 		if (eval(tt) == 0) {
 			alert("保存失败,请稍后再试");
 		} else {
+			alert("增加成功");
 			toNewUnit(y, title);
 		}
 	}
+}
+
+function delete_unit(this_row_unit, next_row_unit, del_title_group) {
+	$.ajax({
+		url : '../../php/t_deleteUnit.php',
+		data : {
+			cNo : cNo,
+			del_title_group : del_title_group
+		},
+		type : "GET",
+		cache : false,
+		success : succseFunction()
+	});
+	function succseFunction(t) {
+		if (eval(t) == 0) {
+			alert("操作失败,请稍后再试");
+		} else {
+			next_row_unit.replaceWith();
+			this_row_unit.replaceWith();
+			resetUnitNum();
+			refreshTitleGather();
+		}
+
+	}
+
 }
 
 /*----------------------------------------------------------------------------------------*/
@@ -176,6 +205,7 @@ function updatePartInfo(old_title, title, desc, real_path, x) {
 		} else {
 			alert("修改成功");
 			toOrdinaryPart(x, title);
+			refreshTitleGather();
 		}
 	}
 }
@@ -198,16 +228,68 @@ function insertPartInfo(title, desc, real_path, x) {
 			alert("保存成功");
 			/* 生成一个新的课时行和一个添加课时行 */
 			newPart(x, title);
+			refreshTitleGather();
 		}
 	}
 }
 
-/*----------------------------------------------------------------------------------------*/
+function deletePart(row_part, part_title) {
+	var url_ = "../../php/t_deletePart.php?cNo=" + cNo + "&part_title=" + part_title;
+	$.ajax({
+		url : url_,
+		type : "GET",
+		cache : false,
+		success : succseFunction()
+	});
+	function succseFunction(t) {
+		if (eval(t) == 0) {
+			alert("操作失败,请稍后再试");
+		} else {
+			row_part.prev().replaceWith();
+			row_part.replaceWith();
+			resetPartNum();
+			refreshTitleGather();
+		}
+	}
+}
+/*-----------------------------------5.标题集合课时ajax代码-----------------------------------*/
 
+function updateTitleGather(titleGather) {
+	var url_ = "../../php/t_changeTitleGather.php?cNo=" + cNo + "&titleGather=" + titleGather;
+	$.ajax({
+		url : url_,
+		type : "GET",
+		cache : false,
+		success : succseFunction()
+	});
+	function succseFunction(t) {
+		if (eval(t) == 0) {
+			alert("操作失败,请稍后再试");
+		}
+	}
+}
 
+/*-----------------------------------5.刷新标题集合-----------------------------------*/
+
+function refreshTitleGather() {
+	var titleGather = "";
+	var titleContent = $(".content-unit,.content-part");
+	var length_ = titleContent.length;
+	titleContent.each(function(index) {
+		var title;
+		if ($(this).attr("class") == "content-unit") {
+			title = "单元--" + $(this).text();
+		} else {
+			title = $(this).text();
+		}
+		if (index == length_ - 1) {
+			titleGather += title;
+		} else {
+			titleGather += title + ",";
+		}
+	});
+	/* ajax代码 */
+	updateTitleGather(titleGather);
+}
 /*----------------------------------------被调用的函数到这里结束----------------------------------------*/
-
-
-
-
 

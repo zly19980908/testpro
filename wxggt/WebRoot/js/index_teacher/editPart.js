@@ -2,8 +2,11 @@
 $(function() {
 	/* 课时-----用户点击'删除' */
 	$(document).on("click", "a:contains('删除')[href='#']", function() {
-		var part_num = parseInt($(this).parent().parent().prev().prev().children().text());
-		alert("课时" + part_num);
+		var part_title=$(this).parents(".content-part").prop("firstChild").nodeValue;
+		var row_part=$(this).parents('.row-part');
+		if (confirm("确定要删除课时 '"+part_title+"' 吗？")) {
+			deletePart(row_part,part_title);
+		}
 	});
 
 	/* 课时-----用户点击'编辑' */
