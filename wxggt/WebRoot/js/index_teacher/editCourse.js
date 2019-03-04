@@ -1,10 +1,9 @@
 var cNo = $("#cNo").val();
 var cSort = $("#cSort").val();
 $(function() {
-	/* 画所有初始竖直连接线 */
-	drawVerticalLine();
+	initCourceInfo();
 });
-refreshTitleGather();
+
 /*----------------------------------------功能区----------------------------------------*/
 /* 单元鼠标覆盖效果 */
 $(document).on("mouseenter", ".content-unit", function() {
@@ -269,6 +268,26 @@ function updateTitleGather(titleGather) {
 	}
 }
 
+function initCourceInfo() {
+	$.ajax({
+		url : "../../php/t_getCourseSequence.php",
+		type : "GET",
+		data : {
+			cNo : cNo
+		},
+		cache : false,
+		success : getCourseSequence
+	});
+	function getCourseSequence(t) {
+		if (eval(t) == "") {
+			alert("操作失败,请稍后再试");
+		} else {
+			var titleGather = eval(t);
+			init_row(titleGather);
+		}
+	}
+}
+
 /*-----------------------------------5.刷新标题集合-----------------------------------*/
 
 function refreshTitleGather() {
@@ -291,5 +310,36 @@ function refreshTitleGather() {
 	/* ajax代码 */
 	updateTitleGather(titleGather);
 }
+
+/*-----------------------------------6.初始化课程信息-----------------------------------*/
+function init_row(titleGather) {
+	var title_group = [];
+	var title;
+
+	var row_add_part = '<div class="row-part"><div class="title-part">&nbsp;</div><div class="circle-part"></div><div class="new-part-content"><span class="am-icon-plus am-icon-sm"></span><div class="new-part-text">添加新课时</div></div></div>';
+	var row_line = '<div class="row-line"> <canvas class="c"></canvas> </div>';
+	title_group = titleGather.split(',');
+	var row_add_unit = $('.row-unit');
+	$.each(title_group, function(index, item) {
+		if (item.substr(0, 4) == "单元--") {
+			if (index != 0) {
+				row_add_unit.before(row_line+row_add_part+row_line);
+			}
+			title = item.match(/单元--(.*)/)[1];
+			var row_unit = '<div class="row-unit"><div class="title-unit">单元</div><div class="circle-unit"><span class="num-unit">1</span></div>	<div class="content-unit" style="">' + title + '</div></div>';
+			row_add_unit.before(row_unit);
+		} else {
+			title = item;
+			var row_part = '<div class="row-part"><div class="title-part">课时<i class="part_num_xixi">1</i></div><div class="circle-part"></div><div class="content-part" style="">' + title + '</div></div>';
+			row_add_unit.before(row_line+row_part);
+		}
+	});
+	row_add_unit.before(row_line+row_add_part+row_line);
+	drawVerticalLine();
+	resetUnitNum();
+	resetPartNum();
+	// refreshTitleGather();
+}
+
 /*----------------------------------------被调用的函数到这里结束----------------------------------------*/
 

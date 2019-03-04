@@ -22,7 +22,9 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="index.html" class="logo">
-				<span class="logo-span"><img src="../../images/main_page/logo.png" class="img-logo"></img></span>
+				<span class="logo-span">
+					<img src="../../images/main_page/logo.png" class="img-logo"></img>
+				</span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
@@ -157,99 +159,6 @@
 							<!-- 这里填入课程号 -->
 							<input id="cNo" type="hidden" value="126263347" />
 							<input id="cSort" type="hidden" value="中基" />
-							<!-- 单元 -->
-							<div class="row-unit">
-								<div class="title-unit">单元</div>
-								<div class="circle-unit">
-									<span class="num-unit">1</span>
-								</div>
-								<div class="content-unit">随堂测试</div>
-							</div>
-
-							<!-- 连接线 -->
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
-							<!-- 课时1 -->
-							<div class="row-part">
-								<div class="title-part">
-									课时<i class="part_num_xixi">1</i>
-								</div>
-								<div class="circle-part"></div>
-								<div class="content-part">爬虫</div>
-							</div>
-
-							<!-- 连接线 -->
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
-							<!-- 课时2 -->
-							<div class="row-part">
-								<div class="title-part">
-									课时<i class="part_num_xixi">2</i>
-								</div>
-								<div class="circle-part"></div>
-								<div class="content-part">爬虫可以做什么</div>
-							</div>
-
-							<!-- 课时2 -->
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
-							<!-- 添加新课时 -->
-							<div class="row-part">
-								<div class="title-part">&nbsp;</div>
-								<div class="circle-part"></div>
-								<div class="new-part-content">
-									<span class="am-icon-plus am-icon-sm"></span>
-									<div class="new-part-text">添加新课时</div>
-								</div>
-							</div>
-
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
-							<div class="row-unit">
-								<div class="title-unit">单元</div>
-								<div class="circle-unit">
-									<span class="num-unit">2</span>
-								</div>
-								<div class="content-unit">看视频</div>
-							</div>
-
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
-							<div class="row-part">
-								<div class="title-part">
-									课时<i class="part_num_xixi">3</i>
-								</div>
-								<div class="circle-part"></div>
-								<div class="content-part">望闻问切</div>
-							</div>
-
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
-							<div class="row-part">
-								<div class="title-part">&nbsp;</div>
-								<div class="circle-part"></div>
-								<div class="new-part-content">
-									<span class="am-icon-plus am-icon-sm"></span>
-									<div class="new-part-text">添加新课时</div>
-								</div>
-							</div>
-
-							<div class="row-line">
-								<canvas class="c"></canvas>
-							</div>
-
 							<!-- 添加新单元 -->
 							<div class="row-unit">
 								<div class="title-unit">&nbsp;</div>
@@ -268,10 +177,18 @@
 		</div>
 	</div>
 </body>
+<!-- 上传视频 -->
+<script type="text/javascript" src="../../js/jquery.min.js"></script>
+<script type="text/javascript" src="../../lib/crypto1/crypto/crypto.js"></script>
+<script type="text/javascript" src="../../lib/crypto1/hmac/hmac.js"></script>
+<script type="text/javascript" src="../../lib/crypto1/sha1/sha1.js"></script>
+<script type="text/javascript" src="../../lib/base64.js"></script>
+<script type="text/javascript" src="../../lib/plupload-2.1.2/js/plupload.full.min.js"></script>
+<script type="text/javascript" src="../../js/index_teacher/uploadCourseVideo.js"></script>
+<!-- 上传视频这里结束 -->
 <script type="text/javascript" src="../../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
 <script type="text/javascript" src="../../js/jcanvas.min.js"></script>
 <!-- 课时编辑页面的动态效果,及工具函数 -->
 <script type="text/javascript" src="../../js/index_teacher/editCourse.js"></script>
