@@ -22,14 +22,14 @@ import com.wxggt.formbean.CourseInfoWithsource;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import net.sf.json.processors.JsDateJsonBeanProcessor;
-@WebServlet("/ShowCourseSourceSevlet")
-public class ShowCourseSourceServlet extends HttpServlet {
+@WebServlet("/CourseSourceShowServlet")
+public class CourseSourceShowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowCourseSourceServlet() {
+    public CourseSourceShowServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

@@ -1,25 +1,28 @@
 package com.wxggt.servlet;
 
 import java.io.IOException;
+import java.io.Writer;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wxggt.dao.TopicDAO;
+import com.wxggt.dao.AttentionDAO;
+import com.wxggt.dto.Attention;
 
 /**
- * Servlet implementation class AddTopicPageViewServlet
+ * Servlet implementation class CancelAttentionServlet
  */
-@WebServlet("/AddTopicPageViewServlet")
-public class AddTopicPageViewServlet extends HttpServlet {
+@WebServlet("/AttentionCancelServlet")
+public class AttentionCancelServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public AddTopicPageViewServlet() {
+    public AttentionCancelServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,10 +36,19 @@ public class AddTopicPageViewServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        TopicDAO dao = new TopicDAO();
-        int topicId = 9;
-        boolean result = dao.updateTopicPageview(topicId);
-        System.out.println(result);
+        AttentionDAO dao = new AttentionDAO();
+        String Uid = request.getParameter("Uid");
+        String AttendUid = request.getParameter("AttendUid");
+        String returnString = null;
+        boolean result1 = dao.deleteAttentionByUidAndAUid(Uid, AttendUid);
+        if(result1){
+        	returnString = "删除失败，尚未添加关注!";
+        }else{
+        	returnString = "取消关注";
+        }
+        Writer out = response.getWriter();
+        out.write(returnString);
+        out.flush();
 	}
 
 	/**

@@ -2,6 +2,7 @@ package com.wxggt.servlet;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,19 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.wxggt.dao.AttentionDAO;
+import com.google.gson.Gson;
+import com.wxggt.dao.TopicDAO;
+import com.wxggt.dto.Topic;
 
 /**
- * Servlet implementation class SearchAttentionServlet
+ * Servlet implementation class ShowAllTopicServlet
  */
-@WebServlet("/SearchAttentionServlet")
-public class SearchAttentionServlet extends HttpServlet {
+@WebServlet("/TopicShowAllServlet")
+public class TopicShowAllServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchAttentionServlet() {
+    public TopicShowAllServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,22 +38,14 @@ public class SearchAttentionServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        AttentionDAO dao = new AttentionDAO();
-        String Uid = request.getParameter("Uid");
-        String AttendUid = request.getParameter("AttendUid");
-        String returnString = null;
-        //查询是否已关注
-        boolean result = dao.searchAttentionByUidAndAUid(Uid, AttendUid);
-        if(result){
-        	//关注则使用关注图标
-        	returnString = "true";
-        }
-        else{
-        	//未关注则使用未关注图标
-        	returnString = "false";
-        }
+        String topicdetail = request.getParameter("topicdetail");
+        TopicDAO topicdao = new TopicDAO();
+        List<Topic> list = topicdao.searchFrontAllSound(topicdetail);
+        Gson gson = new Gson();
+        String Json = gson.toJson(list);
         Writer out = response.getWriter();
-        out.write(returnString);
+        System.out.println(Json);
+        out.write(Json);
         out.flush();
 	}
 

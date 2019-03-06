@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.sf.json.JSONObject;  
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,26 +14,23 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.wxggt.dao.CourseDAO;
-import com.wxggt.dao.SmallVideoDAO;
-import com.wxggt.dao.SoundDAO;
+import com.wxggt.dao.AttentionDAO;
 import com.wxggt.dao.TopicDAO;
-import com.wxggt.dto.Course;
-import com.wxggt.dto.SmallVideo;
-import com.wxggt.dto.Sound;
 import com.wxggt.dto.Topic;
 
+import net.sf.json.JSONObject;
+
 /**
- * Servlet implementation class SearchResult
+ * Servlet implementation class TopicAndAttentionShowAllServlet
  */
-@WebServlet("/SearchResult")
-public class SearchResult extends HttpServlet {
+@WebServlet("/TopicAndAttentionShowAllServlet")
+public class TopicAndAttentionShowAllServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public SearchResult() {
+    public TopicAndAttentionShowAllServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -43,42 +39,34 @@ public class SearchResult extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.setContentType("text/html;charset=utf-8");          
         /* 设置响应头允许ajax跨域访问 */  
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
-        response.setHeader("Access-Control-Allow-Methods", "GET,POST");  
-        String str = request.getParameter("str");
-        CourseDAO coursedao = new CourseDAO();
-        SoundDAO soundao = new SoundDAO();
-        SmallVideoDAO svideodao = new SmallVideoDAO();
+        response.setHeader("Access-Control-Allow-Methods", "GET,POST");
+        String topicdetail = request.getParameter("topicdetail");//查询的话题详细
+        String Uid = request.getParameter("Uid");//获取正在查询的用户编号
         TopicDAO topicdao = new TopicDAO();
-        List<Course> list = coursedao.getFrontAllCourseInfo(str);
-        List<Sound> list1 = soundao.getSingleSound(str);
-        List<SmallVideo> list2 = svideodao.searchFrontAllSvideo(str);
-        List<Topic> list3 = topicdao.searchFrontAllSound(str);
-        //用Map存键值对，将每个数组都做一个键
+        AttentionDAO attentiondao = new AttentionDAO();
+        List<Topic> list = topicdao.searchFrontAllSound(topicdetail);//查询所有话题
+        List<String> attentionlist = attentiondao.SearchAllAttendidByUid(Uid);//查询用户关注的人的编号
+        List<Integer> attendedlist = new ArrayList<Integer>();
+        for(int i = 0;i<list.size();i++){
+        	Topic topic = list.get(i);//list的第i个话题
+        	for(int j = 0;j<attentionlist.size();j++){
+        		if(topic.getUid().equals(attentionlist.get(j))){//如果发布人是用户关注的人就记住这个话题的下标然后退出循环
+        			attendedlist.add(i);//加入关注人发布的话题位置
+        			break;
+        		}
+        	}
+        }
         Map map = new HashMap();
-        map.put("CourseResult", list);
-        map.put("SoundResult", list1);
-        map.put("SmallVideoResult",list2);
-        map.put("TopicResult",list3);
+        map.put("topicResult",list);
+        map.put("attendedlist",attendedlist);
         JSONObject json = JSONObject.fromObject(map);
-        /*String json = gson.toJson(list);
-        System.out.println("\"CourseResult\":"+json);
-        System.out.println("-------------------");
-        String json1 = gson.toJson(list1);
-        System.out.println(json1);
-        System.out.println("-------------------");
-        String json2 = gson.toJson(list2);
-        System.out.println(json2);*/
-        //返回值给微信小程序
-        Writer out = response.getWriter(); 
+        Writer out = response.getWriter();
         System.out.println(json.toString());
-        //存值到缓冲区
         out.write(json.toString());
-		// flush()表示强制将缓冲区中的数据发送出去,不必等到缓冲区满
         out.flush();
 	}
 

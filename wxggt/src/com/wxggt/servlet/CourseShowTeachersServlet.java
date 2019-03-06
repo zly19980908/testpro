@@ -11,20 +11,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-import com.wxggt.dao.TopicDAO;
-import com.wxggt.dto.Topic;
+import com.wxggt.dao.CourseDAO;
+import com.wxggt.dto.Course;
 
 /**
- * Servlet implementation class ShowAllTopicServlet
+ * Servlet implementation class ShowCourseOfTeacherServlet
  */
-@WebServlet("/ShowAllTopicServlet")
-public class ShowAllTopicServlet extends HttpServlet {
+@WebServlet("/CourseShowTeachersServlet")
+public class CourseShowTeachersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowAllTopicServlet() {
+    public CourseShowTeachersServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,13 +38,13 @@ public class ShowAllTopicServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        String topicdetail = request.getParameter("topicdetail");
-        TopicDAO topicdao = new TopicDAO();
-        List<Topic> list = topicdao.searchFrontAllSound(topicdetail);
+        String tid = "2016010901";
+        CourseDAO coursedao = new CourseDAO();
+        List<Course> list = coursedao.findAllCourseByTno(tid);
+        //将数据转化为Json字符串
         Gson gson = new Gson();
         String Json = gson.toJson(list);
         Writer out = response.getWriter();
-        System.out.println(Json);
         out.write(Json);
         out.flush();
 	}

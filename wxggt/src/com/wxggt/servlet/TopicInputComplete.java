@@ -19,14 +19,14 @@ import com.wxggt.formbean.CSTSinputComplete;
 /**
  * Servlet implementation class CompleteTopicInput
  */
-@WebServlet("/CompleteTopicInput")
-public class CompleteTopicInput extends HttpServlet {
+@WebServlet("/TopicInputComplete")
+public class TopicInputComplete extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public CompleteTopicInput() {
+    public TopicInputComplete() {
         super();
         // TODO Auto-generated constructor stub
     }

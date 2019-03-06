@@ -15,389 +15,387 @@ import com.wxggt.util.DBUtil;
 
 public class CourseDAO {
 
-    /* åˆ›å»ºä¸€é—¨è¯¾ç¨‹ */
-    public boolean createCourse(Course course) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        int rs = 0;
-        String sql = "INSERT INTO course(cno,cName,tNo,specialtyid,courseDesc) VALUES(?,?,?,?,?)";
-        try {
-            conn = DBUtil.getConnection();
-            ps = conn.prepareStatement(sql);
-            course.setcNo(CreateCno.CreateCno_(course.getSpecialtyid()));
-            ps.setString(1, course.getcNo());
-            ps.setString(2, course.getcName());
-            ps.setString(3, course.gettNo());
-            ps.setInt(4, course.getSpecialtyid());
-            ps.setString(5, course.getCourseDesc());
-            rs = ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                ps.close();
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        if (rs > 0) {
-            return true;
-        } else {
-            return false;
-        }
-    }
+	/* ´´½¨Ò»ÃÅ¿Î³Ì */
+	public boolean createCourse(Course course) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		String sql = "INSERT INTO course(cno,cName,tNo,specialtyid,courseDesc) VALUES(?,?,?,?,?)";
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			course.setcNo(CreateCno.CreateCno_(course.getSpecialtyid()));
+			ps.setString(1, course.getcNo());
+			ps.setString(2, course.getcName());
+			ps.setString(3, course.gettNo());
+			ps.setInt(4, course.getSpecialtyid());
+			ps.setString(5, course.getCourseDesc());
+			rs = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				ps.close();
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		if (rs > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	/*Î¢ĞÅ¶Ë¸ù¾İ½ÌÊ¦ºÅ²éÑ¯¸Ã½ÌÊ¦ÏÂËùÓĞ¿Î³Ì*/
+	public List<Course> findAllCourseByTno(String tno){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<Course> list = new ArrayList<Course>();
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "select cNo,cName,tNo,pageview,studyquantity,price,specialtyid,courseDesc from course where tNo =?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, tno);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				Course course = new Course();
+				course.setcNo(rs.getString(1));
+				course.setcName(rs.getString(2));
+				course.settNo(rs.getString(3));
+				course.setPageview(rs.getInt(4));
+				course.setStudyquantity(rs.getInt(5));
+				course.setPrice(rs.getInt(6));
+				course.setSpecialtyid(rs.getInt(7));
+				course.setCourseDesc(rs.getString(8));
+				list.add(course);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				rs.close();
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
 
-    /* å¾®ä¿¡ç«¯æ ¹æ®æ•™å¸ˆå·æŸ¥è¯¢è¯¥æ•™å¸ˆä¸‹æ‰€æœ‰è¯¾ç¨‹ */
-    public List<Course> findAllCourseByTno(String tno) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        List<Course> list = new ArrayList<Course>();
-        try {
-            conn = DBUtil.getConnection();
-            String sql = "select cNo,cName,tNo,pageview,studyquantity,price,specialtyid,courseDesc from course where tNo =?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, tno);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                Course course = new Course();
-                course.setcNo(rs.getString(1));
-                course.setcName(rs.getString(2));
-                course.settNo(rs.getString(3));
-                course.setPageview(rs.getInt(4));
-                course.setStudyquantity(rs.getInt(5));
-                course.setPrice(rs.getInt(6));
-                course.setSpecialtyid(rs.getInt(7));
-                course.setCourseDesc(rs.getString(8));
-                list.add(course);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                rs.close();
-                ps.close();
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return list;
-    }
+	/* ²é¿´Ò»ÃÅÉÏ´«¿Î³Ì¼°ÆäÏà¹ØĞÅÏ¢ */
+	public List<CourseInfoWithsource> getSingleCourseInfo(String tNo, String cName) {
+		List<CourseInfoWithsource> list = new ArrayList<CourseInfoWithsource>();
+		String sql = "SELECT cNo,pageview,studyquantity,price,specialtyid,courseDesc FROM course WHERE tno=? AND cName=?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, tNo);
+			ps.setString(2, cName);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				CourseInfoWithsource csw = new CourseInfoWithsource();
+				String cno = rs.getString(1);
+				csw.setcNo(cno);
+				SourceInfoDAO dao = new SourceInfoDAO();
+				List<SourceInfo> list_ = dao.getSourcesByCno(cno);
+				csw.setcName(cName);
+				csw.settNo(tNo);
+				csw.setPageview(rs.getInt(2));
+				csw.setStudyquantity(rs.getInt(3));
+				csw.setPrice(rs.getInt(4));
+				csw.setSpecialtyid(rs.getInt(5));
+				csw.setCourseDesc(rs.getString(6));
+				csw.setSources(list_);
+				list.add(csw);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
 
-    /* æŸ¥çœ‹ä¸€é—¨ä¸Šä¼ è¯¾ç¨‹åŠå…¶ç›¸å…³ä¿¡æ¯ */
-    public List<CourseInfoWithsource> getSingleCourseInfo(String tNo, String cName) {
-        List<CourseInfoWithsource> list = new ArrayList<CourseInfoWithsource>();
-        String sql = "SELECT cNo,pageview,studyquantity,price,specialtyid,courseDesc FROM course WHERE tno=? AND cName=?";
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try {
-            conn = DBUtil.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, tNo);
-            ps.setString(2, cName);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                CourseInfoWithsource csw = new CourseInfoWithsource();
-                String cno = rs.getString(1);
-                csw.setcNo(cno);
-                SourceInfoDAO dao = new SourceInfoDAO();
-                List<SourceInfo> list_ = dao.getSourcesByCno(cno);
-                csw.setcName(cName);
-                csw.settNo(tNo);
-                csw.setPageview(rs.getInt(2));
-                csw.setStudyquantity(rs.getInt(3));
-                csw.setPrice(rs.getInt(4));
-                csw.setSpecialtyid(rs.getInt(5));
-                csw.setCourseDesc(rs.getString(6));
-                csw.setSources(list_);
-                list.add(csw);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return list;
-    }
+	/* ²é¿´Ò»¸öÀÏÊ¦ËùÓĞÉÏ´«¿Î³Ì¼°ÆäÏà¹ØĞÅÏ¢ */
+	public List<CourseInfoWithsource> getAllCourseInfo(String tNo,String cNo) {
+		List<CourseInfoWithsource> list = new ArrayList<CourseInfoWithsource>();
+		String sql = "SELECT cNo,cName,pageview,studyquantity,price,specialtyid,courseDesc,tName FROM course WHERE tno=? and cNo=?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, tNo);
+			ps.setString(2, cNo);
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				CourseInfoWithsource csw = new CourseInfoWithsource();
+				String cno = rs.getString(1);
+				csw.setcNo(cno);
+				SourceInfoDAO dao = new SourceInfoDAO();
+				List<SourceInfo> list_ = dao.getSourcesByCno(cno);
+				csw.setcName(rs.getString(2));
+				csw.settNo(tNo);
+				csw.setPageview(rs.getInt(3));
+				csw.setStudyquantity(rs.getInt(4));
+				csw.setPrice(rs.getInt(5));
+				csw.setSpecialtyid(rs.getInt(6));
+				csw.setCourseDesc(rs.getString(7));
+				csw.settName(rs.getString(8));
+				csw.setSources(list_);
+				list.add(csw);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
+	
+	/*Î¢ĞÅ¶ËÌÖÂÛÇøÄ£ºı²¹È«ÊäÈë*/
+	public List<String> CompleteInput(String str){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<String> list = new ArrayList<String>();//²»new³öÀ´±¨´í
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select cName from course where cName like ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, str+"%");
+			rs = ps.executeQuery();
+			while(rs.next()){
+				list.add(rs.getString(1));
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return list;
+	}
+	
+	/*Î¢ĞÅ¶Ë¸ù¾İ¿Î³ÌÃûÄ£ºı²éÑ¯¿Î³ÌĞÅÏ¢*/
+	public List<Course> getFrontAllCourseInfo(String cName) {
+		List<Course> list = new ArrayList<Course>();
+		String sql = "SELECT pageview,price,tNo,tName,cName,cNo,imageUrl,courseDesc FROM course WHERE cName like ?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		try {
+			conn = DBUtil.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, "%"+cName+"%");
+			rs = ps.executeQuery();
+			while (rs.next()) {
+				Course csw = new Course();
+				csw.setPageview(rs.getInt(1));
+				csw.setPrice(rs.getInt(2));
+				csw.settNo(rs.getString(3));
+				csw.settName(rs.getString(4));
+				csw.setcName(rs.getString(5));
+				csw.setcNo(rs.getString(6));
+				csw.setImageUrl(rs.getString(7));
+				csw.setCourseDesc(rs.getString(8));
+				list.add(csw);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+		return list;
+	}
+	
+	/*Î¢ĞÅ¶Ë·ÃÎÊÒ»´Î¸ù¾İ¿Î³Ìid·ÃÎÊÁ¿¼ÓÒ»*/
+	public boolean addPageView(String cNo){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "update course set pageview=pageview+1 where cNo = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cNo);
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
+	/*Î¢ĞÅ¶Ë¹ºÂòÒ»´Î¸ù¾İ¿Î³Ìid¹ºÂòÁ¿¼ÓÒ»*/
+	public boolean addStudyquantity(String cNo){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		int rs = 0;
+		try{
+			conn = DBUtil.getConnection();
+			String sql = "update course set studyquantity=studyquantity+1 where cNo = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cNo);
+			rs = ps.executeUpdate();
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try{
+				ps.close();
+				conn.close();
+			}catch(Exception e1){
+				e1.printStackTrace();
+			}
+		}
+		if(rs>0)
+			return true;
+		else
+			return false;
+	}
+	
+	/*Î¢ĞÅ¶Ë¿Î³ÌÇøÄ£ºı²¹È«ÊäÈë*/
+	public List<CSTSinputComplete> completeInput(String str){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		List<CSTSinputComplete> list = new ArrayList<CSTSinputComplete>();//²»new³öÀ´±¨´í
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select cNo,cName from course where cName like ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, str+"%");
+			rs = ps.executeQuery();
+			while(rs.next()){
+				CSTSinputComplete course = new CSTSinputComplete();
+				course.setcName(rs.getString(1));
+				course.setName(rs.getString(2));
+				list.add(course);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return list;
+	}
+	
+	//¸ù¾İ¿Î³ÌºÅ²éÑ¯½ÌÊ¦ºÅ
+	public String SearchTnoByCno(String cno){
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String Tno = null;
+ 		try{
+			conn = DBUtil.getConnection();
+			String sql = "select tNo from course where cNo = ?";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cno);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				Tno = rs.getString(1);
+				return Tno;
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}finally{
+			try {
+				conn.close();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+ 		return null;
+	}
 
-    /* æŸ¥çœ‹ä¸€ä¸ªè€å¸ˆæ‰€æœ‰ä¸Šä¼ è¯¾ç¨‹åŠå…¶ç›¸å…³ä¿¡æ¯ */
-    public List<CourseInfoWithsource> getAllCourseInfo(String tNo, String cNo) {
-        List<CourseInfoWithsource> list = new ArrayList<CourseInfoWithsource>();
-        String sql = "SELECT cNo,cName,pageview,studyquantity,price,specialtyid,courseDesc,tName FROM course WHERE tno=? and cNo=?";
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try {
-            conn = DBUtil.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, tNo);
-            ps.setString(2, cNo);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                CourseInfoWithsource csw = new CourseInfoWithsource();
-                String cno = rs.getString(1);
-                csw.setcNo(cno);
-                SourceInfoDAO dao = new SourceInfoDAO();
-                List<SourceInfo> list_ = dao.getSourcesByCno(cno);
-                csw.setcName(rs.getString(2));
-                csw.settNo(tNo);
-                csw.setPageview(rs.getInt(3));
-                csw.setStudyquantity(rs.getInt(4));
-                csw.setPrice(rs.getInt(5));
-                csw.setSpecialtyid(rs.getInt(6));
-                csw.setCourseDesc(rs.getString(7));
-                csw.settName(rs.getString(8));
-                csw.setSources(list_);
-                list.add(csw);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return list;
-    }
+	public static void main(String[] args) {
 
-    /* å¾®ä¿¡ç«¯è®¨è®ºåŒºæ¨¡ç³Šè¡¥å…¨è¾“å…¥ */
-    public List<String> CompleteInput(String str) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        List<String> list = new ArrayList<String>();// ä¸newå‡ºæ¥æŠ¥é”™
-        try {
-            conn = DBUtil.getConnection();
-            String sql = "select cName from course where cName like ?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, str + "%");
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                list.add(rs.getString(1));
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return list;
-    }
+		/* ²é¿´Ò»ÃÅÉÏ´«¿Î³Ì¼°ÆäÏà¹ØĞÅÏ¢ */
+		// CourseDAO dao = new CourseDAO();
+		// String tNo = "2016010901";
+		// String cName = "ÖĞ»ù";
+		// List<CourseInfoWithsource> list = dao.getSingleCourseInfo(tNo,
+		// cName);
+		// for (CourseInfoWithsource c : list) {
+		// System.out.println(c.getcNo() + " " + c.getcName() + " " +
+		// c.getPageview() + " " + c.getPrice() + " "
+		// + c.getCourseDesc());
+		// for (SourceInfo s : c.getSources()) {
+		// System.out.println(s.getSourceName() + " " + s.getSourceDesc());
+		// }
+		// }
+		
+		/* ²é¿´ËùÓĞÉÏ´«¿Î³Ì¼°ÆäÏà¹ØĞÅÏ¢ */
+		/*CourseDAO dao = new CourseDAO();
+		String tNo = "2016010901";
+		boolean result = dao.addPageView("126263347916");
+		boolean result2 = dao.addStudyquantity("126263347916");
+		System.out.println(result+" "+result2);
+		List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo,);
+		List<Course> list2 = dao.getFrontAllCourseInfo("ÖĞ");
+		List<Course> list3 = dao.findAllCourseByTno("2016010901");
+		for (Course c : list2) {
+			System.out.println(c.getcName()+' '+c.getPageview()+' '+c.getPrice()+' '+c.gettNo());
+		}
+		for (CourseInfoWithsource c : list) {
+			System.out.println(c.getcNo() + " " + c.getcName() + " " + c.getPageview() + " " + c.getPrice() + " "
+					+ c.getCourseDesc());
+			for (SourceInfo s : c.getSources()) {
+				System.out.println(s.getSourceName() + " " + s.getSourceDesc());
+			}
+		}
+		for (Course c :list3){
+			System.out.println(c.getcNo() + " " + c.getcName() + " " + c.getPageview() + " " + c.getPrice() + " "
+					+ c.getCourseDesc());
+		}
 
-    /* å¾®ä¿¡ç«¯æ ¹æ®è¯¾ç¨‹åæ¨¡ç³ŠæŸ¥è¯¢è¯¾ç¨‹ä¿¡æ¯ */
-    public List<Course> getFrontAllCourseInfo(String cName) {
-        List<Course> list = new ArrayList<Course>();
-        String sql = "SELECT pageview,price,tNo,tName,cName,cNo,imageUrl FROM course WHERE cName like ?";
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        try {
-            conn = DBUtil.getConnection();
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, "%" + cName + "%");
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                Course csw = new Course();
-                csw.setPageview(rs.getInt(1));
-                csw.setPrice(rs.getInt(2));
-                csw.settNo(rs.getString(3));
-                csw.settName(rs.getString(4));
-                csw.setcName(rs.getString(5));
-                csw.setcNo(rs.getString(6));
-                csw.setImageUrl(rs.getString(7));
-                list.add(csw);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return list;
-    }
-
-    /* å¾®ä¿¡ç«¯è®¿é—®ä¸€æ¬¡æ ¹æ®è¯¾ç¨‹idè®¿é—®é‡åŠ ä¸€ */
-    public boolean addPageView(String cNo) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        int rs = 0;
-        try {
-            conn = DBUtil.getConnection();
-            String sql = "update course set pageview=pageview+1 where cNo = ?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, cNo);
-            rs = ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                ps.close();
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        if (rs > 0)
-            return true;
-        else
-            return false;
-    }
-
-    /* å¾®ä¿¡ç«¯è´­ä¹°ä¸€æ¬¡æ ¹æ®è¯¾ç¨‹idè´­ä¹°é‡åŠ ä¸€ */
-    public boolean addStudyquantity(String cNo) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        int rs = 0;
-        try {
-            conn = DBUtil.getConnection();
-            String sql = "update course set studyquantity=studyquantity+1 where cNo = ?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, cNo);
-            rs = ps.executeUpdate();
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                ps.close();
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        if (rs > 0)
-            return true;
-        else
-            return false;
-    }
-
-    /* å¾®ä¿¡ç«¯è¯¾ç¨‹åŒºæ¨¡ç³Šè¡¥å…¨è¾“å…¥ */
-    public List<CSTSinputComplete> completeInput(String str) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        List<CSTSinputComplete> list = new ArrayList<CSTSinputComplete>();// ä¸newå‡ºæ¥æŠ¥é”™
-        try {
-            conn = DBUtil.getConnection();
-            String sql = "select cNo,cName from course where cName like ?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, str + "%");
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                CSTSinputComplete course = new CSTSinputComplete();
-                course.setcName(rs.getString(1));
-                course.setName(rs.getString(2));
-                list.add(course);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return list;
-    }
-
-    // æ ¹æ®è¯¾ç¨‹å·æŸ¥è¯¢æ•™å¸ˆå·
-    public String SearchTnoByCno(String cno) {
-        Connection conn = null;
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        String Tno = null;
-        try {
-            conn = DBUtil.getConnection();
-            String sql = "select tNo from course where cNo = ?";
-            ps = conn.prepareStatement(sql);
-            ps.setString(1, cno);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                Tno = rs.getString(1);
-                return Tno;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                conn.close();
-            } catch (Exception e1) {
-                e1.printStackTrace();
-            }
-        }
-        return null;
-    }
-
-    public static void main(String[] args) {
-
-        /* æŸ¥çœ‹ä¸€é—¨ä¸Šä¼ è¯¾ç¨‹åŠå…¶ç›¸å…³ä¿¡æ¯ */
-        // CourseDAO dao = new CourseDAO();
-        // String tNo = "2016010901";
-        // String cName = "ä¸­åŸº";
-        // List<CourseInfoWithsource> list = dao.getSingleCourseInfo(tNo,
-        // cName);
-        // for (CourseInfoWithsource c : list) {
-        // System.out.println(c.getcNo() + " " + c.getcName() + " " +
-        // c.getPageview() + " " + c.getPrice() + " "
-        // + c.getCourseDesc());
-        // for (SourceInfo s : c.getSources()) {
-        // System.out.println(s.getSourceName() + " " + s.getSourceDesc());
-        // }
-        // }
-
-        /* æŸ¥çœ‹æ‰€æœ‰ä¸Šä¼ è¯¾ç¨‹åŠå…¶ç›¸å…³ä¿¡æ¯ */
-        /*
-         * CourseDAO dao = new CourseDAO();
-         * String tNo = "2016010901";
-         * boolean result = dao.addPageView("126263347916");
-         * boolean result2 = dao.addStudyquantity("126263347916");
-         * System.out.println(result+" "+result2);
-         * List<CourseInfoWithsource> list = dao.getAllCourseInfo(tNo,);
-         * List<Course> list2 = dao.getFrontAllCourseInfo("ä¸­");
-         * List<Course> list3 = dao.findAllCourseByTno("2016010901");
-         * for (Course c : list2) {
-         * System.out.println(c.getcName()+' '+c.getPageview()+' '+c.getPrice()+' '+c.gettNo());
-         * }
-         * for (CourseInfoWithsource c : list) {
-         * System.out.println(c.getcNo() + " " + c.getcName() + " " + c.getPageview() + " " + c.getPrice() + " "
-         * + c.getCourseDesc());
-         * for (SourceInfo s : c.getSources()) {
-         * System.out.println(s.getSourceName() + " " + s.getSourceDesc());
-         * }
-         * }
-         * for (Course c :list3){
-         * System.out.println(c.getcNo() + " " + c.getcName() + " " + c.getPageview() + " " + c.getPrice() + " "
-         * + c.getCourseDesc());
-         * }
-         * 
-         * /* åˆ›å»ºä¸€é—¨è¯¾ç¨‹
-         */
-        // CourseDAO dao = new CourseDAO();
-        // Course course = new Course();
-        // course.setcName("ä¸­è¯Š");
-        // course.settNo("2016010901");
-        // course.setSpecialtyid(2);
-        // course.setCourseDesc("å“ˆå“ˆ");
-        // if (dao.createCourse(course)) {
-        // System.out.println("åˆ›å»ºæˆåŠŸ");
-        // } else {
-        // System.out.println("åˆ›å»ºå¤±è´¥");
-        // }
-    }
+		/* ´´½¨Ò»ÃÅ¿Î³Ì */
+		// CourseDAO dao = new CourseDAO();
+		// Course course = new Course();
+		// course.setcName("ÖĞÕï");
+		// course.settNo("2016010901");
+		// course.setSpecialtyid(2);
+		// course.setCourseDesc("¹ş¹ş");
+		// if (dao.createCourse(course)) {
+		// System.out.println("´´½¨³É¹¦");
+		// } else {
+		// System.out.println("´´½¨Ê§°Ü");
+		// }
+	}
 
 }

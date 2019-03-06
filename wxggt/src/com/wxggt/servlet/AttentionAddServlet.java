@@ -2,7 +2,6 @@ package com.wxggt.servlet;
 
 import java.io.IOException;
 import java.io.Writer;
-import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,21 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-import com.wxggt.dao.CourseDAO;
-import com.wxggt.dto.Course;
+import com.wxggt.dao.AttentionDAO;
+import com.wxggt.dto.Attention;
 
 /**
- * Servlet implementation class ShowCourseOfTeacherServlet
+ * Servlet implementation class AddAttentionServlet
  */
-@WebServlet("/ShowCourseOfTeacherServlet")
-public class ShowCourseOfTeacherServlet extends HttpServlet {
+@WebServlet("/AttentionAddServlet")
+public class AttentionAddServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ShowCourseOfTeacherServlet() {
+    public AttentionAddServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,14 +36,19 @@ public class ShowCourseOfTeacherServlet extends HttpServlet {
         response.setHeader("Access-Control-Allow-Origin", "*");  
         /* 星号表示所有的异域请求都可以接受， */  
         response.setHeader("Access-Control-Allow-Methods", "GET,POST");
-        String tid = "2016010901";
-        CourseDAO coursedao = new CourseDAO();
-        List<Course> list = coursedao.findAllCourseByTno(tid);
-        //将数据转化为Json字符串
-        Gson gson = new Gson();
-        String Json = gson.toJson(list);
+        AttentionDAO dao = new AttentionDAO();
+        String Uid = request.getParameter("Uid");
+        String AttendUid = request.getParameter("AttendUid");
+        String returnString = null;
+        Attention attention = new Attention(Uid, AttendUid);
+        boolean result1 = dao.insertAttention(attention);
+        if(result1){
+        	returnString = "关注失败，请检查网络是否异常!";
+        }else{
+        	returnString = "关注成功!";
+        }
         Writer out = response.getWriter();
-        out.write(Json);
+        out.write(returnString);
         out.flush();
 	}
 
