@@ -1,5 +1,5 @@
-var cNo = $("#cNo").val();
-var cSort = $("#cSort").val();
+var cNo = $("#cNo").val().trim();
+var cSort = $("#cSort").val().trim();
 $(function() {
 	initCourceInfo();
 });
@@ -100,7 +100,7 @@ function changeUnitTitle(unit_title, new_unit_title) {
 			alert("保存失败,请稍后再试");
 			toOrdinaryUnit(unit_title);
 		} else {
-			alert("修改成功");
+			MP.successAlert("修改成功!");
 			toOrdinaryUnit(new_unit_title);
 			refreshTitleGather();
 		}
@@ -120,7 +120,7 @@ function insertUnitTitle(y, title) {
 		if (eval(tt) == 0) {
 			alert("保存失败,请稍后再试");
 		} else {
-			alert("增加成功");
+			MP.successAlert("添加成功!");
 			toNewUnit(y, title);
 		}
 	}
@@ -139,11 +139,13 @@ function delete_unit(this_row_unit, next_row_unit, del_title_group) {
 	});
 	function succseFunction(t) {
 		if (eval(t) == 0) {
-			alert("操作失败,请稍后再试");
+			alert("删除失败,请稍后再试");
 		} else {
+			MP.successAlert("已删除");
 			next_row_unit.replaceWith();
 			this_row_unit.replaceWith();
 			resetUnitNum();
+			resetPartNum();
 			refreshTitleGather();
 		}
 
@@ -202,7 +204,7 @@ function updatePartInfo(old_title, title, desc, real_path, x) {
 		if (eval(t2) == 0) {
 			alert("修改失败,请稍后再试");
 		} else {
-			alert("修改成功");
+			MP.successAlert("保存成功！");
 			toOrdinaryPart(x, title);
 			refreshTitleGather();
 		}
@@ -224,7 +226,7 @@ function insertPartInfo(title, desc, real_path, x) {
 		if (eval(t3) == 0) {
 			alert("保存失败,请稍后再试");
 		} else {
-			alert("保存成功");
+			MP.successAlert("添加成功！");
 			/* 生成一个新的课时行和一个添加课时行 */
 			newPart(x, title);
 			refreshTitleGather();
@@ -242,7 +244,7 @@ function deletePart(row_part, part_title) {
 	});
 	function succseFunction(t) {
 		if (eval(t) == 0) {
-			alert("操作失败,请稍后再试");
+			alert("deletePart操作失败,请稍后再试");
 		} else {
 			row_part.prev().replaceWith();
 			row_part.replaceWith();
@@ -263,7 +265,7 @@ function updateTitleGather(titleGather) {
 	});
 	function succseFunction(t) {
 		if (eval(t) == 0) {
-			alert("操作失败,请稍后再试");
+			alert("updateTitleGather操作失败,请稍后再试");
 		}
 	}
 }
@@ -280,7 +282,6 @@ function initCourceInfo() {
 	});
 	function getCourseSequence(t) {
 		if (eval(t) == "") {
-			alert("操作失败,请稍后再试");
 		} else {
 			var titleGather = eval(t);
 			init_row(titleGather);
@@ -323,7 +324,7 @@ function init_row(titleGather) {
 	$.each(title_group, function(index, item) {
 		if (item.substr(0, 4) == "单元--") {
 			if (index != 0) {
-				row_add_unit.before(row_line+row_add_part+row_line);
+				row_add_unit.before(row_line + row_add_part + row_line);
 			}
 			title = item.match(/单元--(.*)/)[1];
 			var row_unit = '<div class="row-unit"><div class="title-unit">单元</div><div class="circle-unit"><span class="num-unit">1</span></div>	<div class="content-unit" style="">' + title + '</div></div>';
@@ -331,10 +332,10 @@ function init_row(titleGather) {
 		} else {
 			title = item;
 			var row_part = '<div class="row-part"><div class="title-part">课时<i class="part_num_xixi">1</i></div><div class="circle-part"></div><div class="content-part" style="">' + title + '</div></div>';
-			row_add_unit.before(row_line+row_part);
+			row_add_unit.before(row_line + row_part);
 		}
 	});
-	row_add_unit.before(row_line+row_add_part+row_line);
+	row_add_unit.before(row_line + row_add_part + row_line);
 	drawVerticalLine();
 	resetUnitNum();
 	resetPartNum();

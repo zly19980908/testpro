@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="../../css/index_teacher/admin.css" />
 <link rel="stylesheet" href="../../css/index_teacher/page/typography.css" />
 <link rel="stylesheet" href="../../css/index_teacher/page/form.css" />
+<link rel="stylesheet" href="../../css/MyPopup.css" />
 <link rel="stylesheet" href="../../css/index_teacher/page/course.css" />
 </head>
 <body>
@@ -190,6 +191,7 @@
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../../js/jcanvas.min.js"></script>
+<script type="text/javascript" src="../../js/MyPopup.js"></script>
 <!-- 课时编辑页面的动态效果,及工具函数 -->
 <script type="text/javascript" src="../../js/index_teacher/editCourse.js"></script>
 <!-- 编辑单元 -->

@@ -71,7 +71,8 @@ $(document).on("click", ".am-icon-plus.am-icon-md,.new-unit-text", function() {
 	});
 	/* 保存---用户点击保存 */
 	y.find(".change-unit-button:eq(0)").click(function() {
-		var title = y.find(".change-unit-input").val();
+		var title = y.find(".change-unit-input").val().trim();
+		$.trim(title);
 		if (title != "") {
 			insertUnitTitle(y, title);
 		}
@@ -81,7 +82,7 @@ $(document).on("click", ".am-icon-plus.am-icon-md,.new-unit-text", function() {
 	y.find(".change-unit-input").keyup(function(e) {
 		if (e.keyCode == 13) {
 			/* 修改单元内容处理过程 */
-			var title = y.find(".change-unit-input").val();
+			var title = y.find(".change-unit-input").val().trim();
 			if (title != "") {
 				insertUnitTitle(y, title);
 			}
@@ -96,7 +97,7 @@ function toOrdinaryUnit(unit_title) {
 
 /* 修改单元内容处理过程 */
 function executeChangeUnitTitle(unit_title) {
-	var new_unit_title = $('.change-unit-input').val();
+	var new_unit_title = $('.change-unit-input').val().trim();
 	/* 如果单元内容发生了变化 */
 	if (new_unit_title != unit_title) {
 		/* 这里写ajax代码 */
