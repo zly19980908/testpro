@@ -53,10 +53,10 @@ $(document).on("click", ".am-icon-plus.am-icon-sm,.new-part-text", function() {
 	if (edittingPart.length > 0) {
 		alert("请先编辑完当前课时");
 	} else {
-		var edit_panel = "<div class='edit_part' tabindex='1'>" + "<label>课时标题:</label>" + "<input type='text' maxlength='25'  class='edit-part-title'/>" + "<label>课时描述:</label>" + "<textarea maxlength='99' class='edit-part-desc'></textarea>" + "<div class='upload_box'>" + "<label>视频上传:</label>" + 
+		var edit_panel =" <div class='edit_part' tabindex='1'>" + "<label>&nbsp;&nbsp;&nbsp;课时标题:&nbsp;</label>" + "<input type='text' maxlength='25'  class='edit-part-title'/>" + "<label>&nbsp;&nbsp;&nbsp;课时描述:&nbsp;</label>" + "<textarea maxlength='99' class='edit-part-desc'></textarea>" + "<div class='upload_box'>" + "<label>&nbsp;&nbsp;&nbsp;视频上传:&nbsp;</label>" + 
 		"<div id='container'><a id='selectfiles' href='javascript:void(0);' class='btn'>选择文件</a></div>" + "<div class='video_box'></div>" + 
-		"<div id='ossfile' class='ossfile-box'></div>" + "<input type='text' class='upload_real_path' value='../apple.mp4' style='display:none;' /> </div>"+
-		"<div class='button_box'>" + "<input type='button' class='edit-part-button' value='保存' />" + "&nbsp;&nbsp;" + "<input type='button' class='edit-part-button' value='取消' />" + "</div>" + "</div>";
+		"<div id='ossfile' class='ossfile-box'></div>" + "<input type='text' class='upload_real_path' value='../apple.mp4' style='display:none;' /> </div>" + "<div class='button_box'>"
+				+ "<input type='button' class='edit-part-button' value='保存' />" + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + "<input type='button' class='edit-part-button' value='取消' />" + "</div> </div>";
 		/* x代表圆圈circle-part */
 		var x = $(this).parents('.new-part-content').prev();
 		createPart_Panel($(this), edit_panel);

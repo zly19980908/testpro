@@ -126,8 +126,8 @@ function getUploader(part_panel){
 				d.getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
 				var prog = d.getElementsByTagName('div')[0];
 				var progBar = prog.getElementsByTagName('div')[0];
-				progBar.style.width = 2 * file.percent + 'px';
-				progBar.setAttribute('aria-valuenow', file.percent);
+				progBar.style.width = 4 * file.percent + 'px';
+				progBar.setAttribute('aria-valuenow', file.percent*2);
 			},
 
 			FileUploaded : function(up, file, info) {
