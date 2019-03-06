@@ -116,10 +116,7 @@
 								<a href="t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="t_practice.jsp"  class="am-cf">练习管理</a>
-							</li>
-							<li>
-								<a href="t_exam.jsp">考试管理</a>
+								<a href="t_ exercises.jsp"  class="am-cf">习题管理</a>
 							</li>
 							<li>
 								<a href="t_audio.jsp">音频管理</a>

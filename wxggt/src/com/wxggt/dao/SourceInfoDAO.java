@@ -3,15 +3,13 @@ package com.wxggt.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
-
 import java.util.List;
 
 import com.wxggt.dto.SourceInfo;
 import com.wxggt.util.DBUtil;
 import com.wxggt.util.ManagerTime;
+
 public class SourceInfoDAO {
 	/* 这是关于视频资源的DAO */
 
@@ -52,7 +50,7 @@ public class SourceInfoDAO {
 	/* 根据课程号查出所有视频资源(按视频序号递增) */
 	public List<SourceInfo> getSourcesByCno(String cno) {
 		List<SourceInfo> list = new ArrayList<SourceInfo>();
-		//TIMESTAMPDIFF(SECOND,downloadDate,CURRENT_TIME())以秒为单位获取数据库中时间与当前时间差
+		// TIMESTAMPDIFF(SECOND,downloadDate,CURRENT_TIME())以秒为单位获取数据库中时间与当前时间差
 		String sql = "SELECT id,cNo,sourceName,sourceSort,sourceTime,TIMESTAMPDIFF(SECOND,downloadDate,CURRENT_TIME()),sourceOrgin,isMajorType,sourceDesc FROM sourceinfo WHERE cno=? order by id ASC";
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -101,19 +99,19 @@ public class SourceInfoDAO {
 //		}
 
 		/* 上传一个资源 */
-		 SourceInfoDAO dao = new SourceInfoDAO();
-		 SourceInfo sourceInfo = new SourceInfo();
-		 sourceInfo.setcNo("226322545460");
-		 sourceInfo.setSourceName("中诊二");
-		 sourceInfo.setSourceSort("中诊");
-		 sourceInfo.setSourceTime(60);
-		 sourceInfo.setSourceOrgin("path");
-		 sourceInfo.setIsMajorType(1);
-		 sourceInfo.setSourceDesc("hahah");
-		 if (dao.uploadSource(sourceInfo)) {
-		 System.out.println("上传成功");
-		 } else {
-		 System.out.println("上传失败");
-		 }
+		SourceInfoDAO dao = new SourceInfoDAO();
+		SourceInfo sourceInfo = new SourceInfo();
+		sourceInfo.setcNo("226322545460");
+		sourceInfo.setSourceName("中诊二");
+		sourceInfo.setSourceSort("中诊");
+		sourceInfo.setSourceTime(60);
+		sourceInfo.setSourceOrgin("path");
+		sourceInfo.setIsMajorType(1);
+		sourceInfo.setSourceDesc("hahah");
+		if (dao.uploadSource(sourceInfo)) {
+			System.out.println("上传成功");
+		} else {
+			System.out.println("上传失败");
+		}
 	}
 }
