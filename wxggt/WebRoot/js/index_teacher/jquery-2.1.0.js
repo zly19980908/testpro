@@ -121,11 +121,9 @@ jQuery.fn = jQuery.prototype = {
 
 		// Build a new jQuery matched element set
 		var ret = jQuery.merge( this.constructor(), elems );
-
 		// Add the old object onto the stack (as a reference)
 		ret.prevObject = this;
 		ret.context = this.context;
-
 		// Return the newly-formed element set
 		return ret;
 	},

@@ -158,34 +158,6 @@
 						<div class="course-card-box">
 							<div class="div-content">
 								<!-- ondragstart="return false;"--禁止拖动图片 -->
-								<img src="../../images/index_teacher/course/x.jpg" class="img-content x" ondragstart="return false;">
-								<!-- 这里存放课程号 -->
-								<input type="hidden" value="1" />
-							</div>
-							<div class="div-content">
-								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
-								<div>
-									&nbsp;&nbsp;
-									<span class="am-icon-book">&nbsp;孩子叛逆早知道</span>
-								</div>
-								<div>
-									&nbsp;&nbsp;
-									<span class="am-icon-user">&nbsp;111人学习</span>
-								</div>
-								<div>
-									&nbsp;&nbsp;
-									<span class="am-icon-shopping-cart">&nbsp;0元</span>
-									<button class="edit-course-button" onclick="window.location.href='t_editCourse.jsp'">编辑课时</button>
-									<!-- 这里存放课程号 -->
-									<input type="hidden" value="1" />
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="am-u-md-3">
-						<div class="course-card-box">
-							<div class="div-content">
-								<!-- ondragstart="return false;"--禁止拖动图片 -->
 								<img src="../../images/index_teacher/course/web.jpg" class="img-content x" ondragstart="return false;">
 								<!-- 这里存放课程号 -->
 								<input type="hidden" value="2" />
