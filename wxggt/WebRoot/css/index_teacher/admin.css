@@ -13,7 +13,11 @@ html,body {
 ul {
 	margin-top: 0;
 }
-
+.home-position{
+	position:relative;
+	left:10px;
+	top:10px;
+}
 .admin-icon-yellow {
 	color: #ffbe40;
 }
@@ -101,9 +105,6 @@ ul {
 
 .admin-content,.admin-sidebar {
 	height: 100%;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
 }
 
 .admin-content-body {

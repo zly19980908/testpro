@@ -38,20 +38,22 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="index.html" class="logo">
-				<span class="logo-span"><img src="../images/main_page/logo.png" class="img-logo"></img></span>
+				<span class="logo-span">
+					<img src="../images/main_page/logo.png" class="img-logo"></img>
+				</span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
-
 		<div class="contain">
 			<ul class="am-nav am-navbar-nav am-navbar-left">
-
 				<li>
 					<h4 class="page-title">首页</h4>
 				</li>
 			</ul>
-
 			<ul class="am-nav am-navbar-nav am-navbar-right">
+				<li class="inform">
+						<a class="am-icon-home home-position" href="index.html"></a>
+				</li>
 				<li class="inform">
 					<i class="am-icon-bell-o"></i> <i id="letterNum" class="info-num">2</i>
 				</li>
@@ -67,8 +69,6 @@
 		</div>
 	</header>
 	<!-- end page -->
-
-
 	<div class="admin">
 		<!-- ========== 侧边栏开始 ========== -->
 		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
@@ -88,16 +88,9 @@
 					</h5>
 				</div>
 				<!-- End 用户 -->
-
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
-					<li>
-						<a href="index.html">
-							<span class="am-icon-home"></span>
-							首页
-						</a>
-					</li>
 					<!-- 副标题---教学管理-->
 					<li class="admin-parent">
 						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav1'}">
@@ -113,7 +106,7 @@
 								<a href="sidebar/t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="t_ exercises.jsp">习题管理</a>
+								<a href="t_exercises.jsp">习题管理</a>
 							</li>
 							<li>
 								<a href="sidebar/t_audio.jsp">音频管理</a>
@@ -146,15 +139,11 @@
 							</li>
 						</ul>
 					</li>
-					<li>
-						<a href="javascript:;">&nbsp;</a>
-					</li>
 				</ul>
 				<!-- 导航栏结束 -->
 			</div>
 		</div>
 		<!-- ========== 侧边栏结束 ========== -->
-
 		<!-- 右边内容从此处开始 -->
 		<div class="content-page">
 			<!-- 内容开始 -->
@@ -226,7 +215,6 @@
 					<!-- 新闻速览板块结束 -->
 				</div>
 				<!-- 第一部分结束 -->
-
 				<!-- 第二部分开始 -->
 				<div class="am-g">
 					<h3 class="page-title">数据展示</h3>
@@ -238,14 +226,12 @@
 								<div id="index-pie-1" style="height: 345px;height: 300px;"></div>
 							</div>
 						</div>
-
 						<div class="am-u-md-4">
 							<div class="card-box">
 								<h4 class="header-title m-t-0">环形图</h4>
 								<div id="index-bar-1" style="height: 345px;height: 300px;"></div>
 							</div>
 						</div>
-
 						<div class="am-u-md-4">
 							<div class="card-box">
 								<h4 class="header-title m-t-0">环形图</h4>
@@ -256,12 +242,10 @@
 					<!-- Row end -->
 				</div>
 				<!-- 第二部分结束 -->
-
 			</div>
 			<!-- 内容结束 -->
 		</div>
 		<!-- 右边内容在此处结束-->
-
 	</div>
 	<!-- 页面结束 -->
 </body>
@@ -276,5 +260,4 @@
 <!-- 上面这个影响滑动效果 -->
 <script type="text/javascript" src="../js/index_teacher/Common.js"></script>
 <script type="text/javascript" src="../js/index_teacher/Index.js"></script>
-
 </html>

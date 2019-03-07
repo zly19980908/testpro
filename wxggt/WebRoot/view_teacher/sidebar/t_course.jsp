@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,21 +20,23 @@
 	<!-- Begin page -->
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
-			<a href="index.html" class="logo">
-			<span class="logo-span"><img src="../../images/main_page/logo.png" class="img-logo"></img></span>
+			<a href="../index.html" class="logo">
+				<span class="logo-span">
+					<img src="../../images/main_page/logo.png" class="img-logo"></img>
+				</span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
-
 		<div class="contain">
 			<ul class="am-nav am-navbar-nav am-navbar-left">
-
 				<li>
 					<h4 class="page-title">课程管理</h4>
 				</li>
 			</ul>
-
 			<ul class="am-nav am-navbar-nav am-navbar-right">
+				<li class="inform">
+					<a class="am-icon-home home-position" href="../index.html"></a>
+				</li>
 				<li class="inform">
 					<span class="am-icon-bell-o"></span>
 					<i id="letterNum" class="info-num">2</i>
@@ -52,8 +53,6 @@
 		</div>
 	</header>
 	<!-- end page -->
-
-
 	<div class="admin">
 		<!-- ========== 侧边栏开始 ========== -->
 		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
@@ -73,16 +72,9 @@
 					</h5>
 				</div>
 				<!-- End 用户 -->
-
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
-					<li>
-						<a href="../index.html">
-							<span class="am-icon-home"></span>
-							首页
-						</a>
-					</li>
 					<!-- 副标题---教学管理-->
 					<li class="admin-parent">
 						<a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}">
@@ -98,7 +90,7 @@
 								<a href="t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="t_ exercises.jsp">习题管理</a>
+								<a href="t_exercises.jsp">习题管理</a>
 							</li>
 							<li>
 								<a href="t_audio.jsp">音频管理</a>
@@ -131,15 +123,11 @@
 							</li>
 						</ul>
 					</li>
-					<li>
-						<a href="javascript:;">&nbsp;</a>
-					</li>
 				</ul>
 				<!-- 导航栏结束 -->
 			</div>
 		</div>
 		<!-- ========== 侧边栏结束 ========== -->
-
 		<!-- ============================================================== -->
 		<!-- 右边的内容 -->
 		<div class="content-page">
@@ -148,7 +136,6 @@
 				<!-- 我的课程开始 -->
 				<div class="am-g">
 					<h3 class="page-title">我的课程</h3>
-
 					<!-- Row start -->
 					<!-- 这是第一个创建面板，不参与循环 -->
 					<div class="am-u-md-3">
@@ -166,7 +153,6 @@
 						</div>
 					</div>
 					<!-- 这是第一个创建面板到这里结束 -->
-
 					<!--  此处开始循环该教师所有的课程 -->
 					<div class="am-u-md-3">
 						<div class="course-card-box">
@@ -196,7 +182,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
@@ -225,7 +210,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
@@ -254,7 +238,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div class="am-u-md-3">
 						<div class="course-card-box">
 							<div class="div-content">
@@ -285,7 +268,6 @@
 					</div>
 					<!--  此处结束循环该教师所有的课程 -->
 					<!-- Row end -->
-
 				</div>
 				<!-- 第一部分结束 -->
 			</div>
@@ -305,13 +287,13 @@
 		/* 点击图片跳转到修改课程信息页面 */
 		$('.x').click(function() {
 			var cNo = $(this).next().val();
-			alert("课程号："+cNo);
+			alert("课程号：" + cNo);
 			$(location).attr('href', 't_changeCourseInfo.jsp?cNo=' + cNo);
 		});
 		/* 点击按钮跳转到编辑课程课时页面 */
 		$('.edit-course-button').click(function() {
 			var cNo = $(this).next().val();
-			alert("课程号："+cNo);
+			alert("课程号：" + cNo);
 			$(location).attr('href', 't_editCourse.jsp?cNo=' + cNo);
 		});
 	});

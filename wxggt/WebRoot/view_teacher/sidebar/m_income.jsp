@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,21 +39,23 @@
 	<!-- Begin page -->
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
-			<a href="index.html" class="logo">
-				<span class="logo-span"><img src="../../images/main_page/logo.png" class="img-logo"></img></span>
+			<a href="../index.html" class="logo">
+				<span class="logo-span">
+					<img src="../../images/main_page/logo.png" class="img-logo"></img>
+				</span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
-
 		<div class="contain">
 			<ul class="am-nav am-navbar-nav am-navbar-left">
-
 				<li>
 					<h4 class="page-title">首页</h4>
 				</li>
 			</ul>
-
 			<ul class="am-nav am-navbar-nav am-navbar-right">
+				<li class="inform">
+					<a class="am-icon-home home-position" href="../index.html"></a>
+				</li>
 				<li class="inform">
 					<i class="am-icon-bell-o"></i> <i id="letterNum" class="info-num">2</i>
 				</li>
@@ -70,8 +71,6 @@
 		</div>
 	</header>
 	<!-- end page -->
-
-
 	<div class="admin">
 		<!-- ========== 侧边栏开始 ========== -->
 		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
@@ -91,16 +90,9 @@
 					</h5>
 				</div>
 				<!-- End 用户 -->
-
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
-					<li>
-						<a href="../index.html">
-							<span class="am-icon-home"></span>
-							首页
-						</a>
-					</li>
 					<!-- 副标题---教学管理-->
 					<li class="admin-parent">
 						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav1'}">
@@ -116,7 +108,7 @@
 								<a href="t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="t_ exercises.jsp">练习管理</a>
+								<a href="t_exercises.jsp">练习管理</a>
 							</li>
 							<li>
 								<a href="t_audio.jsp">音频管理</a>
@@ -149,18 +141,11 @@
 							</li>
 						</ul>
 					</li>
-					<li>
-						<a href="javascript:;">&nbsp;</a>
-					</li>
 				</ul>
 				<!-- 导航栏结束 -->
 			</div>
 		</div>
 		<!-- ========== 侧边栏结束 ========== -->
-
-
-
-
 		<!-- ============================================================== -->
 		<!-- Start right Content here -->
 		<div class="content-page">
@@ -183,9 +168,7 @@
 									</ul>
 								</li>
 							</ul>
-
 							<h4 class="header-title m-t-0 m-b-30">输入框类型</h4>
-
 							<div class="am-g">
 								<div class="am-u-md-6">
 									<form class="am-form am-text-sm">
@@ -195,28 +178,24 @@
 												<input class="am-u-md-10 form-control" id="doc-ipt-text-1" placeholder="输入标题信息">
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">电子邮箱</label>
 												<input class="am-u-md-10 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right am-padding-left-0" for="doc-ipt-pwd-1">密码</label>
 												<input type="password" class="am-u-md-10" id="doc-ipt-pwd-1" placeholder="设置个密码吧">
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right am-padding-left-0" for="doc-ipt-phd-1">提示</label>
 												<input class="am-u-md-10 form-control" id="doc-ipt-phd-1" placeholder="提示信息">
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right am-padding-left-0" for="doc-ta-1">文本域</label>
@@ -225,7 +204,6 @@
 										</div>
 									</form>
 								</div>
-
 								<div class="am-u-md-6">
 									<form class="am-form am-text-sm">
 										<div class="am-form-group">
@@ -234,7 +212,6 @@
 												<input class="am-form-field am-u-md-10" type="text" id="doc-ds-ipt-1" placeholder="禁止输入" disabled>
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right am-padding-left-0" for="doc-ipt-text-2">说明信息</label>
@@ -244,7 +221,6 @@
 												</div>
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right" for="doc-select-1">下拉选框</label>
@@ -256,7 +232,6 @@
 												<span class="am-form-caret"></span>
 											</div>
 										</div>
-
 										<div class="am-form-group">
 											<div class="am-g">
 												<label class="am-u-md-2 am-md-text-right" for="doc-select-2">多选框</label>
@@ -278,8 +253,6 @@
 					</div>
 					<!-- Row end -->
 				</div>
-
-
 				<!-- row start -->
 				<div class="am-g">
 					<!-- col start -->
@@ -296,7 +269,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="am-form-group am-form-warning">
 									<div class="am-g">
 										<label class="am-form-label am-u-md-3 am-md-text-right am-padding-right-0" for="doc-ipt-warning">验证警告</label>
@@ -305,7 +277,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="am-form-group am-form-error">
 									<div class="am-g">
 										<label class="am-form-label am-u-md-3 am-md-text-right am-padding-right-0" for="doc-ipt-error">验证失败</label>
@@ -314,7 +285,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="am-form-group am-form-success am-form-icon am-form-feedback">
 									<div class="am-g">
 										<label class="am-form-label am-u-md-3 am-md-text-right am-padding-right-0" for="doc-ipt-success2">验证成功</label>
@@ -324,7 +294,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="am-form-group am-form-warning am-form-icon am-form-feedback">
 									<div class="am-g">
 										<label class="am-form-label am-u-md-3 am-md-text-right am-padding-right-0" for="doc-ipt-warm2">验证警告</label>
@@ -334,7 +303,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="am-form-group am-form-error am-form-icon am-form-feedback">
 									<div class="am-g">
 										<label class="am-form-label am-u-md-3 am-md-text-right am-padding-right-0" for="doc-ipt-error2">验证失败</label>
@@ -344,14 +312,10 @@
 										</div>
 									</div>
 								</div>
-
-
-
 							</form>
 						</div>
 					</div>
 					<!-- col end -->
-
 					<!-- col start -->
 					<div class="am-u-md-6">
 						<div class="card-box">
@@ -363,19 +327,16 @@
 								<br />
 								<input class="am-form-field am-input-sm am-radius" type="text" placeholder="添加了 .am-input-sm">
 								<br />
-
 								<div class="am-form-group am-form-select">
 									<select class=" am-input-lg am-radius">
 										<option value="">添加了 .am-input-lg</option>
 									</select>
 								</div>
-
 								<div class="am-form-group am-form-select">
 									<select class="am-radius">
 										<option value="">select 默认大小</option>
 									</select>
 								</div>
-
 								<div class="am-form-group am-form-select">
 									<select class=" am-input-sm am-radius">
 										<option value="">添加了 .am-input-sm</option>
@@ -387,8 +348,6 @@
 					<!-- col end -->
 				</div>
 				<!-- row end -->
-
-
 				<!-- row start -->
 				<div class="am-g">
 					<!-- col start -->
@@ -400,25 +359,21 @@
 									<label for="doc-ipt-email-2">邮件</label>
 									<input type="email" class="am-radius" id="doc-ipt-email-2" placeholder="输入电子邮件">
 								</div>
-
 								<div class="am-form-group">
 									<label for="doc-ipt-pwd-2">密码</label>
 									<input type="password" class="am-radius" id="doc-ipt-pwd-2" placeholder="设置个密码吧">
 								</div>
-
 								<div class="am-checkbox">
 									<label>
 										<input type="checkbox">
 										记住我
 									</label>
 								</div>
-
 								<button type="submit" class="am-btn am-btn-primary">Submit</button>
 							</form>
 						</div>
 					</div>
 					<!-- col end -->
-
 					<!-- col start -->
 					<div class="am-u-md-6">
 						<div class="card-box">
@@ -430,21 +385,18 @@
 										<input type="email" id="doc-ipt-3" placeholder="输入你的电子邮件">
 									</div>
 								</div>
-
 								<div class="am-form-group">
 									<label for="doc-ipt-pwd-2" class="am-u-sm-3 am-form-label am-text-right am-padding-right-0">密码</label>
 									<div class="am-u-sm-9">
 										<input type="password" id="doc-ipt-pwd-2" placeholder="设置一个密码吧">
 									</div>
 								</div>
-
 								<div class="am-form-group">
 									<label for="doc-ipt-pwd-3" class="am-u-sm-3 am-form-label am-text-right am-padding-right-0">确认密码</label>
 									<div class="am-u-sm-9">
 										<input type="password" id="doc-ipt-pwd-3" placeholder="输入确认密码">
 									</div>
 								</div>
-
 								<div class="am-form-group">
 									<div class="am-u-sm-offset-3 am-u-sm-10">
 										<div class="checkbox">
@@ -455,7 +407,6 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="am-form-group">
 									<div class="am-u-sm-10 am-u-sm-offset-3">
 										<button type="submit" class="am-btn am-btn-default">提交登入</button>
@@ -467,7 +418,6 @@
 					<!-- col end -->
 				</div>
 				<!-- row end -->
-
 			</div>
 		</div>
 	</div>

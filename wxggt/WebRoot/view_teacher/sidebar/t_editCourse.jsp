@@ -1,7 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ page contentType="text/html;charset=utf-8"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,23 +21,23 @@
 	<!-- Begin page -->
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
-			<a href="index.html" class="logo">
+			<a href="../index.html" class="logo">
 				<span class="logo-span">
 					<img src="../../images/main_page/logo.png" class="img-logo"></img>
 				</span>
 				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
-
 		<div class="contain">
 			<ul class="am-nav am-navbar-nav am-navbar-left">
-
 				<li>
 					<h4 class="page-title">课程管理</h4>
 				</li>
 			</ul>
-
 			<ul class="am-nav am-navbar-nav am-navbar-right">
+				<li class="inform">
+					<a class="am-icon-home home-position" href="../index.html"></a>
+				</li>
 				<li class="inform">
 					<span class="am-icon-bell-o"></span>
 					<i id="letterNum" class="info-num">2</i>
@@ -55,8 +54,6 @@
 		</div>
 	</header>
 	<!-- end page -->
-
-
 	<div class="admin">
 		<!-- ========== 侧边栏开始 ========== -->
 		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
@@ -76,16 +73,9 @@
 					</h5>
 				</div>
 				<!-- End 用户 -->
-
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
 					<!-- 首页 -->
-					<li>
-						<a href="../index.html">
-							<span class="am-icon-home"></span>
-							首页
-						</a>
-					</li>
 					<!-- 副标题---教学管理-->
 					<li class="admin-parent">
 						<a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}">
@@ -101,7 +91,7 @@
 								<a href="t_resource.jsp">资料管理</a>
 							</li>
 							<li>
-								<a href="t_ exercises.jsp">习题管理</a>
+								<a href="t_exercises.jsp">习题管理</a>
 							</li>
 							<li>
 								<a href="t_audio.jsp">音频管理</a>
@@ -134,15 +124,11 @@
 							</li>
 						</ul>
 					</li>
-					<li>
-						<a href="javascript:;">&nbsp;</a>
-					</li>
 				</ul>
 				<!-- 导航栏结束 -->
 			</div>
 		</div>
 		<!-- ========== 侧边栏结束 ========== -->
-
 		<!-- ============================================================== -->
 		<!-- 右边的内容 -->
 		<div class="content-page">
@@ -195,5 +181,4 @@
 <script type="text/javascript" src="../../js/index_teacher/editUnit.js"></script>
 <!-- 编辑课时 -->
 <script type="text/javascript" src="../../js/index_teacher/editPart.js"></script>
-
 </html>
