@@ -1,3 +1,21 @@
+.info-num {
+	position: absolute;
+	top: 28px;
+	right: -10px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	background: url('../../images/index_teacher/msg.png');
+	color: #fff;
+	font-style: normal;
+	font-size: 1px;
+}
+
+.info-num_ {
+	display: none;
+	list-style-type: none;
+}
 .logo-span {
 	position: relative;
 	top: -10px;

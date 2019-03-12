@@ -75,56 +75,37 @@
 				<!-- End 用户 -->
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
-					<!-- 首页 -->
-					<!-- 副标题---教学管理-->
-					<li class="admin-parent">
-						<a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}">
-							<span class="am-icon-book"></span>
-							教学管理
-							<span class="am-icon-angle-right am-fr am-margin-right"></span>
-						</a>
-						<ul class="am-list admin-sidebar-sub am-collapse am-in" id="collapse-nav1" style="">
-							<li>
-								<a href="t_course.jsp" class="am-cf">课程管理</a>
-							</li>
-							<li>
-								<a href="t_resource.jsp">资料管理</a>
-							</li>
-							<li>
-								<a href="t_exercises.jsp">习题管理</a>
-							</li>
-							<li>
-								<a href="t_audio.jsp">音频管理</a>
-							</li>
-						</ul>
-					</li>
-					<!-- 副标题---资金管理-->
-					<li class="admin-parent">
-						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav2'}">
-							<span class="am-icon-briefcase"></span>
-							资金管理
-							<span class="am-icon-angle-right am-fr am-margin-right"></span>
-						</a>
-						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav2" style="height: 0px;">
-							<li>
-								<a href="m_income.jsp" class="am-cf">收益管理</a>
-							</li>
-						</ul>
-					</li>
-					<!-- 副标题---个人中心 -->
-					<li class="admin-parent">
-						<a class="am-cf am-collapsed" data-am-collapse="{target: '#collapse-nav5'}">
-							<span class="am-icon-user"></span>
-							个人中心
-							<span class="am-icon-angle-right am-fr am-margin-right"></span>
-						</a>
-						<ul class="am-list admin-sidebar-sub am-collapse" id="collapse-nav5" style="height: 0px;">
-							<li>
-								<a href="../resetInfo.jsp" class="am-cf">信息管理</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
+                    <li class="admin-parent"></li>
+                    <li class="admin-parent">
+                        <a class="am-cf page-on" style="color:#fff;" href="t_course.jsp">
+                            <span class="am-icon-file"></span> 课程管理 <span class="am-fr am-margin-right"></span>
+                        </a>
+                    </li>
+                    <li class="admin-parent">
+                        <a class="am-cf" href="t_resource.jsp">
+                            <span class="am-icon-files-o"></span> 资料管理 <span class="am-fr am-margin-right"></span>
+                        </a>
+                    <li class="admin-parent">
+                        <a class="am-cf" href="t_exercises.jsp">
+                            <span class="am-icon-paperclip"></span> 习题管理 <span class="am-fr am-margin-right"></span>
+                        </a>
+                    </li>
+                    <li class="admin-parent">
+                        <a class="am-cf" href="t_audio.jsp">
+                            <span class="am-icon-microphone"></span> 音频管理 <span class="am-fr am-margin-right"></span>
+                        </a>
+                    </li>
+                    <li class="admin-parent">
+                        <a class="am-cf" href="m_income.jsp">
+                            <span class="am-icon-briefcase"></span> 资金管理 <span class="am-fr am-margin-right"></span>
+                        </a>
+                    </li>
+                    <li class="admin-parent">
+                        <a class="am-cf" href="../resetInfo.jsp">
+                            <span class="am-icon-user"></span> 个人中心 <span class="am-fr am-margin-right"></span>
+                        </a>
+                    </li>
+                </ul>
 				<!-- 导航栏结束 -->
 			</div>
 		</div>

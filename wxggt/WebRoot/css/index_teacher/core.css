@@ -1,3 +1,4 @@
+
 body {
 	background: #ebeff2;
 	font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -646,7 +647,7 @@ a:focus {
 }
 /* Form components */
 textarea.form-control {
-	min-height: 90px;
+	min-height: 52px;
 }
 
 .form-control {

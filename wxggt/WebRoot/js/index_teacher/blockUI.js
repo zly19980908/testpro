@@ -13,15 +13,22 @@
  */
 /*这里需要设置菜单的切换样式*/
 $(function() {
-        /* 点击事件*/
-        //$(".admin-parent:eq(0) a:eq(0)").click();
-
-//        $(".admin-parent").find(".am-cf.am-collapsed").click(function() {
-//                $("[class='am-cf']").each(function(){
-//                    alert('123');
-//                    $(this).click();
-//                });
-//        });
+  $('.am-cf').mouseenter(function(){
+	  var ele_css=$(this).attr("class");
+		$(this).find("span:eq(1)").toggleClass("am-icon-angle-right");
+		if(ele_css!="am-cf page-on"){
+		  $(this).toggleClass("page-onn");
+	  }
+  });
+  
+  $('.am-cf').mouseleave(function(){
+	  var ele_css=$(this).attr("class");
+		$(this).find("span:eq(1)").toggleClass("am-icon-angle-right");
+		if(ele_css!="am-cf page-on"){
+		  $(this).toggleClass("page-onn");
+	  }
+  });
+  
 
 });
 ;(function() {
