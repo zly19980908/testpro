@@ -1,0 +1,62 @@
+.am-form-group {
+	margin-bottom:-0.5rem;
+}
+
+.card-position {
+	position: relative;
+	left: 45px;
+}
+
+.textarea-style {
+	resize: none;
+	max-width: 628px;
+	max-height: 56px;
+}
+
+textarea.form-control {
+    min-height: 38px;
+}
+
+.select-style {
+	resize: none;
+	max-width: 628px;
+	max-height: 38px;
+}
+
+.labels {
+	padding:0.1px;
+	left: 64px;
+	width: 109px;
+	text-align: left !important;
+}
+
+.radio-group {
+	position: relative;
+	left: 46px;
+	top: 34px;
+	width: 10px;
+}
+
+.question-word-num {
+	position: absolute;
+	background: #def5d0;
+	left: 615px;
+	top: 12px;
+	width: 120px;
+	height: 23px;
+	color: #6baf39;
+	border-radius: 4px;
+	display:none ;
+}
+
+.select-word-num {
+	position: absolute;
+	background: #def5d0;
+	left: 654px;
+	top: 6px;
+	width: 120px;
+	height: 23px;
+	color: #6baf39;
+	border-radius: 4px;
+	display: none;
+}

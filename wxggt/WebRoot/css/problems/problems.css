@@ -1,0 +1,60 @@
+.info-num {
+	position: absolute;
+	top: 28px;
+	right: -10px;
+	width: 16px;
+	height: 16px;
+	line-height: 16px;
+	text-align: center;
+	background: url('../../images/index_teacher/msg.png');
+	color: #fff;
+	font-style: normal;
+	font-size: 1px;
+}
+
+table.dataTable tbody tr.selected {
+	background-color: #B0BED9;
+}
+
+.select-all {
+	background-color: rgb(109, 199, 77);
+	color: #fff;
+	border: rgb(165, 218, 93) 1px solid;
+	padding: 4px 7px 4px 7px;
+	position: relative;
+	left: 820px;
+	top: 30px;
+}
+
+.edit-pb {
+	background-color: rgb(113, 182, 249);
+	color: #fff;
+	border: #B0BED9 1px solid;
+	padding: 4px 7px 4px 7px;
+	position: relative;
+	left: 840px;
+	top: 30px;
+}
+
+.del-pb {
+	background-color: rgb(249, 119, 108);
+	color: #fff;
+	border: rgb(230, 116, 106) 1px solid;
+	padding: 4px 7px 4px 7px;
+	position: relative;
+	left: 860px;
+	top: 30px;
+}
+
+a {
+	color: #797979;
+}
+
+a:hover {
+	color: #797979;
+}
+
+.info-num_ {
+	display: none;
+	list-style-type: none;
+}
