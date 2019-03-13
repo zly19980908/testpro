@@ -19,8 +19,10 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="../index.html" class="logo">
-				<span class="logo-span"> <img src="../../images/main_page/logo.png" class="img-logo"></img>
-				</span> <i class="zmdi zmdi-layers"></i>
+				<span class="logo-span">
+					<img src="../../images/main_page/logo.png" class="img-logo"></img>
+				</span>
+				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
 		<div class="contain">
@@ -61,37 +63,49 @@
 				<!-- End 用户 -->
 				<!-- 导航栏开始 -->
 				<ul class="am-list admin-sidebar-list">
-                    <li class="admin-parent"></li>
-                    <li class="admin-parent">
-                        <a class="am-cf" href="t_course.jsp">
-                            <span class="am-icon-file"></span> 课程管理 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    </li>
-                    <li class="admin-parent">
-                        <a class="am-cf" href="t_resource.jsp">
-                            <span class="am-icon-files-o"></span> 资料管理 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    <li class="admin-parent">
-                        <a class="am-cf page-on" style="color:#fff;" href="t_exercises.jsp">
-                            <span class="am-icon-paperclip"></span> 习题管理 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    </li>
-                    <li class="admin-parent">
-                        <a class="am-cf" href="t_audio.jsp">
-                            <span class="am-icon-microphone"></span> 音频管理 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    </li>
-                    <li class="admin-parent">
-                        <a class="am-cf" href="m_income.jsp">
-                            <span class="am-icon-briefcase"></span> 资金管理 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    </li>
-                    <li class="admin-parent">
-                        <a class="am-cf" href="../resetInfo.jsp">
-                            <span class="am-icon-user"></span> 个人中心 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    </li>
-                </ul>
+					<li class="admin-parent"></li>
+					<li class="admin-parent">
+						<a class="am-cf" href="t_course.jsp">
+							<span class="am-icon-file"></span>
+							课程管理
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+					<li class="admin-parent">
+						<a class="am-cf" href="t_resource.jsp">
+							<span class="am-icon-files-o"></span>
+							资料管理
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					<li class="admin-parent">
+						<a class="am-cf page-on" style="color:#fff;" href="t_exercisesRepositories.jsp">
+							<span class="am-icon-paperclip"></span>
+							习题管理
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+					<li class="admin-parent">
+						<a class="am-cf" href="t_audio.jsp">
+							<span class="am-icon-microphone"></span>
+							音频管理
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+					<li class="admin-parent">
+						<a class="am-cf" href="m_income.jsp">
+							<span class="am-icon-briefcase"></span>
+							资金管理
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+					<li class="admin-parent">
+						<a class="am-cf" href="../resetInfo.jsp">
+							<span class="am-icon-user"></span>
+							个人中心
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+				</ul>
 				<!-- 导航栏结束 -->
 			</div>
 		</div>
@@ -111,13 +125,15 @@
 								<div class="card-box card-position">
 									<h4 class="header-title m-t-0 m-b-30">试题编辑</h4>
 									<form class="am-form am-form-horizontal">
-										<hr style="border:2px inset #ccffb8;width:100%;" >
+										<hr style="border:2px inset #ccffb8;width:100%;">
 										<div class="am-form-group">
 											<label for="doc-ipt-3" class="am-u-sm-2 am-form-label am-text-right am-padding-right-0" style="left:-40px;">题目内容</label>
 											<div class="am-u-sm-9">
 												<textarea class="am-u-md-5 form-control textarea-style" maxlength="80" rows="4" id="question_comtent" style="left:-40px;"></textarea>
 												<div class="question-word-num">
-													还可输入<span>76</span>个字
+													还可输入
+													<span>76</span>
+													个字
 												</div>
 											</div>
 										</div>
@@ -130,7 +146,9 @@
 											<div class="am-u-sm-9">
 												<textarea class="am-u-md-5 form-control select-style" maxlength="38" rows="2" id="question_select_A"></textarea>
 												<div class="select-word-num">
-													还可输入<span>38</span>个字
+													还可输入
+													<span>38</span>
+													个字
 												</div>
 											</div>
 										</div>
@@ -143,7 +161,9 @@
 											<div class="am-u-sm-9">
 												<textarea class="am-u-md-5 form-control select-style" maxlength="38" rows="2" id="question_select_B"></textarea>
 												<div class="select-word-num">
-													还可输入<span>38</span>个字
+													还可输入
+													<span>38</span>
+													个字
 												</div>
 											</div>
 										</div>
@@ -156,7 +176,9 @@
 											<div class="am-u-sm-9">
 												<textarea class="am-u-md-5 form-control select-style" maxlength="38" rows="2" id="question_select_C"></textarea>
 												<div class="select-word-num">
-													还可输入<span>38</span>个字
+													还可输入
+													<span>38</span>
+													个字
 												</div>
 											</div>
 										</div>
@@ -169,7 +191,9 @@
 											<div class="am-u-sm-9">
 												<textarea class="am-u-md-5 form-control select-style" maxlength="38" rows="2" id="question_select_D"></textarea>
 												<div class="select-word-num">
-													还可输入<span>38</span>个字
+													还可输入
+													<span>38</span>
+													个字
 												</div>
 											</div>
 										</div>
@@ -179,7 +203,9 @@
 											<div class="am-u-sm-9">
 												<textarea class="am-u-md-5 form-control textarea-style" maxlength="80" rows="4" id="question_comtent" style="left:-40px;"></textarea>
 												<div class="question-word-num">
-													还可输入<span>76</span>个字
+													还可输入
+													<span>76</span>
+													个字
 												</div>
 											</div>
 										</div>
@@ -192,7 +218,7 @@
 											</div>
 										</div>
 										<br>
-										<hr style="border:2px inset #ccffb8;width:100%;" >
+										<hr style="border:2px inset #ccffb8;width:100%;">
 										<div class="am-form-group">
 											<div class="am-u-sm-10 am-u-sm-offset-3">
 												<button type="submit" class="am-btn am-btn-warning">保存</button>

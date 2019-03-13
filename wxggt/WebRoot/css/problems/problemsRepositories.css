@@ -16,9 +16,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .row-group {
-	position:relative;
+	position: relative;
 	margin-bottom: 2.0rem;
-	left:32px;
+	left: 28px;
 }
 
 a {
@@ -46,17 +46,19 @@ a:hover, #topbar a:hover, h1 a.more:hover, .catagory_container a:hover,
 .test {
 	margin-bottom: 12px;
 	padding: 10px;
+	margin-left:50px;
+	margin-right:50px;
 }
 
 h1 {
 	height: 34px;
 	line-height: 34px;
 	background-color: #f6f6f6;
-	border-top: 2px solid #0f9d58;
+	border-top: 2px solid #61bfbf;
 	border-bottom: 1px solid #eee;
 	position: relative;
 	text-align: right;
-	border-right: 1px solid #0f9d58;
+	border-right: 1px solid #61bfbf;
 	padding-right: 10px;
 }
 
@@ -81,10 +83,11 @@ h1 b {
 }
 
 .test_container {
-	border-left: 1px solid #0f9d58;
-	border-right: 1px solid #0f9d58;
-	border-bottom: 1px solid #0f9d58;
+	border-left: 1px solid #61bfbf;
+	border-right: 1px solid #61bfbf;
+	border-bottom: 1px solid #61bfbf;
 	padding: 8px 8px 16px;
+	height: 100px;
 }
 
 .test h4 {
@@ -96,7 +99,7 @@ h1 b {
 	border-top: 1px solid #eee;
 	text-align: center;
 	line-height: 30px;
-	color: #0f9d58;
+	color: #61bfbf;
 	font-weight: bold;
 	font-size: 14px;
 	margin-top: 14px;
@@ -112,5 +115,38 @@ h1 b {
 
 .test p a {
 	padding: 0px 20px;
-	font: 14px/46px ;
+	font: 14px/46px;
+}
+
+.div-box {
+	height: 110px;
+	width: 110px;
+	float: left;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
+	background: transparent;
+}
+
+.m-b-0 {
+	margin-bottom: 0px !important;
+}
+
+.p-num-box {
+	position: relative;
+	top: -95px;
+	left: 140px;
+	width: 120px;
+	font-family: 'Microsoft Yahei', "simsun";
+	font-size: 20px;
+}
+
+.href-box {
+	position: relative;
+	top: -107px;
+	left: 155px;
+	width: 60px;
+	height: 20px;
+	color: #fff;
+	font-family: 'Microsoft Yahei', "simsun";
+    font-size: 6px;
 }

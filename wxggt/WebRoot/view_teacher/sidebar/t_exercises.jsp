@@ -75,7 +75,7 @@
                             <span class="am-icon-files-o"></span> 资料管理 <span class="am-fr am-margin-right"></span>
                         </a>
                     <li class="admin-parent">
-                        <a class="am-cf page-on" style="color:#fff;" href="t_exercises.jsp">
+                        <a class="am-cf page-on" style="color:#fff;" href="t_exercisesRepositories.jsp">
                             <span class="am-icon-paperclip"></span> 习题管理 <span class="am-fr am-margin-right"></span>
                         </a>
                     </li>

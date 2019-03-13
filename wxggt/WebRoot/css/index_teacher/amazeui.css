@@ -8855,6 +8855,15 @@ img.am-thumbnail, .am-thumbnail>img, .am-thumbnail a>img {
 	clear: both;
 }
 
+.am-cf-1:before, .am-cf-1:after {
+    content: " ";
+    display: table;
+}
+
+.am-cf-1:after {
+    clear: both;
+}
+
 .am-fl {
 	float: left;
 }

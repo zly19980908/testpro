@@ -11,7 +11,7 @@
 <link rel="stylesheet" href='../../css/index_teacher/amazeui.css' />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../../css/index_teacher/admin.css" />
-<link rel="stylesheet" href="../../css/problems/problems.css" />
+<link rel="stylesheet" href="../../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../../css/problems/problemsRepositories.css" />
 </head>
 <body>
@@ -19,8 +19,10 @@
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
 			<a href="../index.html" class="logo">
-				<span class="logo-span"> <img src="../../images/main_page/logo.png" class="img-logo"></img>
-				</span> <i class="zmdi zmdi-layers"></i>
+				<span class="logo-span">
+					<img src="../../images/main_page/logo.png" class="img-logo"></img>
+				</span>
+				<i class="zmdi zmdi-layers"></i>
 			</a>
 		</div>
 		<div class="contain">
@@ -64,31 +66,43 @@
 					<li class="admin-parent"></li>
 					<li class="admin-parent">
 						<a class="am-cf" href="t_course.jsp">
-							<span class="am-icon-file"></span> 课程管理 <span class="am-fr am-margin-right"></span>
+							<span class="am-icon-file"></span>
+							课程管理
+							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
 					<li class="admin-parent">
 						<a class="am-cf" href="t_resource.jsp">
-							<span class="am-icon-files-o"></span> 资料管理 <span class="am-fr am-margin-right"></span>
+							<span class="am-icon-files-o"></span>
+							资料管理
+							<span class="am-fr am-margin-right"></span>
 						</a>
 					<li class="admin-parent">
-						<a class="am-cf page-on" style="color:#fff;" href="t_exercises.jsp">
-							<span class="am-icon-paperclip"></span> 习题管理 <span class="am-fr am-margin-right"></span>
+						<a class="am-cf page-on" style="color:#fff;" href="t_exercisesRepositories.jsp">
+							<span class="am-icon-paperclip"></span>
+							习题管理
+							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
 					<li class="admin-parent">
 						<a class="am-cf" href="t_audio.jsp">
-							<span class="am-icon-microphone"></span> 音频管理 <span class="am-fr am-margin-right"></span>
+							<span class="am-icon-microphone"></span>
+							音频管理
+							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
 					<li class="admin-parent">
 						<a class="am-cf" href="m_income.jsp">
-							<span class="am-icon-briefcase"></span> 资金管理 <span class="am-fr am-margin-right"></span>
+							<span class="am-icon-briefcase"></span>
+							资金管理
+							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
 					<li class="admin-parent">
 						<a class="am-cf" href="../resetInfo.jsp">
-							<span class="am-icon-user"></span> 个人中心 <span class="am-fr am-margin-right"></span>
+							<span class="am-icon-user"></span>
+							个人中心
+							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
 				</ul>
@@ -102,33 +116,130 @@
 			<div class="content">
 				<!-- Row start -->
 				<div class="am-g row-group">
-					<div class="am-u-sm-5">
-						<div class="test">
+					<div class="am-u-sm-12">
+						<!-- Col start -->
+						<div class="test am-u-md-4">
 							<h1>
 								<b>爬虫</b>
 							</h1>
 							<div class="test_container">
-								<p>
-									<span class="am-icon-question-circle"></span><span style="color:red;">10道题</span> <span class="am-icon-paper-planet"></span>
-									<a href="t_exercises.jsp">进入题库</a>
-								</p>
+								<!-- 这里是饼状图 -->
+								<div class="widget-chart-1 am-cf-1">
+									<div id="widget-chart-box-1" class="div-box"></div>
+									<div class="widget-detail-1" style="float: right;"></div>
+								</div>
+								<div class="p-num-box">
+									<h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
+								</div>
+								<span class="am-icon-paper-planet"></span>
+								<div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
 							</div>
 						</div>
-					</div>
-					<!-- Row end -->
+						<!-- Col end -->
 
+						<!-- Col start -->
+						<div class="test am-u-md-4">
+							<h1>
+								<b>爬虫</b>
+							</h1>
+							<div class="test_container">
+								<!-- 这里是饼状图 -->
+								<div class="widget-chart-1 am-cf-1">
+									<div id="widget-chart-box-2" class="div-box"></div>
+									<div class="widget-detail-1" style="float: right;"></div>
+								</div>
+								<div class="p-num-box">
+									<h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
+								</div>
+								<span class="am-icon-paper-planet"></span>
+								<div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+							</div>
+						</div>
+						<!-- Col end -->
+					</div>
 				</div>
+				<!-- Row end -->
+				
+				<!-- Row start -->
+                <div class="am-g row-group">
+                    <div class="am-u-sm-12">
+                        <!-- Col start -->
+                        <div class="test am-u-md-4">
+                            <h1>
+                                <b>爬虫</b>
+                            </h1>
+                            <div class="test_container">
+                                <!-- 这里是饼状图 -->
+                                <div class="widget-chart-1 am-cf-1">
+                                    <div id="widget-chart-box-3" class="div-box"></div>
+                                    <div class="widget-detail-1" style="float: right;"></div>
+                                </div>
+                                <div class="p-num-box">
+                                    <h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
+                                </div>
+                                <span class="am-icon-paper-planet"></span>
+                                <div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+                            </div>
+                        </div>
+                        <!-- Col end -->
+
+                        <!-- Col start -->
+                        <div class="test am-u-md-4">
+                            <h1>
+                                <b>爬虫</b>
+                            </h1>
+                            <div class="test_container">
+                                <!-- 这里是饼状图 -->
+                                <div class="widget-chart-1 am-cf-1">
+                                    <div id="widget-chart-box-4" class="div-box"></div>
+                                    <div class="widget-detail-1" style="float: right;"></div>
+                                </div>
+                                <div class="p-num-box">
+                                    <h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
+                                </div>
+                                <span class="am-icon-paper-planet"></span>
+                                <div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+                            </div>
+                        </div>
+                        <!-- Col end -->
+                    </div>
+                </div>
+                <!-- Row end -->
+                
+                <!-- Row start -->
+                <div class="am-g row-group">
+                    <div class="am-u-sm-12">
+                        <!-- Col start -->
+                        <div class="test am-u-md-4">
+                            <h1>
+                                <b>爬虫</b>
+                            </h1>
+                            <div class="test_container">
+                                <!-- 这里是饼状图 -->
+                                <div class="widget-chart-1 am-cf-1">
+                                    <div id="widget-chart-box-5" class="div-box"></div>
+                                    <div class="widget-detail-1" style="float: right;"></div>
+                                </div>
+                                <div class="p-num-box">
+                                    <h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
+                                </div>
+                                <span class="am-icon-paper-planet"></span>
+                                <div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+                            </div>
+                        </div>
+                        <!-- Col end -->
+                    </div>
+                </div>
+                <!-- Row end -->
+                
 			</div>
+
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="../../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
-<!-- Bootstrap Js -->
-<script src="../../js/bootstrap.min.js"></script>
-<!-- DATA TABLE SCRIPTS -->
-<script src="../../js/problems/jquery.dataTables.js"></script>
-<script src="../../js/problems/dataTables.bootstrap.js"></script>
-<script src="../../js/problems/problems.js"></script>
+<script type="text/javascript" src="../../js/index_teacher/charts/echarts.min.js"></script>
+<script type="text/javascript" src="../../js/index_teacher/charts/RepositoryChart.js"></script>
 </html>
