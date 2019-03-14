@@ -1,8 +1,7 @@
 body {
 	font: normal 15px/1.5 Arial, Helvetica, Free Sans, sans-serif;
 	color: #222;
-	background: url(pattern.png);
-	overflow-y: scroll;
+	background:#7eb8e2;
 	padding: 60px 0 0 0;
 }
 

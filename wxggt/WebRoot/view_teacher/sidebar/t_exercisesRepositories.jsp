@@ -85,13 +85,6 @@
 						</a>
 					</li>
 					<li class="admin-parent">
-						<a class="am-cf" href="t_audio.jsp">
-							<span class="am-icon-microphone"></span>
-							音频管理
-							<span class="am-fr am-margin-right"></span>
-						</a>
-					</li>
-					<li class="admin-parent">
 						<a class="am-cf" href="m_income.jsp">
 							<span class="am-icon-briefcase"></span>
 							资金管理
@@ -132,7 +125,7 @@
 									<h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
 								</div>
 								<span class="am-icon-paper-planet"></span>
-								<div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+								<div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
 							</div>
 						</div>
 						<!-- Col end -->
@@ -152,7 +145,7 @@
 									<h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
 								</div>
 								<span class="am-icon-paper-planet"></span>
-								<div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+								<div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
 							</div>
 						</div>
 						<!-- Col end -->
@@ -178,7 +171,7 @@
                                     <h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
                                 </div>
                                 <span class="am-icon-paper-planet"></span>
-                                <div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+                                <div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
                             </div>
                         </div>
                         <!-- Col end -->
@@ -198,7 +191,7 @@
                                     <h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
                                 </div>
                                 <span class="am-icon-paper-planet"></span>
-                                <div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+                                <div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
                             </div>
                         </div>
                         <!-- Col end -->
@@ -224,7 +217,7 @@
                                     <h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
                                 </div>
                                 <span class="am-icon-paper-planet"></span>
-                                <div class="label label-warning href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
+                                <div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
                             </div>
                         </div>
                         <!-- Col end -->

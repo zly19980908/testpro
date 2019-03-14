@@ -9,30 +9,7 @@
 <link href="../css/register/jquery-ui.css" rel="stylesheet" />
 <link href="../css/register/jquery.idealforms.min.css" rel="stylesheet"
 	media="screen" />
-
-<style type="text/css">
-body {
-	font: normal 15px/1.5 Arial, Helvetica, Free Sans, sans-serif;
-	color: #222;
-	background: url(pattern.png);
-	overflow-y: scroll;
-	padding: 60px 0 0 0;
-}
-
-#my-form {
-	width: 755px;
-	margin: 0 auto;
-	border: 1px solid #ccc;
-	padding: 3em;
-	border-radius: 3px;
-	box-shadow: 0 0 2px rgba(0, 0, 0, .2);
-}
-
-#comments {
-	width: 350px;
-	height: 100px;
-}
-</style>
+	<link href="../css/resetInfo/baseInfo.css" rel="stylesheet" />
 
 </head>
 <body>

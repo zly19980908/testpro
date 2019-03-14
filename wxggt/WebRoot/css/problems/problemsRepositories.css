@@ -143,10 +143,11 @@ h1 b {
 .href-box {
 	position: relative;
 	top: -107px;
-	left: 155px;
+	left: 177px;
 	width: 60px;
 	height: 20px;
 	color: #fff;
 	font-family: 'Microsoft Yahei', "simsun";
     font-size: 6px;
+    cursor:pointer;
 }

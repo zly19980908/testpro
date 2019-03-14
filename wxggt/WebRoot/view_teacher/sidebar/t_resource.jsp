@@ -88,11 +88,6 @@
                         </a>
                     </li>
                     <li class="admin-parent">
-                        <a class="am-cf" href="t_audio.jsp">
-                            <span class="am-icon-microphone"></span> 音频管理 <span class="am-fr am-margin-right"></span>
-                        </a>
-                    </li>
-                    <li class="admin-parent">
                         <a class="am-cf" href="m_income.jsp">
                             <span class="am-icon-briefcase"></span> 资金管理 <span class="am-fr am-margin-right"></span>
                         </a>

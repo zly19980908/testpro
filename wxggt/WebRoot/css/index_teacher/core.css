@@ -652,7 +652,7 @@ textarea.form-control {
 
 .form-control {
 	background-color: #FFFFFF;
-	border: 1px solid #E3E3E3;
+	border: 1px solid #ccc;
 	border-radius: 4px;
 	color: #565656;
 	padding: 7px 12px;
@@ -735,6 +735,10 @@ textarea.form-control {
 
 .label-info {
 	background-color: #35b8e0;
+}
+
+.label-suit {
+    background-color: #61bfbf;
 }
 
 .label-warning {
