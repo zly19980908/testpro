@@ -1,0 +1,153 @@
+@charset "utf-8";
+
+*, *:before, *:after {
+	box-sizing: content-box;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code,
+	form, fieldset, legend, input, textarea, p, blockquote, th, td {
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+.row-group {
+	position: relative;
+	margin-bottom: 2.0rem;
+	left: 28px;
+}
+
+a {
+	text-decoration: none;
+	color: #333;
+}
+
+a:hover, #topbar a:hover, h1 a.more:hover, .catagory_container a:hover,
+	.catagory_container .unit li a:hover, .shengming p a:hover,
+	.download_link, .links p a:hover {
+	text-decoration: none;
+	color: #e23131;
+}
+
+.content {
+	width: 980px;
+	margin: 0 auto;
+}
+
+#mainbar {
+	width: 700px;
+	float: left;
+}
+
+.test {
+	margin-bottom: 12px;
+	padding: 10px;
+	margin-left:-20px;
+	margin-right:50px;
+}
+
+h1 {
+	height: 34px;
+	line-height: 34px;
+	background-color: #f6f6f6;
+	border-top: 2px solid #41b2f4;
+	border-bottom: 1px solid #eee;
+	position: relative;
+	text-align: right;
+	border-right: 1px solid #41b2f4;
+	padding-right: 10px;
+}
+
+h1 a.more {
+	color: #999;
+}
+
+h1 b {
+	display: block;
+	height: 35px;
+	width: 122px;
+	padding-left: 40px;
+	line-height: 34px;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #fff;
+	background: url(../../../images/index_teacher/title_comments.png) no-repeat;
+	text-align: left;
+}
+
+.test_container {
+	border-left: 1px solid #41b2f4;
+	border-right: 1px solid #41b2f4;
+	border-bottom: 1px solid #41b2f4;
+	padding: 8px 8px 16px;
+	height: 100px;
+}
+
+.test h4 {
+	width: 90px;
+	height: 30px;
+	background-color: #fbfbfb;
+	border-left: 1px solid #eee;
+	border-right: 1px solid #eee;
+	border-top: 1px solid #eee;
+	text-align: center;
+	line-height: 30px;
+	color: #41b2f4;
+	font-weight: bold;
+	font-size: 14px;
+	margin-top: 14px;
+	margin-left: 14px;
+}
+
+.test p {
+	line-height: 46px;
+	font-size: 12px;
+	border-top: 1px solid #eee;
+	color: #d8d8d8;
+}
+
+.test p a {
+	padding: 0px 20px;
+	font: 14px/46px;
+}
+
+.div-box {
+	height: 110px;
+	width: 110px;
+	float: left;
+	-webkit-tap-highlight-color: transparent;
+	user-select: none;
+	background: transparent;
+}
+
+.m-b-0 {
+	margin-bottom: 0px !important;
+}
+
+.p-num-box {
+	position: relative;
+	top: -95px;
+	left: 140px;
+	width: 120px;
+	font-family: 'Microsoft Yahei', "simsun";
+	font-size: 20px;
+}
+
+.href-box {
+	position: relative;
+	top: -107px;
+	left: 177px;
+	width: 60px;
+	height: 20px;
+	color: #fff;
+	font-family: 'Microsoft Yahei', "simsun";
+    font-size: 6px;
+    cursor:pointer;
+}

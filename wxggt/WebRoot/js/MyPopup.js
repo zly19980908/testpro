@@ -12,7 +12,7 @@ var MP={
     //延时自动关闭
     setTimeout(function () {
        obj.remove();
-    }, 600);            
+    }, 6000);            
      
   },
   errorAlert:function(str){ //调用失败的方法
