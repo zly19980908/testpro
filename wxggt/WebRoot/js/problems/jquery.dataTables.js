@@ -334,7 +334,7 @@
 			 * sZeroRecords - assuming that is given.
 			 */
 			if (!oLanguage.sEmptyTable && zeroRecords &&
-				oDefaults.sEmptyTable === "题库中暂时还没有数据") {
+				oDefaults.sEmptyTable === "暂时还没有数据") {
 				_fnMap(oLanguage, oLanguage, 'sZeroRecords', 'sEmptyTable');
 			}
 
@@ -10229,7 +10229,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sEmptyTable" : "题库中暂时还没有数据",
+				"sEmptyTable" : "暂时还没有数据",
 
 
 				/**
@@ -10304,7 +10304,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sInfoFiltered" : "(从_MAX_个题目中筛选出来)",
+				"sInfoFiltered" : '',
 
 
 				/**
@@ -10518,7 +10518,7 @@
 				 *      } );
 				 *    } );
 				 */
-				"sZeroRecords" : "心态崩了(ノへ￣、)  居然没有这道题"
+				"sZeroRecords" : "心态崩了(ノへ￣、)  居然没有找到"
 			},
 
 

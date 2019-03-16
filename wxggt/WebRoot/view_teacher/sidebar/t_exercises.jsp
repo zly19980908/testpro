@@ -159,7 +159,6 @@
 					</div>
 				</div>
 				<!-- Row end -->
-				<!-- row start -->
 			</div>
 		</div>
 	</div>
