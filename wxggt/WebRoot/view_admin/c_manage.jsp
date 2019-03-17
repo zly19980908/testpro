@@ -7,18 +7,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>课程管理</title>
+<!-- TABLE STYLES-->
+<link rel="stylesheet" href="../css/problems/bootstrap.css" />
 <link rel="stylesheet" href="../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../css/index_teacher/index.css" />
 <link rel="stylesheet" href="../css/index_teacher/admin.css" />
+
 <link rel="stylesheet" href="../css/index_teacher/page/typography.css" />
-<link rel="styleshee
-t" href="../css/index_teacher/page/form.css" />
-<!-- TABLE STYLES-->
-<link rel="stylesheet" href="../css/problems/bootstrap.css" />
-<link rel="stylesheet" href="../css/problems/dataTables.bootstrap.css" />
 <link rel="stylesheet" href="../css/admin/modalBox.css" />
+
+<link rel="stylesheet" href="../css/problems/dataTables.bootstrap.css" />
 </head>
 <body>
 	<!-- Begin page -->
@@ -122,7 +122,7 @@ t" href="../css/index_teacher/page/form.css" />
 										<div class="panel-body">
 											<div class="table-responsive">
 												<input type="button" class="select-all" value="全选" />
-												<input type="button" class="edit-pb" value="新建专业" id="triggerBtn" />
+												<input type="button" class="edit-pb" value="专业" id="triggerBtn" />
 												<input type="button" class="del-pb" value="删除" />
 
 												<table class="table table-striped table-bordered table-hover" id="dataTables-example">

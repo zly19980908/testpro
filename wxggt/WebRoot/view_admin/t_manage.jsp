@@ -7,16 +7,20 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>教师管理</title>
+<link rel="stylesheet" href="../css/problems/bootstrap.css" />
+<link rel="stylesheet"
+	href="../css/problems/dataTables.bootstrap.css" />
+	<link rel="stylesheet" href="../css/problems/problems.css" />
 <link rel="stylesheet" href="../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../css/index_teacher/index.css" />
 <link rel="stylesheet" href="../css/index_teacher/admin.css" />
-<link rel="stylesheet" href="../css/problems/bootstrap.css" />
 <!-- TABLE STYLES-->
 <link rel="stylesheet"
 	href="../css/problems/dataTables.bootstrap.css" />
 <link rel="stylesheet" href="../css/problems/problems.css" />
+
 </head>
 <body>
 	<!-- Begin page -->
@@ -125,49 +129,53 @@
 										<div class="panel-heading">教师列表</div>
 										<div class="panel-body">
 											<div class="table-responsive">
-												<input type="button" class="select-all" value="全选" />
-												<input type="button" class="edit-pb" value="上传" onclick="window.location.href='t_uploadFiles.jsp'" />
-												<input type="button" class="del-pb" value="删除" />
-
+												<input type="button" class="select-all" value="通过" />
+												<input type="button" class="del-pb" value="驳回" />
 												<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 													<thead>
 														<tr>
-															<th>文件编号</th>
-															<th>文件名称</th>
-															<th>文件类型</th>
-															<th>上传时间</th>
+															<th>教师编号</th>
+															<th>教师姓名</th>
+															<th>性别</th>
+															<th>邮件</th>
+															<th>状态</th>
 														</tr>
 													</thead>
 													<tbody>
 														<tr class="odd gradeX">
 															<td>1</td>
-															<td>爬虫的来历</td>
-															<td>B</td>
-															<td>2019-03-16</td>
+															<td>孙天民</td>
+															<td>男</td>
+															<td>182644501@qq.com</td>
+															<td>正式</td>
 														</tr>
 														<tr class="even gradeC">
 															<td>2</td>
-															<td>python基础</td>
-															<td>D</td>
-															<td>2019-03-16</td>
+															<td>钱汉祥</td>
+															<td>男</td>
+															<td>ww1556121@outlook.com</td>
+															<td>正式</td>
 														</tr>
 														<tr class="odd gradeA">
-															<td>3</td>
-															<td>網易雲音樂</td>
-															<td>C</td>
-															<td>2019-03-16</td>
+															<td>--</td>
+															<td>李秉贵</td>
+															<td>男</td>
+															<td>4892151@163.com</td>
+															<td>待审</td>
 														</tr>
 														<tr class="even gradeA">
 															<td>4</td>
-															<td>QQ</td>
-															<td>A</td>
-															<td>2019-03-16</td>
+															<td>关玉和</td>
+															<td>女</td>
+															<td>454518453@126.com</td>
+															<td>正式</td>
 														</tr>
 														<tr class="even gradeA">
-															<td>5</td>
-															<td>TIM</td>
-															<td>C</td>
-															<td>2019-03-16</td>
+															<td>--</td>
+															<td>王仁兴</td>
+															<td>男</td>
+															<td>alwayChina@gmail.com</td>
+															<td>待审</td>
 														</tr>
 													</tbody>
 												</table>
@@ -194,5 +202,5 @@
 <!-- DATA TABLE SCRIPTS -->
 <script src="../js/problems/jquery.dataTables.js"></script>
 <script src="../js/problems/dataTables.bootstrap.js"></script>
-<script src="../js/index_teacher/resource/uploadFiles.js"></script>
+<script src="../js/admin/t_manage.js"></script>
 </html>

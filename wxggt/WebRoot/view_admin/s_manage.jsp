@@ -7,6 +7,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>学生管理</title>
+<link rel="stylesheet" href="../css/problems/bootstrap.css" />
 <link rel="stylesheet" href="../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../css/index_teacher/menu.css" />
@@ -14,6 +15,10 @@
 <link rel="stylesheet" href="../css/index_teacher/admin.css" />
 <link rel="stylesheet" href="../css/index_teacher/page/typography.css" />
 <link rel="stylesheet" href="../css/index_teacher/page/form.css" />
+<!-- TABLE STYLES-->
+<link rel="stylesheet"
+	href="../css/problems/dataTables.bootstrap.css" />
+<link rel="stylesheet" href="../css/problems/problems.css" />
 </head>
 <body>
 	<!-- Begin page -->
@@ -83,7 +88,7 @@
 					<li class="admin-parent">
 						<a class="am-cf" href="t_manage.jsp">
 							<span class="am-icon-file"></span>
-							教师管理
+							学生管理
 							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
@@ -111,7 +116,79 @@
 		<div class="content-page">
 			<!-- Start content -->
 			<div class="content">
-				<div class="am-g"></div>
+				<div class="am-g">
+				<!-- Row start -->
+					<div id="wrapper">
+						<div id="page-inner">
+							<div class="row">
+								<div class="col-md-12">
+									<!-- Advanced Tables -->
+									<div class="panel panel-default">
+										<div class="panel-heading">学生列表</div>
+										<div class="panel-body">
+											<div class="table-responsive">
+												<input type="button" class="select-all" value="授权" />
+												<input type="button" class="edit-pb" value="封禁" />
+												<input type="button" class="del-pb" value="冻结" />
+												<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+													<thead>
+														<tr>
+															<th>学生编号</th>
+															<th>学生姓名</th>
+															<th>性别</th>
+															<th>邮件</th>
+															<th>状态</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="odd gradeX">
+															<td>1</td>
+															<td>孙天民</td>
+															<td>男</td>
+															<td>182644501@qq.com</td>
+															<td>正常</td>
+														</tr>
+														<tr class="even gradeC">
+															<td>2</td>
+															<td>钱汉祥</td>
+															<td>男</td>
+															<td>ww1556121@outlook.com</td>
+															<td>正常</td>
+														</tr>
+														<tr class="odd gradeA">
+															<td>3</td>
+															<td>李秉贵</td>
+															<td>男</td>
+															<td>4892151@163.com</td>
+															<td>冻结</td>
+														</tr>
+														<tr class="even gradeA">
+															<td>4</td>
+															<td>关玉和</td>
+															<td>女</td>
+															<td>454518453@126.com</td>
+															<td>正常</td>
+														</tr>
+														<tr class="even gradeA">
+															<td>5</td>
+															<td>王仁兴</td>
+															<td>男</td>
+															<td>alwayChina@gmail.com</td>
+															<td>封禁</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<!--End Advanced Tables -->
+								</div>
+							</div>
+							<!-- /. ROW  -->
+						</div>
+					</div>
+					<!-- row end -->
+				</div>
 			</div>
 		</div>
 	</div>
@@ -121,4 +198,10 @@
 <script type="text/javascript" src="../js/index_teacher/blockUI.js"></script>
 <script type="text/javascript" src="../js/index_teacher/charts/echarts.min.js"></script>
 <script type="text/javascript" src="../js/index_teacher/charts/income_graph.js"></script>
+<!-- Bootstrap Js -->
+<script src="../js/bootstrap.min.js"></script>
+<!-- DATA TABLE SCRIPTS -->
+<script src="../js/problems/jquery.dataTables.js"></script>
+<script src="../js/problems/dataTables.bootstrap.js"></script>
+<script src="../js/admin/s_manage.js"></script>
 </html>
