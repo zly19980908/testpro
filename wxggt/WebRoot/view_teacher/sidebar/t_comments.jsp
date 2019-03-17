@@ -28,7 +28,7 @@
 		<div class="contain">
 			<ul class="am-nav am-navbar-nav am-navbar-left">
 				<li>
-					<h4 class="page-title">首页</h4>
+					<h4 class="page-title">学生评价</h4>
 				</li>
 			</ul>
 			<ul class="am-nav am-navbar-nav am-navbar-right">
@@ -77,10 +77,18 @@
 							资料管理
 							<span class="am-fr am-margin-right"></span>
 						</a>
+					</li>
 					<li class="admin-parent">
-						<a class="am-cf page-on" style="color:#fff;" href="t_exercisesRepositories.jsp">
+						<a class="am-cf"href="t_exercisesRepositories.jsp">
 							<span class="am-icon-paperclip"></span>
 							习题管理
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+					<li class="admin-parent">
+						<a class="am-cf page-on" style="color:#fff;" href="t_comments.jsp">
+							<span class="am-icon-envelope"></span>
+							学生评价
 							<span class="am-fr am-margin-right"></span>
 						</a>
 					</li>
@@ -107,27 +115,72 @@
 		<div class="content-page">
 			<!-- Start content -->
 			<div class="content">
-                <!-- Row start -->
-                <div class="am-g row-group">
-                    <div class="am-u-sm-12">
-                        <!-- Col start -->
-                        <div class="test am-u-md-11">
-                            <h1>
-                                <b>爬虫</b>
-                            </h1>
-                            <div class="test_container"></div>
-                        </div>
-                        <!-- Col end -->
-                    </div>
-                </div>
-                <!-- Row end -->
-                
+				<!-- Row start -->
+				<div class="am-g row-group">
+					<div class="am-u-sm-12">
+						<!-- Col start -->
+						<div class="test am-u-md-11">
+							<h1>
+								<b>爬虫</b>
+							</h1>
+							<div class="test_container">
+								<ul style="list-style-type:none">
+									<li class="comments-li">
+										<div>
+											<span title="点击昵称回复">
+												<b>一只会飞的猪</b>
+											</span>
+											:
+											<pre>老师授课的方式非常适合我们，他根据本课程知识结构的特点，重点突出，层次分明。</pre>
+										</div>
+									</li>
+									<li class="comments-li">
+										<div>
+											<b>小麻瓜</b>:
+											<pre>理论和实际相结合，通过例题使知识更条理化。但授课速度有点快，来不及记录。</pre>
+											<pre class="t_reply">回复:谢谢同学的意见,我会好好调整,争取讲得慢一点</pre>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- Col end -->
+						<!-- Col start -->
+						<div class="test am-u-md-11">
+							<h1>
+								<b>生理学概论</b>
+							</h1>
+							<div class="test_container">
+								<ul style="list-style-type:none">
+									<li>
+										<div>
+											<span title="点击昵称回复">
+												<b>一只会飞的猪</b>
+											</span>
+											:
+											<pre>老师授课的方式非常适合我们，他根据本课程知识结构的特点，重点突出，层次分明。</pre>
+										</div>
+									</li>
+									<li>
+										<div>
+											<b>小麻瓜</b>:
+											<pre>理论和实际相结合，通过例题使知识更条理化。但授课速度有点快，来不及记录。</pre>
+											<pre class="t_reply">回复:谢谢同学的意见,我会好好调整,争取讲得慢一点</pre>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<!-- Col end -->
+					</div>
+				</div>
+				<!-- Row end -->
 			</div>
-
 		</div>
 	</div>
 </body>
 <script type="text/javascript" src="../../js/index_teacher/jquery-2.1.0.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/amazeui.min.js"></script>
 <script type="text/javascript" src="../../js/index_teacher/blockUI.js"></script>
+<script type="text/javascript" src="../../js/index_teacher/comments.js"></script>
 </html>

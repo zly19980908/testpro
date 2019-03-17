@@ -90,6 +90,13 @@
                         </a>
                     </li>
                     <li class="admin-parent">
+						<a class="am-cf" href="t_comments.jsp">
+							<span class="am-icon-envelope"></span>
+							学生评价
+							<span class="am-fr am-margin-right"></span>
+						</a>
+					</li>
+                    <li class="admin-parent">
                         <a class="am-cf" href="m_income.jsp">
                             <span class="am-icon-briefcase"></span> 资金管理 <span class="am-fr am-margin-right"></span>
                         </a>

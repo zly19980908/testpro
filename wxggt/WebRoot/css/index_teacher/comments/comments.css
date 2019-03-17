@@ -87,7 +87,6 @@ h1 b {
 	border-right: 1px solid #41b2f4;
 	border-bottom: 1px solid #41b2f4;
 	padding: 8px 8px 16px;
-	height: 100px;
 }
 
 .test h4 {
@@ -150,4 +149,17 @@ h1 b {
 	font-family: 'Microsoft Yahei', "simsun";
     font-size: 6px;
     cursor:pointer;
+}
+pre{
+	font-size: 14px;
+	background: #e8e8e8;
+	border: 1px solid #e8e8e8;
+}
+.comments-li{
+	padding: 8px;
+}
+.t_reply{
+	font-size: 14px;
+	background: #d0e8d4;
+	border: 1px solid #d0e8d4;
 }
