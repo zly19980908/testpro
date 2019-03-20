@@ -13,7 +13,7 @@
 		</action>
 		<!-- 教师登陆 -->
 		<action name="teacherlogin" class="com.wxggt.action.TeacherLoginAction">
-		    <result name="login" type="redirect">/view_teacher/index.html</result>
+		    <result name="login" type="redirect">/view_teacher/sidebar/t_course.jsp</result>
 		    <result name="error" type="redirect">/error.html</result>
 		</action>
 		

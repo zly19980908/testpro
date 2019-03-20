@@ -8,7 +8,7 @@
 <title>登录</title>
 <link href="css/login/login.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
-<body onload="_init()">
+<body>
 	<div id="tab">
 		<ul class="tab_menu">
 			<li class="selected">教师登录</li>
@@ -20,7 +20,7 @@
 				<form action="teacherlogin.action" method="post" class="stu_login_error" onsubmit="return verify_1(this);">
 					<div id="username">
 						<label>账&nbsp;&nbsp;&nbsp;号：</label>
-						<input type="text" id="t_id" name="account" value="输入教师账号" class="input_init" />
+						<input type="text" id="t_id" name="account" placeholder="输入教师账号" class="input_init" />
 					</div>
 					<div id="password">
 						<label>密&nbsp;&nbsp;&nbsp;码：</label>
@@ -43,7 +43,7 @@
 				<form action="" method="post" class="tea_login_error" onsubmit="return verify_2(this);">
 					<div id="username">
 						<label>账&nbsp;&nbsp;&nbsp;号：</label>
-						<input type="text" id="a_id" class="input_init" name="" value="输入管理员账号" />
+						<input type="text" id="a_id" class="input_init" name="" placeholder="输入管理员账号" />
 					</div>
 					<div id="password">
 						<label>密&nbsp;&nbsp;&nbsp;码：</label>
@@ -56,7 +56,7 @@
 						<canvas id="verifyCanvas_2"></canvas>
 					</div>
 					<div id="login">
-						<button type="submit">登录</button>
+						<button id="enter" type="submit">登录</button>
 					</div>
 				</form>
 			</div>

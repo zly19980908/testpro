@@ -227,8 +227,12 @@ function verify_2() {
 	}
 	var res = verifyCode_2.validate($("#code_input_2").val());
 	if (flag_id && flag_pwd && flag_code && res) {
-		$("#code_input_2").val('')
-		alert('校验成功');
+		$("#code_input_2").val('');
+		var t_id=$('#t_id').val().trim();
+		var t_pwd=$("#t_pwd").val();
+		if(t_id=="201601090127"&&t_pwd=='111111'){
+			window.location.href="http://www.baidu.com";
+		}
 		return true;
 	} else {
 		$("#code_input_2").val('')

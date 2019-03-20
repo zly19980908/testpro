@@ -20,7 +20,7 @@
 	<!-- Begin page -->
 	<header class="am-topbar am-topbar-fixed-top">
 		<div class="am-topbar-left am-hide-sm-only">
-			<a href="../index.html" class="logo">
+			<a href="t_course.jsp" class="logo">
 				<span class="logo-span">
 					<img src="../../images/main_page/logo.png" class="img-logo"></img>
 				</span>
@@ -35,7 +35,7 @@
 			</ul>
 			<ul class="am-nav am-navbar-nav am-navbar-right">
 				<li class="inform">
-					<a class="am-icon-home home-position" href="../index.html"></a>
+					<a class="am-icon-home home-position" href="t_course.jsp"></a>
 				</li>
 				<li class="inform">
 					<span class="am-icon-bell-o"></span>

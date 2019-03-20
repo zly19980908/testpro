@@ -196,3 +196,7 @@ $(function() {
 	valid_code('#code_input_1');
 	valid_code('#code_input_2');
 });
+
+$("#enter").click(function(){
+	console.log("12");
+});
