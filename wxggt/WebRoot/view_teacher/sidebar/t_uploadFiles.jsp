@@ -7,6 +7,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>后台模板</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <link rel="stylesheet" href="../../css/problems/bootstrap.css" />
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
@@ -70,7 +72,7 @@
 						</div>
 					</div>
 					<h5>
-						<a href="#">张 三</a>
+						<a href="#">张无忌</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->
@@ -140,7 +142,7 @@
 												<legend>上传资源</legend>
 												<div class="am-form-group">
 													<label for="doc-vld-name-2">教师姓名：</label>
-													<input type="text" name="tname" placeholder="输入用户名（至少 3 个字符）" required value="汪大伟" readonly="readonly" />
+													<input type="text" name="tname" placeholder="输入用户名（至少 3 个字符）" required value="张无忌" readonly="readonly" />
 												</div>
 												<div class="am-form-group">
 													<label>资源类别： </label>

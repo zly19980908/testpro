@@ -6,7 +6,9 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>后台模板</title>
+<title>资料管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <link rel="stylesheet" href="../../css/problems/bootstrap.css" />
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
@@ -33,11 +35,6 @@
 			</a>
 		</div>
 		<div class="contain">
-			<ul class="am-nav am-navbar-nav am-navbar-left">
-				<li>
-					<h4 class="page-title">首页</h4>
-				</li>
-			</ul>
 			<ul class="am-nav am-navbar-nav am-navbar-right">
 				<li class="inform">
 					<a class="am-icon-home home-position" href="t_course.jsp"></a>
@@ -77,7 +74,7 @@
 						</div>
 					</div>
 					<h5>
-						<a href="#">张 三</a>
+						<a href="#">张无忌</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->
@@ -143,7 +140,7 @@
 								<div class="col-md-12">
 									<!-- Advanced Tables -->
 									<div class="panel panel-default">
-										<div class="panel-heading">文件清单</div>
+										<div class="panel-heading" style="text-align: center;font-size: 24px;">文件清单</div>
 										<div class="panel-body">
 											<div class="table-responsive">
 												<input type="button" class="select-all" value="全选" />
@@ -164,32 +161,32 @@
 													<tbody>
 														<tr class="odd gradeX">
 															<td>1</td>
-															<td>爬虫的来历</td>
-															<td>B</td>
+															<td>眩晕鉴别诊断ppt</td>
+															<td>PPT</td>
 															<td>2019-03-16</td>
 														</tr>
 														<tr class="even gradeC">
 															<td>2</td>
-															<td>python基础</td>
-															<td>D</td>
+															<td>肺结核CT影像学特征</td>
+															<td>PDF</td>
 															<td>2019-03-16</td>
 														</tr>
 														<tr class="odd gradeA">
 															<td>3</td>
-															<td>網易雲音樂</td>
-															<td>C</td>
+															<td>金银忍冬临床上有何功效</td>
+															<td>WORD</td>
 															<td>2019-03-16</td>
 														</tr>
 														<tr class="even gradeA">
 															<td>4</td>
-															<td>QQ</td>
-															<td>A</td>
+															<td>慢性胰腺炎反复发作的临床及CT鉴别</td>
+															<td>PPT</td>
 															<td>2019-03-16</td>
 														</tr>
 														<tr class="even gradeA">
 															<td>5</td>
-															<td>TIM</td>
-															<td>C</td>
+															<td>疟疾临床表现</td>
+															<td>MP4</td>
 															<td>2019-03-16</td>
 														</tr>
 													</tbody>

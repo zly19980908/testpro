@@ -7,6 +7,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>课程管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
@@ -56,7 +58,7 @@
 	<!-- end page -->
 	<div class="admin">
 		<!-- ========== 侧边栏开始 ========== -->
-		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas" style="margin-top: 0px;">
 			<div class="am-offcanvas-bar admin-offcanvas-bar">
 				<!-- start User -->
 				<div class="user-box am-hide-sm-only">
@@ -197,22 +199,12 @@
 
 		/* 动态生成专业信息 */
 		$.ajax({
-			url : '../../php/getMajorInfo.php',
+			url : '../../php/t_getMajorInfo.php',
 			type : 'GET',
 			dataType : 'json',
-			timeout : 1000,
-			cache : false,
-			beforeSend : LoadFunction, //加载执行方法  
-			error : erryFunction, //错误执行方法  
 			success : succFunction
 		//成功执行方法  
 		});
-		function LoadFunction() {
-			$("#list").html('加载中...');
-		}
-		function erryFunction() {
-			alert("error");
-		}
 		function succFunction(tt) {
 			var datalist = $('#doc-select-1');
 			var majorInfo = eval(tt); //数组       

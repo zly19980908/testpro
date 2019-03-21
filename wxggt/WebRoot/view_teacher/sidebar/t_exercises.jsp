@@ -7,6 +7,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>题目管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <!-- Bootstrap Styles-->
 <link rel="stylesheet" href="../../css/problems/bootstrap.css" />
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
@@ -58,7 +60,7 @@
 						</div>
 					</div>
 					<h5>
-						<a href="#">张 三</a>
+						<a href="#">张无忌</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->

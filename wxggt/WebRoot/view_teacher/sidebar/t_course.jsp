@@ -7,6 +7,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>课程管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
@@ -28,11 +30,6 @@
 			</a>
 		</div>
 		<div class="contain">
-			<ul class="am-nav am-navbar-nav am-navbar-left">
-				<li>
-					<h4 class="page-title">课程管理</h4>
-				</li>
-			</ul>
 			<ul class="am-nav am-navbar-nav am-navbar-right">
 				<li class="inform">
 					<a class="am-icon-home home-position" href="t_course.jsp"></a>
@@ -40,14 +37,6 @@
 				<li class="inform">
 					<span class="am-icon-bell-o"></span>
 					<i id="letterNum" class="info-num">2</i>
-				</li>
-				<li class="hidden-xs am-hide-sm-only">
-					<form class="app-search">
-						<input type="text" placeholder="Search..." class="form-control">
-						<a href="javascript:;">
-							<img src="../../images/index_teacher/search.png" ondragstart="return false;">
-						</a>
-					</form>
 				</li>
 			</ul>
 		</div>
@@ -68,7 +57,7 @@
 						</div>
 					</div>
 					<h5>
-						<a href="#">周 娜</a>
+						<a href="#">张无忌</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->
@@ -143,7 +132,7 @@
 								<!-- ondragstart="return false;"--禁止拖动图片 -->
 								<img src="../../images/index_teacher/course/web.jpg" class="img-content x" ondragstart="return false;">
 								<!-- 这里存放课程号 -->
-								<input type="hidden" value="2" />
+								<input type="hidden" value="126263347" />
 							</div>
 							<div class="div-content">
 								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
@@ -160,7 +149,7 @@
 									<span class="am-icon-shopping-cart">&nbsp;18元</span>
 									<button class="edit-course-button" onclick="window.location.href='t_editCourse.jsp'">编辑课时</button>
 									<!-- 这里存放课程号 -->
-									<input type="hidden" value="2" />
+									<input type="hidden" value="126263347" />
 								</div>
 							</div>
 						</div>
@@ -171,7 +160,7 @@
 								<!-- ondragstart="return false;"--禁止拖动图片 -->
 								<img src="../../images/index_teacher/course/h.jpg" class="img-content x" ondragstart="return false;">
 								<!-- 这里存放课程号 -->
-								<input type="hidden" value="3" />
+								<input type="hidden" value="126263347" />
 							</div>
 							<div class="div-content">
 								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
@@ -188,7 +177,7 @@
 									<span class="am-icon-shopping-cart">&nbsp;0元</span>
 									<button class="edit-course-button" onclick="window.location.href='t_editCourse.jsp'">编辑课时</button>
 									<!-- 这里存放课程号 -->
-									<input type="hidden" value="3" />
+									<input type="hidden" value="126263347" />
 								</div>
 							</div>
 						</div>
@@ -199,7 +188,7 @@
 								<!-- ondragstart="return false;"--禁止拖动图片 -->
 								<img src="../../images/index_teacher/course/o.jpg" class="img-content x" ondragstart="return false;">
 								<!-- 这里存放课程号 -->
-								<input type="hidden" value="4" />
+								<input type="hidden" value="126263347" />
 							</div>
 							<div class="div-content">
 								<h4 class="header-title m-t-0 title-name">&nbsp;</h4>
@@ -242,13 +231,11 @@
 		/* 点击图片跳转到修改课程信息页面 */
 		$('.x').click(function() {
 			var cNo = $(this).next().val();
-			alert("课程号：" + cNo);
 			$(location).attr('href', 't_changeCourseInfo.jsp?cNo=' + cNo);
 		});
 		/* 点击按钮跳转到编辑课程课时页面 */
 		$('.edit-course-button').click(function() {
 			var cNo = $(this).next().val();
-			alert("课程号：" + cNo);
 			$(location).attr('href', 't_editCourse.jsp?cNo=' + cNo);
 		});
 	});

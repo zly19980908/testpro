@@ -186,7 +186,6 @@ function verify_1() {
 	var res = verifyCode_1.validate($("#code_input_1").val());
 	if (flag_id && flag_pwd && flag_code && res) {
 		$("#code_input_1").val('')
-		alert('校验成功');
 		return true;
 	} else {
 		$("#code_input_1").val('')

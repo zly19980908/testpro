@@ -7,6 +7,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>题目管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <!-- Bootstrap Styles-->
 <link rel="stylesheet" href='../../css/index_teacher/amazeui.css' />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
@@ -57,7 +59,7 @@
 						</div>
 					</div>
 					<h5>
-						<a href="#">张 三</a>
+						<a href="#">张无忌</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->
@@ -155,7 +157,7 @@
 									<li>
 										<div>
 											<span title="点击昵称回复">
-												<b>一只会飞的猪</b>
+												<b>我是一只小小鸟</b>
 											</span>
 											:
 											<pre>老师授课的方式非常适合我们，他根据本课程知识结构的特点，重点突出，层次分明。</pre>
@@ -163,7 +165,7 @@
 									</li>
 									<li>
 										<div>
-											<b>小麻瓜</b>:
+											<b>独孤求败</b>:
 											<pre>理论和实际相结合，通过例题使知识更条理化。但授课速度有点快，来不及记录。</pre>
 											<pre class="t_reply">回复:谢谢同学的意见,我会好好调整,争取讲得慢一点</pre>
 										</div>

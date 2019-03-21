@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>登录</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="images/top_logo.png" />
 <link href="css/login/login.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>

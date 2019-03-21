@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <title>修改教师信息</title>
-
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../images/top_logo.png" />
 <link href="../css/register/normalize.css" rel="stylesheet" />
 <link href="../css/register/jquery-ui.css" rel="stylesheet" />
 <link href="../css/resetInfo/baseInfo.css" rel="stylesheet" />

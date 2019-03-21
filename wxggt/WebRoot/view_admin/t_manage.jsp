@@ -7,18 +7,18 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>教师管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../images/top_logo.png" />
 <link rel="stylesheet" href="../css/problems/bootstrap.css" />
-<link rel="stylesheet"
-	href="../css/problems/dataTables.bootstrap.css" />
-	<link rel="stylesheet" href="../css/problems/problems.css" />
+<link rel="stylesheet" href="../css/problems/dataTables.bootstrap.css" />
+<link rel="stylesheet" href="../css/problems/problems.css" />
 <link rel="stylesheet" href="../css/index_teacher/amazeui.css" />
 <link rel="stylesheet" href="../css/index_teacher/core.css" />
 <link rel="stylesheet" href="../css/index_teacher/menu.css" />
 <link rel="stylesheet" href="../css/index_teacher/index.css" />
 <link rel="stylesheet" href="../css/index_teacher/admin.css" />
 <!-- TABLE STYLES-->
-<link rel="stylesheet"
-	href="../css/problems/dataTables.bootstrap.css" />
+<link rel="stylesheet" href="../css/problems/dataTables.bootstrap.css" />
 <link rel="stylesheet" href="../css/problems/problems.css" />
 
 </head>
@@ -60,13 +60,17 @@
 	<!-- end page -->
 	<div class="admin">
 		<!-- ========== 侧边栏开始 ========== -->
-		<div class="admin-sidebar am-offcanvas  am-padding-0" id="admin-offcanvas">
+		<div class="admin-sidebar am-offcanvas  am-padding-0"
+			id="admin-offcanvas">
 			<div class="am-offcanvas-bar admin-offcanvas-bar">
 				<!-- start User -->
 				<div class="user-box am-hide-sm-only">
 					<div class="user-img">
 						<a href="../photoCut.html">
-							<img src="../upload/headFace/201601090127/headFace.png" ondragstart="return false;" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive" style="width:89px;height:89px;">
+							<img src="../upload/headFace/201601090127/headFace.png"
+								ondragstart="return false;" alt="user-img" title="Mat Helme"
+								class="img-circle img-thumbnail img-responsive"
+								style="width:89px;height:89px;">
 						</a>
 						<div class="user-status offline">
 							<i class="am-icon-dot-circle-o"></i>
@@ -131,7 +135,9 @@
 											<div class="table-responsive">
 												<input type="button" class="select-all" value="通过" />
 												<input type="button" class="del-pb" value="驳回" />
-												<table class="table table-striped table-bordered table-hover" id="dataTables-example">
+												<table
+													class="table table-striped table-bordered table-hover"
+													id="dataTables-example">
 													<thead>
 														<tr>
 															<th>教师编号</th>

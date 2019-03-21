@@ -1,6 +1,4 @@
 (function() {
-	var myChart_1 = echarts.init(document.getElementById("widget-chart-box-1"));
-	var myChart_2 = echarts.init(document.getElementById("widget-chart-box-2"));
 	var myChart_3 = echarts.init(document.getElementById("widget-chart-box-3"));
 	var myChart_4 = echarts.init(document.getElementById("widget-chart-box-4"));
 	var myChart_5 = echarts.init(document.getElementById("widget-chart-box-5"));
@@ -120,8 +118,6 @@
 		return option;
 	}
 	
-	myChart_1.setOption(getOption(54));
-	myChart_2.setOption(getOption(60));
 	myChart_3.setOption(getOption(30));
 	myChart_4.setOption(getOption(40));
 	myChart_5.setOption(getOption(70));

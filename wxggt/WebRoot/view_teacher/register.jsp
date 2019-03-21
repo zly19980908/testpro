@@ -4,7 +4,8 @@
 <!DOCTYPE html>
 <html>
 <title>教师注册</title>
-
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../images/top_logo.png" />
 <link href="../css/register/normalize.css" rel="stylesheet" />
 <link href="../css/register/jquery-ui.css" rel="stylesheet" />
 <link href="../css/register/jquery.idealforms.min.css" rel="stylesheet"

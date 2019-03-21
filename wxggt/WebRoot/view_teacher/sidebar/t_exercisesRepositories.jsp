@@ -7,6 +7,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>题目管理</title>
+<!-- 页面头上的图标 -->
+<link rel="shortcut icon" href="../../images/top_logo.png" />
 <!-- Bootstrap Styles-->
 <link rel="stylesheet" href='../../css/index_teacher/amazeui.css' />
 <link rel="stylesheet" href="../../css/index_teacher/menu.css" />
@@ -57,7 +59,7 @@
 						</div>
 					</div>
 					<h5>
-						<a href="#">张 三</a>
+						<a href="#">张无忌</a>
 					</h5>
 				</div>
 				<!-- End 用户 -->
@@ -114,51 +116,6 @@
 		<div class="content-page">
 			<!-- Start content -->
 			<div class="content">
-				<!-- Row start -->
-				<div class="am-g row-group">
-					<div class="am-u-sm-12">
-						<!-- Col start -->
-						<div class="test am-u-md-4">
-							<h1>
-								<b>爬虫</b>
-							</h1>
-							<div class="test_container">
-								<!-- 这里是饼状图 -->
-								<div class="widget-chart-1 am-cf-1">
-									<div id="widget-chart-box-1" class="div-box"></div>
-									<div class="widget-detail-1" style="float: right;"></div>
-								</div>
-								<div class="p-num-box">
-									<h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
-								</div>
-								<span class="am-icon-paper-planet"></span>
-								<div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
-							</div>
-						</div>
-						<!-- Col end -->
-
-						<!-- Col start -->
-						<div class="test am-u-md-4">
-							<h1>
-								<b>爬虫</b>
-							</h1>
-							<div class="test_container">
-								<!-- 这里是饼状图 -->
-								<div class="widget-chart-1 am-cf-1">
-									<div id="widget-chart-box-2" class="div-box"></div>
-									<div class="widget-detail-1" style="float: right;"></div>
-								</div>
-								<div class="p-num-box">
-									<h2 class="m-b-0">总量:&nbsp;500&nbsp;题</h2>
-								</div>
-								<span class="am-icon-paper-planet"></span>
-								<div class="label label-suit href-box" onclick="window.location.href='t_exercises.jsp';">&nbsp;进入题库</div>
-							</div>
-						</div>
-						<!-- Col end -->
-					</div>
-				</div>
-				<!-- Row end -->
 				
 				<!-- Row start -->
                 <div class="am-g row-group">
@@ -166,7 +123,7 @@
                         <!-- Col start -->
                         <div class="test am-u-md-4">
                             <h1>
-                                <b>爬虫</b>
+                                <b>web前端</b>
                             </h1>
                             <div class="test_container">
                                 <!-- 这里是饼状图 -->
@@ -186,7 +143,7 @@
                         <!-- Col start -->
                         <div class="test am-u-md-4">
                             <h1>
-                                <b>爬虫</b>
+                                <b>家庭财务学</b>
                             </h1>
                             <div class="test_container">
                                 <!-- 这里是饼状图 -->
@@ -212,7 +169,7 @@
                         <!-- Col start -->
                         <div class="test am-u-md-4">
                             <h1>
-                                <b>爬虫</b>
+                                <b>OCP修炼之道</b>
                             </h1>
                             <div class="test_container">
                                 <!-- 这里是饼状图 -->
