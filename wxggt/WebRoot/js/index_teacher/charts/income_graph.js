@@ -29,7 +29,7 @@ option = {
     legend: {
         orient: 'vertical',
         left: 'left',
-        data: ['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
+        data: ['课程','打赏','分红']
     },
     series : [
         {
@@ -38,11 +38,10 @@ option = {
             radius : '55%',
             center: ['50%', '60%'],
             data:[
-                {value:335, name:'直接访问'},
-                {value:310, name:'邮件营销'},
-                {value:234, name:'联盟广告'},
-                {value:135, name:'视频广告'},
-                {value:1548, name:'搜索引擎'}
+                 {value:335, name:'课程'},
+                 {value:310, name:'打赏'},
+                 {value:234, name:'分红'}
+               
             ],
             itemStyle: {
                 emphasis: {
@@ -68,7 +67,7 @@ var columnar1 = echarts.init(document.getElementById("columnar1"));
 option = {
 	
 	title: {
-		text: "柱状图",
+		text: "收入",
 		x:'left'
 	},
 	
@@ -93,7 +92,7 @@ option = {
   xAxis : [
       {
           type : 'category',
-          data : ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+          data : ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
           axisTick: {
               alignWithLabel: true
           }

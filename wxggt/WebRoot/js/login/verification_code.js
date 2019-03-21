@@ -190,8 +190,8 @@ function verify_1() {
 	} else {
 		$("#code_input_1").val('')
 		/* 这里为了登录方便，直接返回true */
+		return true;
 		alert('输入信息有误,请重新输入');
-		return false;
 	}
 };
 

@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>收益</title>
+<title>资金管理</title>
 <!-- 页面头上的图标 -->
 <link rel="shortcut icon" href="../../images/top_logo.png" />
 <link rel="stylesheet" href="../../css/index_teacher/amazeui.css" />
@@ -29,11 +29,6 @@
 			</a>
 		</div>
 		<div class="contain">
-			<ul class="am-nav am-navbar-nav am-navbar-left">
-				<li>
-					<h4 class="page-title">首页</h4>
-				</li>
-			</ul>
 			<ul class="am-nav am-navbar-nav am-navbar-right">
 				<li class="inform">
 					<a class="am-icon-home home-position" href="t_course.jsp"></a>
